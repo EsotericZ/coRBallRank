@@ -1,0 +1,25 @@
+{
+  "name": "corballrank",
+  "version": "1.0.0",
+  "description": "Colorado Racquetball Ranking Generator built with React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsotericZ/coRBallRank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsotericZ/coRBallRank/issues"
+  },
+  "homepage": "https://github.com/EsotericZ/coRBallRank#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
