@@ -1,24 +1,24 @@
 import { Form, Field } from 'react-final-form';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import { LOGIN } from '../graphql/mutations/login';
+import { CREATE_USER } from '../graphql/mutations/createUser';
 
 
-export const Login = () => {
-	const [loginMutation,] = useMutation(LOGIN);
+export const CreateUser = () => {
+	const [createMutation,] = useMutation(CREATE_USER);
 	const navigate = useNavigate();
 
 	return (
 		<Form
 			onSubmit={async (values) => {
 
-				await loginMutation({
+				await createMutation({
 					variables: {
 						...values,
 					},
 					onCompleted: (data) => {
 						console.log(data);
-						localStorage.setItem('token', data?.login?.token);
+						// localStorage.setItem('token', data?.login?.token);
 						navigate('/success');
 					}
 				});
@@ -31,16 +31,16 @@ export const Login = () => {
 
 				return (
 					<div>
-						{/*<h1>FirstName</h1>*/}
-						{/*<Field*/}
-						{/*	name='firstName'*/}
-						{/*	component='input'*/}
-						{/*/>*/}
-						{/*<h1>Last Name</h1>*/}
-						{/*<Field*/}
-						{/*	name='lastName'*/}
-						{/*	component='input'*/}
-						{/*/>*/}
+                        <h1>FirstName</h1>
+						<Field
+							name='firstName'
+							component='input'
+						/>
+						<h1>Last Name</h1>
+						<Field
+							name='lastName'
+							component='input'
+						/>
 						<h1>Email</h1>
 						<Field
 							name='email'
@@ -53,9 +53,9 @@ export const Login = () => {
 							type='password'
 						/>
 						<button
-							disabled={
-								values?.password?.length === 0 || values?.email?.length === 0
-							}
+							// disabled={
+							// 	values?.password?.length === 0 || values?.email?.length === 0
+							// }
 							onClick={async () => {
 								await handleSubmit();
 								form.reset();
@@ -68,4 +68,3 @@ export const Login = () => {
 		/>
 	)
 }
-
