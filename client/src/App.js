@@ -10,8 +10,11 @@ function App() {
       <Routes>
         <Route
           path='/'
-          // element={<Login/>}
           element={<CreateUser/>}
+        />
+        <Route
+          path='/login'
+          element={<Login/>}
         />
         <Route
           path='/success'

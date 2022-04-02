@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { LOGIN } from '../graphql/mutations/login';
 
-
 export const Login = () => {
 	const [loginMutation,] = useMutation(LOGIN);
 	const navigate = useNavigate();
@@ -19,7 +18,7 @@ export const Login = () => {
 					onCompleted: (data) => {
 						console.log(data);
 						localStorage.setItem('token', data?.login?.token);
-						navigate('/success');
+						navigate('/users');
 					}
 				});
 			}}
@@ -31,16 +30,6 @@ export const Login = () => {
 
 				return (
 					<div>
-						{/*<h1>FirstName</h1>*/}
-						{/*<Field*/}
-						{/*	name='firstName'*/}
-						{/*	component='input'*/}
-						{/*/>*/}
-						{/*<h1>Last Name</h1>*/}
-						{/*<Field*/}
-						{/*	name='lastName'*/}
-						{/*	component='input'*/}
-						{/*/>*/}
 						<h1>Email</h1>
 						<Field
 							name='email'
@@ -68,4 +57,3 @@ export const Login = () => {
 		/>
 	)
 }
-
