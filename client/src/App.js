@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { Routes, Route } from 'react-router-dom';
 import { Login } from './login/Login';
 import { Users } from './users/Users';
+import { CreateUser } from './createUser/CreateUser';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<Login/>}
+          // element={<Login/>}
+          element={<CreateUser/>}
         />
         <Route
           path='/success'
