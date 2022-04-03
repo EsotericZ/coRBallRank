@@ -74,8 +74,28 @@ const typeDefs = gql`
             role: String,
             club: String,
             location: String,
-            password: String!
+            password: String!,
         ): Auth
+        # createPlayer(
+        #     playerId: String!,
+        #     firstName: String!,
+        #     lastName: String!,
+        #     birthday: String,
+        #     gender: String!,
+        #     singleRank: Int,
+        #     doubleRank: Int,
+        #     mixedRank: Int,
+        # )
+        # createMatch(
+        #     winningPlayerId: String!,
+        #     winningPointDifferential: Int!,
+        #     losingPlayerId: String!,
+        #     losingPointDifferential: Int!,
+        #     score: String!,
+        #     tieBreaker: Boolean,
+        #     tournamentId: String!,
+        #     matchType: String!,
+        # )
         login(email: String!, password: String!): Auth
     }
 `;
