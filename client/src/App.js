@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { Routes, Route } from 'react-router-dom';
 import { Login } from './login/Login';
 import { Users } from './users/Users';
-import { CreateUser } from './createUser/CreateUser';
+import  CreateUser  from './createUser/CreateUser';
 import  {Nav}  from './navbar/Nav';
 
 function App() {
