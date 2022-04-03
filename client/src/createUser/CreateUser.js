@@ -203,35 +203,14 @@ const CreateUser = () => {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    name="club"
-                                    label="Club"
-                                    type="club"
-                                    id="club"
-                                    autoComplete="new-club"
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    name="location"
-                                    label="Location"
-                                    type="location"
-                                    id="location"
-                                    autoComplete="new-location"
-                                />
-                            </Grid>
-                            <FormControl sx={{ m: 1, width: 500 }}>
-                                <InputLabel id="">Level</InputLabel>
+                            <FormControl  sx={{ width: 550 }}>
+                                <InputLabel id="">Location</InputLabel>
                                 <Select
                                     labelId="l"
                                     id=""
                                     onChange={handleChange}
-                                    autoWidth
-                                    label="Level"
+                                    fullWidth
+                                    label="Location"
                                 >
                                     <MenuItem value="">
                                         <em>None</em>
@@ -241,6 +220,26 @@ const CreateUser = () => {
                                     <MenuItem value={3}>3</MenuItem>
                                 </Select>
                             </FormControl>
+                            </Grid>
+                            <Grid item xs={12}>
+                            <FormControl sx={{ width: 550 }}>
+                                <InputLabel id="">Club</InputLabel>
+                                <Select
+                                    labelId="l"
+                                    id=""
+                                    onChange={handleChange}
+                                    autoWidth
+                                    label="Club"
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                </Select>
+                            </FormControl>
+                            </Grid>
                         </Grid>
                         <Button
                             type="submit"

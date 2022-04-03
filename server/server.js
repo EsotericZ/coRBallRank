@@ -12,8 +12,8 @@ const server = new ApolloServer({
 		const token = req.headers.authorization;
 
 		// if no token no user is logged in
-		if (token?.length === 0) {
-			return {req};
+		if (token.length === 0) {
+			return req;
 		}
 
 		try {
