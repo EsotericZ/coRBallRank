@@ -27,6 +27,7 @@ const typeDefs = gql`
 
     type Match {
         _id: ID
+        matchId: String
         winningPlayerId: [Player]
         winningPointDifferential: Int
         losingPlayerId: [Player]
