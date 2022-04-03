@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Login } from './login/Login';
 import { Users } from './users/Users';
 import { CreateUser } from './createUser/CreateUser';
+import  {Nav}  from './navbar/Nav';
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
         <Route
           path='/'
           element={<CreateUser/>}
+        />
+        <Route
+          path='/navbar'
+          element={<Nav/>}
         />
         <Route
           path='/login'
