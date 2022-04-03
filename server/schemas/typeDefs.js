@@ -33,6 +33,8 @@ const typeDefs = gql`
         losingPointDifferential: Int
         score: String
         tieBreaker: Boolean
+        division: String
+        status: String
         tournamentId: [Tournament]
         matchType: String
     }
@@ -76,27 +78,43 @@ const typeDefs = gql`
             location: String,
             password: String!,
         ): Auth
-        # createPlayer(
-        #     playerId: String!,
-        #     firstName: String!,
-        #     lastName: String!,
-        #     birthday: String,
-        #     gender: String!,
-        #     singleRank: Int,
-        #     doubleRank: Int,
-        #     mixedRank: Int,
-        # )
-        # createMatch(
-        #     winningPlayerId: String!,
-        #     winningPointDifferential: Int!,
-        #     losingPlayerId: String!,
-        #     losingPointDifferential: Int!,
-        #     score: String!,
-        #     tieBreaker: Boolean,
-        #     tournamentId: String!,
-        #     matchType: String!,
-        # )
-        login(email: String!, password: String!): Auth
+        createPlayer(
+            playerId: String!,
+            firstName: String!,
+            lastName: String!,
+            birthday: String,
+            gender: String!,
+            singleRank: Int,
+            doubleRank: Int,
+            mixedRank: Int,
+        ): Player
+        createMatch(
+            matchId: String!,
+            winningPlayerId: String!,
+            winningPointDifferential: Int!,
+            losingPlayerId: String!,
+            losingPointDifferential: Int!,
+            score: String!,
+            tieBreaker: Boolean,
+            division: String,
+            status: String,
+            tournamentId: String!,
+            matchType: String!,
+        ): Match
+        createTournament(
+            tournamentId: String!,
+            name: String!,
+            location: String!,
+            club: String!,
+            startDate: String!,
+            endDate: String!,
+            weightIndex: Int!,
+            link: String!,
+        ): Tournament
+        login(
+            email: String!, 
+            password: String!
+        ): Auth
     }
 `;
 

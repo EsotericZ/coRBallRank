@@ -64,18 +64,34 @@ const resolvers = {
 			});
 			console.log('Created Player', player)
 		},
-		createMatch: async (_root, {winningPlayerId, winningPointDifferential, losingPlayerId, losingPointDifferential, score, tieBreaker, tournamentId, matchType}) => {
+		createMatch: async (_root, {matchId, winningPlayerId, winningPointDifferential, losingPlayerId, losingPointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
 			const match = await Match.create({
+				matchId,
 				winningPlayerId,
 				winningPointDifferential,
 				losingPlayerId,
 				losingPointDifferential,
 				score,
 				tieBreaker,
+				division,
+				status,
 				tournamentId,
 				matchType,
 			});
 			console.log('Created Match', match)
+		},
+		createTournament: async (_root, {tournamentId, name, location, club, startDate, endDate, weightIndex, link}) => {
+			const tournament = await Tournament.create({
+				tournamentId,
+				name,
+				location,
+				club,
+				startDate,
+				endDate,
+				weightIndex,
+				link,
+			});
+			console.log('Created Tournament', tournament)
 		},
 		login: async (_root, {email, password}) => {
 			const userFound = await User.findOne({email});
