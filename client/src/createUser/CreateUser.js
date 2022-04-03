@@ -148,13 +148,19 @@ const CreateUser = () => {
                             </Grid>
                         </Grid>
                         <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            sx={{ mt: 3, mb: 2 }}
-                        >
-                            Submit
-                        </Button>
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{ mt: 3, mb: 2 }}
+                                // disabled={
+                                //     values?.password?.length === 0 || values?.email?.length === 0
+                                // }
+                                onClick={async () => {
+                                    await handleSubmit();
+                                    // form.reset();
+                                }}>
+                                Submit
+                            </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
                                 <Link href="Login" variant="body2">

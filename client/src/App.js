@@ -4,13 +4,18 @@ import { Login } from './login/Login';
 import { Users } from './users/Users';
 import  CreateUser  from './createUser/CreateUser';
 import  {Nav}  from './navbar/Nav';
+import  Profile  from './profile/Profile';
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route
+      <Route
           path='/'
+          element={<Profile/>}
+        />
+        <Route
+          path='/createuser'
           element={<CreateUser/>}
         />
         <Route
