@@ -11,19 +11,20 @@ const resolvers = {
 			if (!context.req?.user) {
 				throw new AuthenticationError('You must be logged in to do that');
 			}
-			console.log(context.coolestGuyInTheWorld);
-			console.log(context.someNerd);
 			return await User.find({});
 		},
 	},
 
 	Mutation: {
-		createUser: async (_root, {firstName, lastName, email, password}) => {
+		createUser: async (_root, {firstName, lastName, username, email, playerId, role, password}) => {
 			console.log('im hit!!!');
 			const user = await User.create({
 				firstName,
 				lastName,
+				username,
 				email,
+				playerId,
+				role,
 				password,
 			});
 
@@ -47,19 +48,6 @@ const resolvers = {
 			throw new AuthenticationError('You must provide correct credentials');
 		},
 	},
-	// Field Resolvers
-	// Basically things we defined in typeDefs
-	// that isn't in the database
-	// but we want extra shit, we can use field resolvers
-	// User: {
-	// 	fullName: (root) => {
-	// 		console.log('I AM ROOT',root);
-	// 		return `${root.firstName} ${root.lastName}`;
-	// 	},
-		// nameLength: (root) => {
-		// 	return root.firstName.length;
-		// },
-	// },
 };
 
 module.exports = resolvers;

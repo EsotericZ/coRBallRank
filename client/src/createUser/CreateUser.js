@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { CREATE_USER } from '../graphql/mutations/createUser';
 
-
 export const CreateUser = () => {
 	const [createMutation,] = useMutation(CREATE_USER);
 	const navigate = useNavigate();
@@ -24,8 +23,15 @@ export const CreateUser = () => {
 				});
 			}}
 			initialValues={{
+				firstName: '',
+				lastName: '',
+				username: '',
+				playerId: '',
+				role: '',
 				email: '',
 				password: '',
+				club: '',
+				location: '',
 			}}
 			render={({values, handleSubmit, form}) => {
 
@@ -41,6 +47,11 @@ export const CreateUser = () => {
 							name='lastName'
 							component='input'
 						/>
+						<h1>Username</h1>
+						<Field
+							name='username'
+							component='input'
+						/>
 						<h1>Email</h1>
 						<Field
 							name='email'
@@ -52,10 +63,20 @@ export const CreateUser = () => {
 							component='input'
 							type='password'
 						/>
+						<h1>Club</h1>
+						<Field
+							name='club'
+							component='input'
+						/>
+						<h1>Location</h1>
+						<Field
+							name='location'
+							component='input'
+						/>
 						<button
-							// disabled={
-							// 	values?.password?.length === 0 || values?.email?.length === 0
-							// }
+							disabled={
+								values?.password?.length === 0 || values?.email?.length === 0
+							}
 							onClick={async () => {
 								await handleSubmit();
 								form.reset();
