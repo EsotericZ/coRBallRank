@@ -44,10 +44,12 @@ const typeDefs = gql`
         tournamentId: String
         name: String
         location: String
+        club: String
         startDate: String
         endDate: String
         weightIndex: Int
         link: String
+        status: String
     }
 
     type Auth {

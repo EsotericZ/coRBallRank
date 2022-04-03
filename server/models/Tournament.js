@@ -9,6 +9,7 @@ const tournamentSchema = new Schema({
     endDate: Date,
     weightIndex: Number,
     link: String,
+    status: String,
 });
 
 module.exports = model('Tournament', tournamentSchema);

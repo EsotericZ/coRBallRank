@@ -80,7 +80,7 @@ const resolvers = {
 			});
 			console.log('Created Match', match)
 		},
-		createTournament: async (_root, {tournamentId, name, location, club, startDate, endDate, weightIndex, link}) => {
+		createTournament: async (_root, {tournamentId, name, location, club, startDate, endDate, weightIndex, link, status}) => {
 			const tournament = await Tournament.create({
 				tournamentId,
 				name,
@@ -90,6 +90,7 @@ const resolvers = {
 				endDate,
 				weightIndex,
 				link,
+				status,
 			});
 			console.log('Created Tournament', tournament)
 		},

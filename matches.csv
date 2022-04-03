@@ -1,0 +1,6 @@
+﻿_id,winningPlayerId,winningPointDifferential,losingPlayerId,losingPointDifferential,score,tieBreaker,division,status,tournamentId,matchType
+1,cjsand,20,derscha,20,"2,4",n,open,complete,bb2020,singles
+2,nickBlan,18,derscha,18,"4,4",n,open,complete,bb2020,singles
+3,cjsand,2,nickBlan,2,"13,14",n,open,complete,bb2020,singles
+4,nickBlan,5,jacoking,5,"12,5",n,open,complete,bb2020,singles
+5,cjsand,3,jacoking,3,"5,12",n,open,complete,bb2020,singles
