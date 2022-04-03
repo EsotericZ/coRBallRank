@@ -11,10 +11,6 @@ import TextField from '@mui/material/TextField';
 
 export const Nav = () => {
   return (
-    //   <div>
-    //       <h1>Nav</h1>
-    //       <HomeIcon/>
-    //   </div>
 
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
