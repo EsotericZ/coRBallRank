@@ -1,10 +1,16 @@
 import { useQuery } from '@apollo/client';
 import { FETCH_USERS } from '../graphql/queries/fetchUsers';
+import { FETCH_PLAYERS } from '../graphql/queries/fetchPlayers';
 
 export const Users = () => {
-	const {data, loading, error} = useQuery(FETCH_USERS);
+	// const {data, loading, error} = useQuery(FETCH_USERS);
+	// const user = data;
+	// console.log('user', user)
+	const {data, loading, error} = useQuery(FETCH_PLAYERS);
+	const players = data;
+	console.log('players', players);
+	
 
-	console.log(error);
 	if (error) {
 		return <h1>Please login</h1>;
 	}
@@ -14,5 +20,6 @@ export const Users = () => {
 		:
 		<div>
 			Success! Woot woot!
+			{/* {user.firstName} */}
 		</div>
 }
