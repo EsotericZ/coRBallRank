@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import TextField from '@mui/material/TextField';
 
-export const Nav = () => {
+const Nav = () => {
   return (
 
     <Box sx={{ flexGrow: 1 }}>
@@ -72,3 +72,5 @@ export const Nav = () => {
     </Box>
   );
 }
+
+export default Nav;
