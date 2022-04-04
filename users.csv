@@ -1,0 +1,5 @@
+﻿_id,firstName,lastName,username,email,playerId,role,password,club,location
+1,CJ,Sanders,squee,c@c.com,cjsand,admin,password,DAC,Denver
+2,Kitley,Adams,kirt,k@k.com,kiadam,player,password,DAC,Denver
+3,Kai,Walsh,kaiguy,w@w.com,kaiwalsh,player,password,DAC,Denver
+4,Erna,Lukac,airna,e@e.com,ernalukac,player,password,DAC,Denver

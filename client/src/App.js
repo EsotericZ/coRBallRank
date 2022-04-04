@@ -3,15 +3,25 @@ import { Routes, Route } from 'react-router-dom';
 import { Login } from './login/Login';
 import { Users } from './users/Users';
 import { Ranking } from './ranking/Ranking';
-import { CreateUser } from './createUser/CreateUser';
+import  CreateUser  from './createUser/CreateUser';
+import  {Nav}  from './navbar/Nav';
+import  Profile  from './profile/Profile';
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route
+      <Route
           path='/'
+          element={<Profile/>}
+        />
+        <Route
+          path='/createuser'
           element={<CreateUser/>}
+        />
+        <Route
+          path='/navbar'
+          element={<Nav/>}
         />
         <Route
           path='/login'

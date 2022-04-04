@@ -13,6 +13,6 @@ export const Users = () => {
 		<h1>Loading....</h1>
 		:
 		<div>
-			Success
+			Success! Woot woot!
 		</div>
 }
