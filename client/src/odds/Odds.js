@@ -1,8 +1,13 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 import './odds.css';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -13,19 +18,60 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+
 const Odds = () => {
+const [Player1, setPlayer1] = useState('');
+const [Player2, setPlayer2] = useState('');
+const handleChange = (event) => {
+    setPlayer1(event.target.value);
+    setPlayer2(event.target.value);
+};    
     return (
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
             <Grid item xs={5}>
-            <Item>Player Search 1</Item>
-            </Grid>
+                <FormControl sx={{ width: 550 }}>
+                    <InputLabel id="">Player 1</InputLabel>
+                    <Select
+                        labelId="l"
+                        id=""
+                        value={Player1}
+                        onChange={handleChange}
+                        fullWidth
+                        label="Player 1"
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                </FormControl>
+                </Grid>
             <Grid item xs={1}>
             <Item></Item>
             </Grid>
             <Grid item xs={5}>
-            <Item>Player Search 2</Item>
-            </Grid>
+                <FormControl sx={{ width: 550 }}>
+                    <InputLabel id="">Player 2</InputLabel>
+                    <Select
+                        labelId="l"
+                        id=""
+                        value={Player2}
+                        onChange={handleChange}
+                        fullWidth
+                        label="Player 2"
+                    >
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                </FormControl>
+                </Grid>
             <Grid item xs={5}>
             <Item>Player Avatar 1</Item>
             </Grid>
