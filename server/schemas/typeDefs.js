@@ -7,7 +7,7 @@ const typeDefs = gql`
         lastName: String
         username: String
         email: String
-        playerId: [Player]
+        playerId: Player
         role: String
         club: String
         location: String
@@ -28,15 +28,15 @@ const typeDefs = gql`
     type Match {
         _id: ID
         matchId: String
-        winningPlayerId: [Player]
+        winningPlayerId: Player
         winningPointDifferential: Int
-        losingPlayerId: [Player]
+        losingPlayerId: Player
         losingPointDifferential: Int
         score: String
         tieBreaker: Boolean
         division: String
         status: String
-        tournamentId: [Tournament]
+        tournamentId: Tournament
         matchType: String
     }
 

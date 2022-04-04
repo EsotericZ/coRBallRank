@@ -5,6 +5,7 @@ import { Users } from './users/Users';
 import  CreateUser  from './createUser/CreateUser';
 import  {Nav}  from './navbar/Nav';
 import  Profile  from './profile/Profile';
+import Odds from './odds/Odds';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Routes>
       <Route
           path='/'
-          element={<Profile/>}
+          element={<Odds/>}
         />
         <Route
           path='/createuser'
