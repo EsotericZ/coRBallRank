@@ -1,9 +1,9 @@
 import { Form, Field } from 'react-final-form';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import { LOGIN } from '../graphql/mutations/login';
+import { LOGIN } from '../../graphql/mutations/login';
 
-export const Login = () => {
+const Login = () => {
 	const [loginMutation,] = useMutation(LOGIN);
 	const navigate = useNavigate();
 
@@ -57,3 +57,5 @@ export const Login = () => {
 		/>
 	)
 }
+
+export default Login;
