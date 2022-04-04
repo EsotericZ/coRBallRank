@@ -2,7 +2,8 @@ import { useQuery } from '@apollo/client';
 import { Routes, Route } from 'react-router-dom';
 import { Login } from './login/Login';
 import { Users } from './users/Users';
-import { Ranking } from './ranking/Ranking';
+// import { Ranking, BasicTable } from './ranking/Ranking';
+import BasicTable from './ranking/Ranking';
 import  CreateUser  from './createUser/CreateUser';
 import  {Nav}  from './navbar/Nav';
 import  Profile  from './profile/Profile';
@@ -37,7 +38,7 @@ function App() {
         />
         <Route
           path='/ranking'
-          element={<Ranking/>}
+          element={<BasicTable/>}
         >
         </Route>
 
