@@ -35,7 +35,7 @@ const CreateUser = () => {
     const handleChange = (event) => {
         setLocation(event.target.value);
         setClub(event.target.value);
-      };
+    };
 
     return (
         <ThemeProvider theme={theme}>
