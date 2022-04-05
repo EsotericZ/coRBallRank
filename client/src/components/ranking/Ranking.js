@@ -1,4 +1,8 @@
+
 import { useQuery } from '@apollo/client';
+
+
+import Nav from '../navbar/Nav';
 
 // import Stack from '@mui/material/Stack';
 import Stack from '@mui/material/Stack';
@@ -14,6 +18,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+
 import { FETCH_SINGLES } from '../../graphql/queries/fetchPlayers';
 
 // export const Ranking = () => {
@@ -27,10 +32,10 @@ import { FETCH_SINGLES } from '../../graphql/queries/fetchPlayers';
 // }
 
 
+function createData(rank, name, level, location, more) {
+    return { rank, name, level, location, more };
+}
 
-// function createData(rank, name, level, location, more) {
-//     return { rank, name, level, location, more };
-// }
 
 // const rows = [
 //     createData('Ada Lovelace', 159, 6.0, 24, 4.0),
@@ -48,6 +53,9 @@ export default function BasicTable() {
         <h1>Loading...</h1>
         :
         <TableContainer component={Paper}>
+
+            <Nav />
+
             <Box sx={{ textAlign: 'center' }}>
                 Current Rankings
             </Box>
