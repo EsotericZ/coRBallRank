@@ -8,6 +8,7 @@ import Profile  from './components/profile/Profile';
 import Odds from './components/odds/Odds';
 import Events from './components/events/Events';
 import History from './components/history/History';
+import HomeNav from './components/homenav/HomeNav';
 
 // THIS IS A TEST PAGE DELETE IT WHEN DONE WITH IT 
 import Users from './users/Users';
@@ -19,6 +20,10 @@ const App = () => {
         <Route
             path='/'
             element={<Home />}
+          />
+          <Route
+            path='/homeNav'
+            element={<HomeNav />}
           />
           <Route
             path='/create'

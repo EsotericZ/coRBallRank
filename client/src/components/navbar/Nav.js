@@ -24,15 +24,14 @@ return (
     <Box className="homeNav"sx={{ flexGrow: 1 }}>
       <AppBar style={linkStyle} >
         <Toolbar>
-          {/* <IconButton
-            size="medium"
-            edge="start"
-            // color="inherit"
-            // aria-label="menu"
-            sx={{ mr: 1 }}
-          > */}
-            {/* <MenuIcon /> */}
-          {/* </IconButton> */}
+        {/* <IconButton 
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          onClick={toggleDrawer(true)}
+          sx={{ mr: 2, display: { xs: 'block', sm: 'none',}, }}>   
+          <MenuIcon />
+        </IconButton> */}
           <Link href="/" style={linkStyle}>Home</Link>
           <Link href="/ranking" style={linkStyle}>Ranking</Link>
           <Link href="/events" style={linkStyle}>Events</Link>
