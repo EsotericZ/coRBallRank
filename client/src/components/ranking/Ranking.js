@@ -32,9 +32,9 @@ import { FETCH_SINGLES } from '../../graphql/queries/fetchPlayers';
 // }
 
 
-function createData(rank, name, level, location, more) {
-    return { rank, name, level, location, more };
-}
+// function createData(rank, name, level, location, more) {
+//     return { rank, name, level, location, more };
+// }
 
 
 // const rows = [
