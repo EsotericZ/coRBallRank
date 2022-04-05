@@ -1,13 +1,7 @@
-
 import { useQuery } from '@apollo/client';
-<<<<<<< HEAD
 import './ranking.css';
-=======
-
-
 import Nav from '../navbar/Nav';
 
->>>>>>> main
 // import Stack from '@mui/material/Stack';
 import Stack from '@mui/material/Stack';
 // import Item from '@mui/material/Item';
@@ -22,7 +16,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 import { FETCH_SINGLES } from '../../graphql/queries/fetchPlayers';
 
 // export const Ranking = () => {
@@ -36,9 +29,9 @@ import { FETCH_SINGLES } from '../../graphql/queries/fetchPlayers';
 // }
 
 
-function createData(rank, name, level, location, more) {
-    return { rank, name, level, location, more };
-}
+// function createData(rank, name, level, location, more) {
+//     return { rank, name, level, location, more };
+// }
 
 
 // const rows = [
