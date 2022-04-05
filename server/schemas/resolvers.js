@@ -20,6 +20,21 @@ const resolvers = {
 		playersSingles: async (_root, _args, context) => {
 			return await Player.find({}).sort({singleRank: -1});
 		},
+		maleSingles: async (_root, _args, context) => {
+			return await Player.find({"gender": "M"}).sort({singleRank: -1});
+		},
+		femaleSingles: async (_root, _args, context) => {
+			return await Player.find({"gender": "F"}).sort({singleRank: -1});
+		},
+		maleDoubles: async (_root, _args, context) => {
+			return await Player.find({"gender": "M"}).sort({doubleRank: -1});
+		},
+		femaleDoubles: async (_root, _args, context) => {
+			return await Player.find({"gender": "F"}).sort({doubleRank: -1});
+		},
+		mixedDoubles: async (_root, _args, context) => {
+			return await Player.find({}).sort({mixedRank: -1});
+		},
 		match: async (_root, {id}) => {
 			return await Match.findById(id);
 		},
@@ -111,6 +126,12 @@ const resolvers = {
 			throw new AuthenticationError('You must provide correct credentials');
 		},
 	},
+
+	Player: { 
+		fullName: (root) => {
+			return `${root.firstName} ${root.lastName}`;
+		}
+	}
 };
 
 module.exports = resolvers;
