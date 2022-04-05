@@ -1,6 +1,18 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+    type Player {
+        _id: ID
+        playerId: String
+        firstName: String
+        lastName: String
+        birthday: String
+        gender: String
+        singleRank: Int
+        doubleRank: Int
+        mixedRank: Int
+    }
+
     type User {
         _id: ID
         firstName: String
@@ -13,16 +25,17 @@ const typeDefs = gql`
         location: String
     }
 
-    type Player {
+    type Tournament {
         _id: ID
-        playerId: String
-        firstName: String
-        lastName: String
-        birthday: String
-        gender: String
-        singleRank: Int
-        doubleRank: Int
-        mixedRank: Int
+        tournamentId: String
+        name: String
+        location: String
+        club: String
+        startDate: String
+        endDate: String
+        weightIndex: Int
+        link: String
+        status: String
     }
 
     type Match {
@@ -40,18 +53,7 @@ const typeDefs = gql`
         matchType: String
     }
 
-    type Tournament {
-        _id: ID
-        tournamentId: String
-        name: String
-        location: String
-        club: String
-        startDate: String
-        endDate: String
-        weightIndex: Int
-        link: String
-        status: String
-    }
+
 
     type Auth {
         token: String
@@ -62,7 +64,7 @@ const typeDefs = gql`
         user(id: String!): User
         users: [User]
         player(id: String!): Player
-        players: [Player]
+        playersSingles: [Player]
         match(id: String!): Match
         matches: [Match]
         tournament(id: String!): Tournament
