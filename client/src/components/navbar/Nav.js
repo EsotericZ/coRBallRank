@@ -7,18 +7,19 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
+import { makeStyles } from '@mui/styles';
 
 import TextField from '@mui/material/TextField';
-// import './nav.css';
+import './nav.css';
 
 const linkStyle = {
   margin: "1rem",
   color: 'red'
 };
-
 const Nav = () => {
-  return (
 
+
+return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -38,6 +39,31 @@ const Nav = () => {
           <Link href="/odds" style={linkStyle}>Odds</Link>
           <Link href="/profile" style={linkStyle}>Profile</Link>
           <Link href="/create" style={linkStyle}>Sign Up</Link>
+            {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
+            Home */}
+            {/* <Link href="/Home"  component="div"sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Home</Link>
+            <Link href="/Home" variant="h6">Home</Link> */}
+          {/* </Typography> */}
+          {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
+            Ranking */}
+            {/* <Link href="/Ranking" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Ranking</Link> */}
+          {/* </Typography> */}
+          {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
+            History */}
+            {/* <Link href="/History" component="div"sx={{ flexGrow: 1 }} className="linkColor"variant="h6">History</Link> */}
+          {/* </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
+            Events */}
+            {/* <Link href="/Events" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Events</Link> */}
+          {/* </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
+            Profile */}
+            {/* <Link href="/Profile" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Profile</Link> */}
+          {/* </Typography> */}
+          {/* <Typography to="/CreateUser"variant="h6" component={Link} sx={{ flexGrow: 1 }} className="linkColor">
+            Sign Up */}
+            {/* <Link  component="div"sx={{ flexGrow: 1 }} className="linkColor"variant="h6">Sign Up</Link> */}
+          {/* </Typography> */}
           <TextField 
               margin="normal"
               required
