@@ -111,6 +111,12 @@ const resolvers = {
 			throw new AuthenticationError('You must provide correct credentials');
 		},
 	},
+
+	Player: { 
+		fullName: (root) => {
+			return `${root.firstName} ${root.lastName}`;
+		}
+	}
 };
 
 module.exports = resolvers;

@@ -4,11 +4,10 @@ export const FETCH_SINGLES = gql`
     query fetchPlayers {
         playersSingles {
             _id
-            playerId
-            firstName
-            lastName
-            gender
             singleRank
+            fullName
+            gender
+            birthday
         }
     }
 

@@ -11,6 +11,7 @@ const typeDefs = gql`
         singleRank: Int
         doubleRank: Int
         mixedRank: Int
+        fullName: String
     }
 
     type User {
