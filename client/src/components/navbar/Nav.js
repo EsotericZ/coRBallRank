@@ -64,7 +64,6 @@ return (
             Sign Up */}
             {/* <Link  component="div"sx={{ flexGrow: 1 }} className="linkColor"variant="h6">Sign Up</Link> */}
           {/* </Typography> */}
-
           <TextField 
               margin="normal"
               required
