@@ -6,14 +6,18 @@ const Users = () => {
 	// const {data, loading, error} = useQuery(FETCH_USERS);
 	// const user = data;
 	// console.log('user', user)
-	const {data, loading, error} = useQuery(FETCH_SINGLES);
-	const players = data;
-	console.log('players', players);
-	
+	// const {data, loading, error} = useQuery(FETCH_SINGLES);
+	// const players = data;
+	// console.log('players', players);
 
-	if (error) {
-		return <h1>Please login</h1>;
-	}
+	const {loading, data} = useQuery(FETCH_SINGLES);
+	const singleList = data?.playersSingles || [];
+	console.log('singleList', singleList)
+
+
+	// if (error) {
+	// 	return <h1>Please login</h1>;
+	// }
 
 	return loading ?
 		<h1>Loading....</h1>
@@ -21,6 +25,17 @@ const Users = () => {
 		<div>
 			Success! Woot woot!
 			{/* {user.firstName} */}
+
+            {singleList.map((play) => {
+                return (
+                	<h1 key={play._id}>
+						why?
+                    	{play.firstName}
+                  	</h1>
+				)
+			})}
+
+
 		</div>
 }
 
