@@ -1,3 +1,4 @@
+import Nav from '../navbar/Nav';
 // import Stack from '@mui/material/Stack';
 import Stack from '@mui/material/Stack';
 // import Item from '@mui/material/Item';
@@ -11,19 +12,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-
-
-// export const Ranking = () => {
-//     return (
-//         <div>
-//             <h1>
-
-//             </h1>
-//         </div>
-//     )
-// }
-
 
 
 function createData(rank, name, level, location, more) {
@@ -41,9 +29,10 @@ const rows = [
 export default function BasicTable() {
     return (
         <TableContainer component={Paper}>
-                <Box sx={{ textAlign: 'center' }}>
-                    Current Rankings
-                </Box>
+            <Nav />
+            <Box sx={{ textAlign: 'center' }}>
+                Current Rankings
+            </Box>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
