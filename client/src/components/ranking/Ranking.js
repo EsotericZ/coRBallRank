@@ -1,9 +1,13 @@
 
 import { useQuery } from '@apollo/client';
+<<<<<<< HEAD
+import './ranking.css';
+=======
 
 
 import Nav from '../navbar/Nav';
 
+>>>>>>> main
 // import Stack from '@mui/material/Stack';
 import Stack from '@mui/material/Stack';
 // import Item from '@mui/material/Item';
@@ -45,9 +49,10 @@ function createData(rank, name, level, location, more) {
 //     createData('Gingerbread', 356, 16.0, 49, 3.9),
 // ];
 
-export default function BasicTable() {
+// export default function BasicTable() {
+const Ranking = () => {
     const {loading, data} = useQuery(FETCH_SINGLES);
-    const singleList = data?.playersSingles || [];
+    const rankList = data?.playersSingles || [];
 
     return loading ?
         <h1>Loading...</h1>
@@ -70,7 +75,7 @@ export default function BasicTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {singleList.map((player, index) => (
+                    {rankList.map((player, index) => (
                         <TableRow
                             key={player._id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -86,3 +91,5 @@ export default function BasicTable() {
             </Table>
         </TableContainer>
 }
+
+export default Ranking;
