@@ -66,6 +66,11 @@ const typeDefs = gql`
         users: [User]
         player(id: String!): Player
         playersSingles: [Player]
+        maleSingles: [Player]
+        femaleSingles: [Player]
+        maleDoubles: [Player]
+        femaleDoubles: [Player]
+        mixedDoubles: [Player]
         match(id: String!): Match
         matches: [Match]
         tournament(id: String!): Tournament

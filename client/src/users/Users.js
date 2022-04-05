@@ -1,16 +1,37 @@
 import { useQuery } from '@apollo/client';
-import { FETCH_SINGLES } from '../graphql/queries/fetchPlayers';
+import {
+	FETCH_SINGLES,
+	MALE_SINGLES,
+	FEMALE_SINGLES,
+	MALE_DOUBLES,
+	FEMALE_DOUBLES,
+	MIXED_DOUBLES,
+} from '../graphql/queries/fetchPlayers';
 
 const Users = () => {
-	const {data, loading, error} = useQuery(FETCH_SINGLES);
-	const players = data;
-	console.log('players', players);
-	// const play = players.playersSingles;
-	// console.log('play', play);
-	// for (let p in play) {
-	// 	console.log(p.fullName)
-	// }
-	
+	// ALL USERS
+	// const {loading, data} = useQuery(FETCH_SINGLES);
+	// const rankList = data?.playersSingles || [];
+
+	// MALE SINGLES
+	// const {loading, data} = useQuery(MALE_SINGLES);
+	// const rankList = data?.maleSingles || [];
+
+	// FEMALE SINGLES
+	// const {loading, data, error} = useQuery(FEMALE_SINGLES);
+	// const rankList = data?.femaleSingles || [];
+
+	// MALE DOUBLES
+	// const {loading, data, error} = useQuery(MALE_DOUBLES);
+	// const rankList = data?.maleDoubles || [];
+
+	// FEMALE DOUBLES
+	// const {loading, data, error} = useQuery(FEMALE_DOUBLES);
+	// const rankList = data?.femaleDoubles || [];
+
+	// MIXED DOUBLES
+	const {loading, data, error} = useQuery(MIXED_DOUBLES);
+	const rankList = data?.mixedDoubles || [];
 
 	if (error) {
 		return <h1>Please login</h1>;
@@ -20,8 +41,14 @@ const Users = () => {
 		<h1>Loading....</h1>
 		:
 		<div>
-			Success! Woot woot!
-		
+            {rankList.map((play) => {
+                return (
+                	<h1 key={play._id}>
+						why?
+                    	{play.firstName}
+                  	</h1>
+				)
+			})}
 		</div>
 
 }
