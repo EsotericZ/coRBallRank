@@ -12,12 +12,13 @@ const resolvers = {
 			// 	throw new AuthenticationError('You must be logged in to do that');
 			// }
 			return await User.find({});
+			// return await User.find({}).populate('player');
 		},
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
 		},
-		players: async (_root, _args, context) => {
-			return await Player.find({});
+		playersSingles: async (_root, _args, context) => {
+			return await Player.find({}).sort({singleRank: -1});
 		},
 		match: async (_root, {id}) => {
 			return await Match.findById(id);
