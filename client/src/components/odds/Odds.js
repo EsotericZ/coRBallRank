@@ -27,6 +27,9 @@ const Odds = () => {
         setPlayer2(event.target.value);
     };
     return (
+        <>
+        <Nav/>
+
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={5}>
@@ -101,6 +104,7 @@ const Odds = () => {
                 </Grid>
             </Grid>
         </Box>
+        </>
     )
 };
 
