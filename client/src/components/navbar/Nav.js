@@ -14,24 +14,25 @@ import './nav.css';
 
 const linkStyle = {
   margin: "1rem",
-  color: 'red'
+  color: 'red',
+  background: "pink",
 };
 const Nav = () => {
 
 
 return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box className="homeNav"sx={{ flexGrow: 1 }}>
+      <AppBar style={linkStyle} >
         <Toolbar>
-          <IconButton
-            size="large"
+          {/* <IconButton
+            size="medium"
             edge="start"
-            color="inherit"
-            aria-label="menu"
+            // color="inherit"
+            // aria-label="menu"
             sx={{ mr: 1 }}
-          >
+          > */}
             {/* <MenuIcon /> */}
-          </IconButton>
+          {/* </IconButton> */}
           <Link href="/" style={linkStyle}>Home</Link>
           <Link href="/ranking" style={linkStyle}>Ranking</Link>
           <Link href="/events" style={linkStyle}>Events</Link>
