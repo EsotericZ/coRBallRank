@@ -6,6 +6,8 @@ import Ranking from './components/ranking/Ranking';
 import CreateUser from './components/createUser/CreateUser';
 import Profile  from './components/profile/Profile';
 import Odds from './components/odds/Odds';
+import Events from './components/events/Events';
+import History from './components/history/History';
 
 // THIS IS A TEST PAGE DELETE IT WHEN DONE WITH IT 
 import Users from './users/Users';
@@ -19,12 +21,16 @@ const App = () => {
             element={<Home />}
           />
           <Route
-            path='/createuser'
+            path='/create'
             element={<CreateUser />}
           />
           <Route
             path='/odds'
             element={<Odds />}
+          />
+            <Route
+            path='/profile'
+            element={<Profile />}
           />
           <Route
             path='/login'
@@ -41,6 +47,16 @@ const App = () => {
           <Route
             path='/ranking'
             element={<Ranking />}
+          >
+          </Route>
+          <Route
+            path='/history'
+            element={<History />}
+          >
+          </Route>
+          <Route
+            path='/events'
+            element={<Events />}
           >
           </Route>
       </Routes>
