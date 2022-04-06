@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const playerSchema = new Schema({
-	playerId: { type: String, unique: true },
     firstName: String,
     lastName: String,
     birthday: String,

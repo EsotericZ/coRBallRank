@@ -3,7 +3,6 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Player {
         _id: ID
-        playerId: String
         firstName: String
         lastName: String
         birthday: String
@@ -28,7 +27,6 @@ const typeDefs = gql`
 
     type Tournament {
         _id: ID
-        tournamentId: String
         name: String
         location: String
         club: String
@@ -43,9 +41,8 @@ const typeDefs = gql`
         _id: ID
         matchId: String
         winningPlayerId: Player
-        winningPointDifferential: Int
         losingPlayerId: Player
-        losingPointDifferential: Int
+        pointDifferential: Int
         score: String
         tieBreaker: Boolean
         division: String
@@ -90,7 +87,6 @@ const typeDefs = gql`
             password: String!,
         ): Auth
         createPlayer(
-            playerId: String!,
             firstName: String!,
             lastName: String!,
             birthday: String,
@@ -102,9 +98,8 @@ const typeDefs = gql`
         createMatch(
             matchId: String!,
             winningPlayerId: String!,
-            winningPointDifferential: Int!,
             losingPlayerId: String!,
-            losingPointDifferential: Int!,
+            pointDifferential: Int!,
             score: String!,
             tieBreaker: Boolean,
             division: String,
@@ -113,7 +108,6 @@ const typeDefs = gql`
             matchType: String!,
         ): Match
         createTournament(
-            tournamentId: String!,
             name: String!,
             location: String!,
             club: String!,
