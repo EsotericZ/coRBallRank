@@ -6,7 +6,6 @@ const Events = () => {
         <div>
             <Nav />
             <h1>Events</h1>
-            <h1>HELLO!!!</h1>
         </div>
     )
 };
