@@ -12,7 +12,6 @@ const resolvers = {
 			// 	throw new AuthenticationError('You must be logged in to do that');
 			// }
 			return await User.find({}).populate({path:"playerId"});
-			// return await User.find({});
 		},
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
@@ -21,19 +20,19 @@ const resolvers = {
 			return await Player.find({}).sort({singleRank: -1});
 		},
 		maleSingles: async (_root, _args, context) => {
-			return await Player.find({"gender": "M"}).sort({singleRank: -1});
+			return await Player.find({"gender": "M", "singleRank": {$ne: 0}}).sort({singleRank: -1});
 		},
 		femaleSingles: async (_root, _args, context) => {
-			return await Player.find({"gender": "F"}).sort({singleRank: -1});
+			return await Player.find({"gender": "F", "singleRank": {$ne: 0}}).sort({singleRank: -1});
 		},
 		maleDoubles: async (_root, _args, context) => {
-			return await Player.find({"gender": "M"}).sort({doubleRank: -1});
+			return await Player.find({"gender": "M", "doubleRank": {$ne: 0}}).sort({doubleRank: -1});
 		},
 		femaleDoubles: async (_root, _args, context) => {
-			return await Player.find({"gender": "F"}).sort({doubleRank: -1});
+			return await Player.find({"gender": "F", "doubleRank": {$ne: 0}}).sort({doubleRank: -1});
 		},
 		mixedDoubles: async (_root, _args, context) => {
-			return await Player.find({}).sort({mixedRank: -1});
+			return await Player.find({"mixedRank": {$ne: 0}}).sort({mixedRank: -1});
 		},
 		match: async (_root, {id}) => {
 			return await Match.findById(id);
