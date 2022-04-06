@@ -6,6 +6,10 @@ export const FETCH_USERS = gql`
             _id
             firstName
             lastName
+            email
+            playerId {
+                firstName
+            }
         }
     }
 `;

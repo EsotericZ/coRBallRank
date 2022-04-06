@@ -3,7 +3,6 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Player {
         _id: ID
-        playerId: String
         firstName: String
         lastName: String
         birthday: String
@@ -20,7 +19,7 @@ const typeDefs = gql`
         lastName: String
         username: String
         email: String
-        playerId: Player
+        playerId: String
         role: String
         club: String
         location: String
@@ -90,7 +89,6 @@ const typeDefs = gql`
             password: String!,
         ): Auth
         createPlayer(
-            playerId: String!,
             firstName: String!,
             lastName: String!,
             birthday: String,
