@@ -25,14 +25,15 @@ import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBL
 
 
 const Ranking = () => {
-    const { loading, data } = useQuery(MALE_SINGLES);
-    const rankList = data?.maleSingles || [];
+    const ms = useQuery(MALE_SINGLES);
+    const rankList = ms.data?.maleSingles || [];
+    const loading = ms.loading;
 
-    const { fetching, atad } = useQuery(FEMALE_SINGLES);
-    const femmeList = atad?.femaleSingles || [];
+    const fs = useQuery(FEMALE_SINGLES);
+    const femmeList = fs.data?.femaleSingles || [];
 
-    const { getting, mdData } = useQuery(MALE_DOUBLES);
-    const mdList = mdData?.maleDoubles || [];
+    const md = useQuery(MALE_DOUBLES);
+    const mdList = md.data?.maleDoubles || [];
 
     const [value, setValue] = React.useState('1');
 
@@ -41,7 +42,10 @@ const Ranking = () => {
     };
 
     return loading ?
-        <h1>Loading...</h1>
+        <>
+            <Nav />
+            <h1>Loading...</h1>
+        </>
         :
         <TableContainer component={Paper}>
 
@@ -146,4 +150,3 @@ const Ranking = () => {
 }
 
 export default Ranking;
-
