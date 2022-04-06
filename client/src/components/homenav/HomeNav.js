@@ -18,7 +18,7 @@ import { spacing } from "@mui/system";
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(1),
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(3),
     marginRight: theme.spacing(1),
     display: "inline-block",
     verticalAlign: "center",
