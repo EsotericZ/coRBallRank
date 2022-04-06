@@ -15,16 +15,15 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './homeNav.css'
 import { spacing } from "@mui/system";
-import  cologo from "../../assets/cologo.png";
+import  rockies from "../../assets/cologo.png";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(1),
-    marginTop: theme.spacing(3),
-    marginRight: theme.spacing(1),
-    display: "inline-block",
+    marginLeft: theme.spacing(),
+    marginTop: theme.spacing(),
+    marginRight: theme.spacing(),
+    // display: "inline-block",
     verticalAlign: "center",
-    justifyContent: "space-around"
   },
   logo: {
     flexGrow: "1",
@@ -34,12 +33,12 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "white",
     fontSize: "18px",
-    marginLeft: theme.spacing(6),
+    marginLeft: theme.spacing(),
     "&:hover": {
       color: "red",
       borderBottom: "1px solid white",
     },
-    marginRight: theme.spacing(4),
+    marginRight: theme.spacing(),
     "&:hover": {
       color: "red",
       borderBottom: "1px solid white",
@@ -57,7 +56,7 @@ function HomeNav() {
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          <img src={cologo} alt="logo" className="logo"/>
+          <img src={rockies} alt="logo" className="logo"/>
         </Typography>
         {isMobile ? (
           <DrawerComponent />
