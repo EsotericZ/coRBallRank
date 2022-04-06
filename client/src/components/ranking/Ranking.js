@@ -61,10 +61,10 @@ const Ranking = () => {
                 <TableHead>
                     <TableRow>
                         <TableCell>Rank</TableCell>
-                        <TableCell align="right">name</TableCell>
-                        <TableCell align="right">level</TableCell>
-                        <TableCell align="right">location</TableCell>
-                        <TableCell align="right">more</TableCell>
+                        <TableCell align="right">Name</TableCell>
+                        <TableCell align="right">Level</TableCell>
+                        <TableCell align="right">Location</TableCell>
+                        <TableCell align="right">More</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
