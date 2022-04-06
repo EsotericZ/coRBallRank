@@ -1,98 +1,80 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Link from '@mui/material/Link';
-import { makeStyles } from '@mui/styles';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  Typography,
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
+import DrawerComponent from "./Drawer";
+import './nav.css'
 
-import TextField from '@mui/material/TextField';
-import './nav.css';
+const useStyles = makeStyles((theme) => ({
+  navlinks: {
+    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(1),
+    display: "inline-block",
+    align: "center",
+    justifyContent: "space-around"
+  },
+  logo: {
+    flexGrow: "1",
+    cursor: "pointer",
+  },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "20px",
+    marginLeft: theme.spacing(15),
+    "&:hover": {
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+  },
+}));
 
-const linkStyle = {
-  margin: "1rem",
-  color: 'red',
-  background: "pink",
-};
-const Nav = () => {
+function Nav() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-
-return (
-    <Box className="homeNav"sx={{ flexGrow: 1 }}>
-      <AppBar style={linkStyle} >
-        <Toolbar>
-        {/* <IconButton 
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          onClick={toggleDrawer(true)}
-          sx={{ mr: 2, display: { xs: 'block', sm: 'none',}, }}>   
-          <MenuIcon />
-        </IconButton> */}
-          <Link href="/" style={linkStyle}>Home</Link>
-          <Link href="/ranking" style={linkStyle}>Ranking</Link>
-          <Link href="/events" style={linkStyle}>Events</Link>
-          <Link href="/history" style={linkStyle}>History</Link>
-          <Link href="/odds" style={linkStyle}>Odds</Link>
-          <Link href="/profile" style={linkStyle}>Profile</Link>
-          <Link href="/create" style={linkStyle}>Sign Up</Link>
-            {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
-            Home */}
-            {/* <Link href="/Home"  component="div"sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Home</Link>
-            <Link href="/Home" variant="h6">Home</Link> */}
-          {/* </Typography> */}
-          {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
-            Ranking */}
-            {/* <Link href="/Ranking" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Ranking</Link> */}
-          {/* </Typography> */}
-          {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
-            History */}
-            {/* <Link href="/History" component="div"sx={{ flexGrow: 1 }} className="linkColor"variant="h6">History</Link> */}
-          {/* </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
-            Events */}
-            {/* <Link href="/Events" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Events</Link> */}
-          {/* </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="linkColor">
-            Profile */}
-            {/* <Link href="/Profile" component="div" sx={{ flexGrow: 1 }}className="linkColor"variant="h6">Profile</Link> */}
-          {/* </Typography> */}
-          {/* <Typography to="/CreateUser"variant="h6" component={Link} sx={{ flexGrow: 1 }} className="linkColor">
-            Sign Up */}
-            {/* <Link  component="div"sx={{ flexGrow: 1 }} className="linkColor"variant="h6">Sign Up</Link> */}
-          {/* </Typography> */}
-          <TextField 
-              margin="normal"
-              required
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+  return (
+    <AppBar position="static">
+      <CssBaseline />
+      <Toolbar>
+        <Typography variant="h4" className={classes.logo}>
+          Navbar
+          
+        </Typography>
+        {isMobile ? (
+          <DrawerComponent />
+        ) : (
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>
+              Home
+            </Link>
+            <Link to="/ranking" className={classes.link}>
+              Ranking
+            </Link>
+            <Link to="/events" className={classes.link}>
+              Events
+            </Link>
+            <Link to="/history" className={classes.link}>
+              History
+            </Link>
+            <Link to="/odds" className={classes.link}>
+              Odds
+            </Link>
+            <Link to="/profile" className={classes.link}>
+              My Account
+            </Link>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 }
-
 export default Nav;

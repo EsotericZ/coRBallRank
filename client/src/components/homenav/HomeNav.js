@@ -11,12 +11,19 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import './homeNav.css'
+import { spacing } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(5),
-    display: "flex",
+    marginLeft: theme.spacing(1),
+    marginTop: theme.spacing(3),
+    marginRight: theme.spacing(1),
+    display: "inline-block",
+    verticalAlign: "center",
+    justifyContent: "space-around"
   },
   logo: {
     flexGrow: "1",
@@ -25,10 +32,15 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "white",
-    fontSize: "20px",
-    marginLeft: theme.spacing(20),
+    fontSize: "18px",
+    marginLeft: theme.spacing(6),
     "&:hover": {
-      color: "yellow",
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+    marginRight: theme.spacing(4),
+    "&:hover": {
+      color: "red",
       borderBottom: "1px solid white",
     },
   },
@@ -69,9 +81,31 @@ function HomeNav() {
             <Link to="/create" className={classes.link}>
               Sign Up
             </Link>
-            <Link to="/login" className={classes.link}>
+            <TextField 
+              margin="normal"
+              required
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ mt: 1, mb: 1 }}
+            >
               Log In
-            </Link>
+            </Button>
           </div>
         )}
       </Toolbar>
