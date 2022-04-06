@@ -13,12 +13,12 @@ const resolvers = {
 			// }
 			return await User.find({}).populate({path:"playerId"});
 		},
-		player: async (_root, {id}) => {
-			return await Player.findById(id);
-		},
-		playersSingles: async (_root, _args, context) => {
-			return await Player.find({}).sort({singleRank: -1});
-		},
+		// player: async (_root, {id}) => {
+		// 	return await Player.findById(id);
+		// },
+		// playersSingles: async (_root, _args, context) => {
+		// 	return await Player.find({}).sort({singleRank: -1});
+		// },
 		maleSingles: async (_root, _args, context) => {
 			return await Player.find({"gender": "M", "singleRank": {$ne: 0}}).sort({singleRank: -1});
 		},
@@ -38,7 +38,7 @@ const resolvers = {
 			return await Match.findById(id);
 		},
 		matches: async (_root, _args, context) => {
-			return await Match.find({});
+			return await Match.find({}).populate({path:"winningPlayerId"}).populate({path:"losingPlayerId"});
 		},
 		tournament: async (_root, {id}) => {
 			return await Tournament.findById(id);
@@ -78,13 +78,12 @@ const resolvers = {
 			});
 			console.log('Created Player', player)
 		},
-		createMatch: async (_root, {matchId, winningPlayerId, winningPointDifferential, losingPlayerId, losingPointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
+		createMatch: async (_root, {matchId, winningPlayerId, losingPlayerId, pointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
 			const match = await Match.create({
 				matchId,
 				winningPlayerId,
-				winningPointDifferential,
 				losingPlayerId,
-				losingPointDifferential,
+				pointDifferential,
 				score,
 				tieBreaker,
 				division,
@@ -94,9 +93,8 @@ const resolvers = {
 			});
 			console.log('Created Match', match)
 		},
-		createTournament: async (_root, {tournamentId, name, location, club, startDate, endDate, weightIndex, link, status}) => {
+		createTournament: async (_root, {name, location, club, startDate, endDate, weightIndex, link, status}) => {
 			const tournament = await Tournament.create({
-				tournamentId,
 				name,
 				location,
 				club,
