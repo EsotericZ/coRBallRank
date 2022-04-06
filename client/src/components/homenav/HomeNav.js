@@ -15,6 +15,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './homeNav.css'
 import { spacing } from "@mui/system";
+import  cologo from "../../assets/cologo.png";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -56,8 +57,7 @@ function HomeNav() {
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
-          Navbar
-          
+          <img src={cologo} alt="logo" className="logo"/>
         </Typography>
         {isMobile ? (
           <DrawerComponent />
