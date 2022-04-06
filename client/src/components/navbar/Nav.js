@@ -68,11 +68,8 @@ function Nav() {
             <Link to="/odds" className={classes.link}>
               Odds
             </Link>
-            <Link to="/create" className={classes.link}>
-              Sign Up
-            </Link>
-            <Link to="/login" className={classes.link}>
-              Log In
+            <Link to="/profile" className={classes.link}>
+              My Account
             </Link>
           </div>
         )}

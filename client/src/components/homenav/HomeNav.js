@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import DrawerComponent from "./Drawers";
+import DrawerComponent from "./Drawer";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './homeNav.css'
