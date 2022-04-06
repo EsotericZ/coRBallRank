@@ -19,7 +19,7 @@ const typeDefs = gql`
         lastName: String
         username: String
         email: String
-        playerId: String
+        playerId: Player
         role: String
         club: String
         location: String
