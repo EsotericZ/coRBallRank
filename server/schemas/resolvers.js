@@ -11,8 +11,8 @@ const resolvers = {
 			// if (!context.req?.user) {
 			// 	throw new AuthenticationError('You must be logged in to do that');
 			// }
-			return await User.find({});
-			// return await User.find({}).populate('player');
+			return await User.find({}).populate({path:"playerId"});
+			// return await User.find({});
 		},
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
@@ -67,9 +67,8 @@ const resolvers = {
 			console.log(token);
 			return {token, user};
 		},
-		createPlayer: async (_root, {playerId, firstName, lastName, birthday, gender, singleRank, doubleRank, mixedRank}) => {
+		createPlayer: async (_root, {firstName, lastName, birthday, gender, singleRank, doubleRank, mixedRank}) => {
 			const player = await Player.create({
-				playerId,
 				firstName,
 				lastName,
 				birthday,

@@ -8,9 +8,11 @@ import {
 	MIXED_DOUBLES,
 } from '../graphql/queries/fetchPlayers';
 
+import { FETCH_USERS } from '../graphql/queries/fetchUsers';
+
 const Users = () => {
 	// ALL USERS
-	// const {loading, data} = useQuery(FETCH_SINGLES);
+	// const {loading, data, error} = useQuery(FETCH_SINGLES);
 	// const rankList = data?.playersSingles || [];
 
 	// MALE SINGLES
@@ -30,8 +32,13 @@ const Users = () => {
 	// const rankList = data?.femaleDoubles || [];
 
 	// MIXED DOUBLES
-	const {loading, data, error} = useQuery(MIXED_DOUBLES);
-	const rankList = data?.mixedDoubles || [];
+	// const {loading, data, error} = useQuery(MIXED_DOUBLES);
+	// const rankList = data?.mixedDoubles || [];
+
+	// MIXED DOUBLES
+	const {loading, data, error} = useQuery(FETCH_USERS);
+	const rankList = data?.users || [];
+	console.log(rankList);
 
 	if (error) {
 		return <h1>Please login</h1>;
