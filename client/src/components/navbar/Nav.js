@@ -132,7 +132,7 @@ function Nav() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /><Link to='/profile' target='_blank'>Profile </Link> 
+          <Avatar /><Link to='/profile'>Profile </Link> 
         </MenuItem>
         <MenuItem>
           <Avatar /> My account
