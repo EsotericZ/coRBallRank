@@ -4,23 +4,27 @@
     "description": "Colorado Racquetball Ranking Generator built with React",
     "main": "index.js",
     "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "node server/config/seeds.js"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+        "install": "cd server && npm i && cd ../client && npm i",
+        "seed": "node server/config/seeds.js"
     },
     "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EsotericZ/coRBallRank.git"
+        "type": "git",
+        "url": "git+https://github.com/EsotericZ/coRBallRank.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-    "url": "https://github.com/EsotericZ/coRBallRank/issues"
+        "url": "https://github.com/EsotericZ/coRBallRank/issues"
     },
     "homepage": "https://github.com/EsotericZ/coRBallRank#readme",
     "devDependencies": {
-    "concurrently": "^7.0.0"
+        "concurrently": "^7.0.0"
+    },
+    "dependencies": {
+        "semantic-ui-css": "^2.4.1",
+        "semantic-ui-react": "^2.1.2"
     }
-    }
+}
