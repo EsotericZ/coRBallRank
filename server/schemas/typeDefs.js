@@ -70,6 +70,7 @@ const typeDefs = gql`
         playerMatchHistory: [PlayerHistory]
         # player(id: String!): Player
         # playersSingles: [Player]
+        allPlayers: [Player]
         maleSingles: [Player]
         femaleSingles: [Player]
         maleDoubles: [Player]
