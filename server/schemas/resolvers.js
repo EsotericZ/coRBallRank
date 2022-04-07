@@ -1,5 +1,5 @@
 const {AuthenticationError} = require('apollo-server-express');
-const { Match, Player, User, Tournament } = require('../models');
+const { Match, Player, User, Tournament, PlayerHistory } = require('../models');
 const utils = require('../utils/auth');
 
 const resolvers = {
@@ -12,6 +12,10 @@ const resolvers = {
 			// 	throw new AuthenticationError('You must be logged in to do that');
 			// }
 			return await User.find({}).populate({path:"playerId"});
+		},
+		playerMatchHistory: async (_root, _args, context) => {
+			// return await PlayerHistory.findById(id).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
+			return await PlayerHistory.find({}).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
 		},
 		// player: async (_root, {id}) => {
 		// 	return await Player.findById(id);
