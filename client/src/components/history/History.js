@@ -3,6 +3,7 @@ import {Comment,CommentGroup, Card} from 'semantic-ui-react';
 import './history.css';
 import  rockies from "../../assets/cologo.png";
 
+
 const History = () => {
     return (
         <div>
