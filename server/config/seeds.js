@@ -1,11 +1,12 @@
 const db = require('./connection');
-const { Player, User, Tournament, Match } = require('../models');
+const { Player, User, Tournament, Match, PlayerHistory } = require('../models');
 
 db.once('open', async () => {
     await Player.deleteMany();
 
     const players = await Player.insertMany([
         {
+            // 00
             firstName: 'Admin',
             lastName: 'Admin',
             birthday: '04/06/2022',
@@ -15,6 +16,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 01
             firstName: 'CJ',
             lastName: 'Sanders',
             birthday: '02/04/1986',
@@ -24,6 +26,7 @@ db.once('open', async () => {
             mixedRank: 1289,
         },
         {
+            // 02
             firstName: 'Luis',
             lastName: 'Martinez',
             birthday: '02/04/1986',
@@ -33,6 +36,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 03
             firstName: 'Dominic',
             lastName: 'Garcia',
             birthday: '02/04/1986',
@@ -42,6 +46,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 04
             firstName: 'Vikram',
             lastName: 'Pathrojuthri',
             birthday: '02/04/1986',
@@ -51,6 +56,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 05
             firstName: 'David',
             lastName: 'Stone',
             birthday: '02/04/1986',
@@ -60,6 +66,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 06
             firstName: 'Lee',
             lastName: 'Beckwith',
             birthday: '02/04/1986',
@@ -69,6 +76,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 07
             firstName: 'Jorge',
             lastName: 'Cuellar',
             birthday: '02/04/1986',
@@ -78,6 +86,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 08
             firstName: 'Ken',
             lastName: 'Huey',
             birthday: '02/04/1986',
@@ -87,6 +96,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 09
             firstName: 'Michael',
             lastName: 'Nigro',
             birthday: '02/04/1986',
@@ -96,6 +106,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 10
             firstName: 'Luis',
             lastName: 'Torres',
             birthday: '02/04/1986',
@@ -105,6 +116,7 @@ db.once('open', async () => {
             mixedRank: 0,
         },
         {
+            // 11
             firstName: 'Chantel',
             lastName: 'Anderson',
             birthday: '02/04/1986',
@@ -114,6 +126,7 @@ db.once('open', async () => {
             mixedRank: 1287,
         },
         {
+            // 12
             firstName: 'Khyathi',
             lastName: 'Velpuri',
             birthday: '02/04/1986',
@@ -123,6 +136,7 @@ db.once('open', async () => {
             mixedRank: 1389,
         },
         {
+            // 13
             firstName: 'Derek',
             lastName: 'Schaeffer',
             birthday: '02/04/1986',
@@ -168,6 +182,7 @@ db.once('open', async () => {
 
     const tournaments = await Tournament.insertMany([
         {
+            // 00
             name: '2020 Apex Open',
             location: 'Arvada',
             club: 'Apex',
@@ -177,26 +192,28 @@ db.once('open', async () => {
             link: 'https://www.r2sports.com/website/event-website.asp?TID=31675',
             status: 'completed',
         },
-        // {
-        //     name: '2022 State Singles',
-        //     location: 'Denver',
-        //     club: 'Denver Athletic Club',
-        //     startDate: '05/13/22',
-        //     endDate: '05/15/22',
-        //     weightIndex: 30,
-        //     link: 'none',
-        //     status: 'future',
-        // },
-        // {
-        //     name: '2022 Rocky Mountain State Games',
-        //     location: 'Colorado Springs',
-        //     club: 'Denver Athletic Club',
-        //     startDate: '07/22/22',
-        //     endDate: '07/24/22',
-        //     weightIndex: 20,
-        //     link: 'https://www.r2sports.com/tourney/home.asp?TID=39071',
-        //     status: 'future',
-        // },
+        {
+            // 01
+            name: '2022 State Singles',
+            location: 'Denver',
+            club: 'Denver Athletic Club',
+            startDate: '05/13/22',
+            endDate: '05/15/22',
+            weightIndex: 30,
+            link: 'none',
+            status: 'future',
+        },
+        {
+            // 02
+            name: '2022 Rocky Mountain State Games',
+            location: 'Colorado Springs',
+            club: 'Denver Athletic Club',
+            startDate: '07/22/22',
+            endDate: '07/24/22',
+            weightIndex: 20,
+            link: 'https://www.r2sports.com/tourney/home.asp?TID=39071',
+            status: 'future',
+        },
     ]);
 
     console.log('Tournaments Seeded')
@@ -205,6 +222,7 @@ db.once('open', async () => {
 
     const matches = await Match.insertMany([
         {
+            // 00
             matchId: 'MO9',
             winningPlayerId: players[3]._id,
             losingPlayerId: players[4]._id,
@@ -217,6 +235,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 01
             matchId: 'MO10',
             winningPlayerId: players[9]._id,
             losingPlayerId: players[10]._id,
@@ -229,6 +248,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 02
             matchId: 'MO8',
             winningPlayerId: players[2]._id,
             losingPlayerId: players[3]._id,
@@ -241,6 +261,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 03
             matchId: 'MO5',
             winningPlayerId: players[6]._id,
             losingPlayerId: players[5]._id,
@@ -253,6 +274,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 04
             matchId: 'MO6',
             winningPlayerId: players[8]._id,
             losingPlayerId: players[7]._id,
@@ -265,6 +287,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 05
             matchId: 'MO7',
             winningPlayerId: players[9]._id,
             losingPlayerId: players[1]._id,
@@ -277,6 +300,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 06
             matchId: 'MO4',
             winningPlayerId: players[2]._id,
             losingPlayerId: players[6]._id,
@@ -289,6 +313,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 07
             matchId: 'MO3',
             winningPlayerId: players[8]._id,
             losingPlayerId: players[9]._id,
@@ -301,6 +326,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 08
             matchId: 'MO1',
             winningPlayerId: players[2]._id,
             losingPlayerId: players[8]._id,
@@ -313,18 +339,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
-            matchId: 'cMO7',
-            winningPlayerId: players[1]._id,
-            losingPlayerId: players[10]._id,
-            pointDifferential: 13,
-            score: '15-14, 15-3',
-            tieBreaker: false,
-            division: 'Open Consolation',
-            status: 'completed',
-            tournamentId: tournaments[0]._id,
-            matchType: 'singles',
-        },
-        {
+            // 09
             matchId: 'cMO5',
             winningPlayerId: players[1]._id,
             losingPlayerId: players[10]._id,
@@ -337,6 +352,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 10
             matchId: 'cMO4',
             winningPlayerId: players[4]._id,
             losingPlayerId: players[5]._id,
@@ -349,6 +365,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 11
             matchId: 'cMO3',
             winningPlayerId: players[1]._id,
             losingPlayerId: players[7]._id,
@@ -361,6 +378,7 @@ db.once('open', async () => {
             matchType: 'singles',
         },
         {
+            // 12
             matchId: 'cMO1',
             winningPlayerId: players[1]._id,
             losingPlayerId: players[4]._id,
@@ -375,6 +393,27 @@ db.once('open', async () => {
     ]);
 
     console.log('Matches Seeded')
+    
+    await PlayerHistory.deleteMany();
+
+    const playerHistory = await PlayerHistory.insertMany([
+        {
+            // CJ SANDERS
+            playerId: players[1]._id,
+            matchesWon: [
+                {
+                    matches: [matches[9]._id, matches[11]._id, matches[12]._id]
+                }
+            ],
+            matchesLost: [
+                {
+                    matches: [matches[5]._id,]
+                }
+            ],
+        },
+    ]);
+
+    console.log('Player Match History Seeded')
 
     process.exit();
 });
