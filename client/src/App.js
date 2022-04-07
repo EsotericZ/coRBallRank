@@ -21,10 +21,10 @@ const App = () => {
             path='/'
             element={<Home />}
           />
-          {/* <Route
-            path='/homeNav'
-            element={<HomeNav />}
-          /> */}
+          <Route
+            path='/home'
+            element={<Home />}
+          />
           <Route
             path='/create'
             element={<CreateUser />}
