@@ -1,5 +1,4 @@
-
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 import './player.css';
 
 const Player = () => {

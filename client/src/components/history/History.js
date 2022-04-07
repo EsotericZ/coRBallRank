@@ -1,5 +1,4 @@
-import Nav from '../navbar/Nav';
-import {Comment,CommentGroup, Card} from 'semantic-ui-react';
+import Nav from '../nav/Nav';
 import './history.css';
 import  rockies from "../../assets/cologo.png";
 
