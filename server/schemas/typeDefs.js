@@ -51,7 +51,12 @@ const typeDefs = gql`
         matchType: String
     }
 
-
+    type PlayerHistory {
+        _id: ID
+        playerId: Player
+        matchesWon: [Match]
+        matchesLost: [Match]
+    }
 
     type Auth {
         token: String
@@ -61,8 +66,10 @@ const typeDefs = gql`
     type Query {
         user(id: String!): User
         users: [User]
-        player(id: String!): Player
-        playersSingles: [Player]
+        # playerMatchHistory(id: String!): PlayerHistory
+        playerMatchHistory: [PlayerHistory]
+        # player(id: String!): Player
+        # playersSingles: [Player]
         maleSingles: [Player]
         femaleSingles: [Player]
         maleDoubles: [Player]
