@@ -1,4 +1,4 @@
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 import './history.css';
 
 const History = () => {

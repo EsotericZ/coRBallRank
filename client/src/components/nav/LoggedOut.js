@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   AppBar,
@@ -10,10 +9,10 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import DrawerComponent from "./Drawer";
+import DrawerComponent from "./LoggedOutDrawer";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import './homeNav.css'
+import './loggedOut.css'
 import { spacing } from "@mui/system";
 import  rockies from "../../assets/cologo.png";
 
@@ -46,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HomeNav() {
+function LoggedOut() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -112,4 +111,4 @@ function HomeNav() {
   );
 }
 
-export default HomeNav;
+export default LoggedOut;

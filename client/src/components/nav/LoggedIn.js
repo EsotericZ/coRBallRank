@@ -15,10 +15,10 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import DrawerComponent from "./Drawer";
+import DrawerComponent from "./LoggedInDrawer";
 import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
-import './nav.css'
+import './loggedIn.css'
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Nav() {
+function LoggedIn() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -151,4 +151,4 @@ function Nav() {
     </AppBar>
   );
 }
-export default Nav;
+export default LoggedIn;

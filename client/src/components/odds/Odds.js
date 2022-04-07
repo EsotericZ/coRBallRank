@@ -11,7 +11,7 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 
 import PlayerSelector from './PlayerSelector';
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
 
@@ -36,7 +36,7 @@ const Odds = () => {
     };
     return (
         <>
-        <Nav/>
+        <Nav />
         <PlayerSelector />
         <PlayerSelector />
         <Box sx={{ flexGrow: 1 }}>
