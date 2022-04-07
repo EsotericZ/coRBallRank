@@ -18,7 +18,7 @@ const Login = () => {
 					onCompleted: (data) => {
 						console.log(data);
 						localStorage.setItem('token', data?.login?.token);
-						navigate('/');
+						navigate('/home');
 					}
 				});
 			}}
@@ -29,13 +29,11 @@ const Login = () => {
 			render={({values, handleSubmit, form}) => {
 
 				return (
-					<div>
-						<h1>Email</h1>
+					<>
 						<Field
 							name='email'
 							component='input'
 						/>
-						<h1>Password</h1>
 						<Field
 							name='password'
 							component='input'
@@ -51,7 +49,7 @@ const Login = () => {
 							}}>
 							Submit
 						</button>
-					</div>
+					</>
 				)
 			}}
 		/>

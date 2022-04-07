@@ -16,6 +16,8 @@ import './loggedOut.css'
 import { spacing } from "@mui/system";
 import  rockies from "../../assets/cologo.png";
 
+import Login from "../login/Login";
+
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(),
@@ -79,7 +81,8 @@ function LoggedOut() {
             <Link to="/create" className={classes.link}>
               Sign Up
             </Link>
-            <TextField 
+            <Login />
+            {/* <TextField 
               margin="normal"
               required
               id="email"
@@ -87,6 +90,8 @@ function LoggedOut() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange = { (event, newValue) => 
+                this.setState({email: newValue})}
             />
             <TextField
               margin="normal"
@@ -96,14 +101,17 @@ function LoggedOut() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange = { (event, newValue) => 
+                this.setState({password: newValue})}
             />
             <Button
               type="submit"
               variant="contained"
               sx={{ mt: 1, mb: 1 }}
+              onClick = { (event) => this.handleClick(event)}
             >
               Log In
-            </Button>
+            </Button> */}
           </div>
         )}
       </Toolbar>
