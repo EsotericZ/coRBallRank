@@ -9,6 +9,7 @@ const ALL_PLAYERS = gql`
             gender
             singleRank
             birthday
+            fullName
         }
     }
 `;
