@@ -22,6 +22,9 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Typography from '@mui/material/Typography';
 import TableSortLabel from '@mui/material/TableSortLabel';
+import TextField from '@mui/material/TextField';
+// import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 
@@ -41,7 +44,7 @@ const Ranking = () => {
 
     const mixd = useQuery(MIXED_DOUBLES);
     const mixdList = mixd.data?.maleDoubles || [];
-    
+
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -73,6 +76,12 @@ const Ranking = () => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
+                        <Autocomplete
+                            id="free-solo-demo"
+                            freeSolo
+                            options={rankList.map((option) => option.title)}
+                            renderInput={(params) => <TextField {...params} label="freeSolo" />}
+                        />
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
@@ -89,6 +98,7 @@ const Ranking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
+
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
                                         <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
                                         <TableCell align="right">{player.singleRank}</TableCell>
