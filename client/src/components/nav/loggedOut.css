@@ -1,12 +1,12 @@
 .logo {
     max-width:100px;
     overflow: hidden;
-    
 }
+
 .logoutNav{
-    /* background-color: #D5DBB3; */
     background-color: var(--color-nav);
 }
+
 #home,
 #ranking,
 #events,
@@ -19,5 +19,10 @@
     color: white;
     margin-right: 35px;
     justify-content: center;
+}
 
+#signUp {
+    color: blue;
+    justify-content: end;
+    display: inline-flex;
 }
