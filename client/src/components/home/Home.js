@@ -12,19 +12,22 @@ import Box from '@mui/material/Box';
 
 const Home = () => {
     return (
-        <div className="container home">
-            <div>
-                <HomeMain />
-            </div>
-            <div>
+        <>
+            <Nav />
+            <div className="container home">
                 <div>
-                    <Ranking />
+                    <HomeMain />
                 </div>
                 <div>
-                    <HomeEvents />
+                    <div>
+                        <Ranking />
+                    </div>
+                    <div>
+                        <HomeEvents />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 };
 
