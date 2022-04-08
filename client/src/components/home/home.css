@@ -1,5 +1,6 @@
 #homeEvents {
-    direction: row-reverse;
-    backgroundColor: #blue;
+    /* position: absolute;
+    right: 0; */
+    float: right;
 }
 
