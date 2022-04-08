@@ -29,12 +29,18 @@ const Ranking = () => {
     const rankList = ms.data?.maleSingles || [];
     const loading = ms.loading;
 
-    const fs = useQuery(FEMALE_SINGLES);
-    const femmeList = fs.data?.femaleSingles || [];
-
     const md = useQuery(MALE_DOUBLES);
     const mdList = md.data?.maleDoubles || [];
 
+    const fs = useQuery(FEMALE_SINGLES);
+    const femmeList = fs.data?.femaleSingles || [];
+
+    const fd = useQuery(FEMALE_DOUBLES);
+    const fdList = fd.data?.maleDoubles || [];
+
+    const mixd = useQuery(MIXED_DOUBLES);
+    const mixdList = mixd.data?.maleDoubles || [];
+    
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -58,9 +64,11 @@ const Ranking = () => {
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example">
-                            <Tab label="Singles" value="1" />
-                            <Tab label="Doubles" value="2" />
-                            <Tab label="Women's" value="3" />
+                            <Tab label="Male's Singles" value="1" />
+                            <Tab label="Male's Doubles" value="2" />
+                            <Tab label="Women's Singles" value="3" />
+                            <Tab label="Women's Doubles" value="4" />
+                            <Tab label="Mixed Doubles" value="5" />
                         </TabList>
                     </Box>
                     <TabPanel value="1">
@@ -130,6 +138,60 @@ const Ranking = () => {
                             </TableHead>
                             <TableBody>
                                 {femmeList.map((player, index) => (
+                                    <TableRow
+                                        key={player._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
+                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="right">{player.birthday}</TableCell>
+                                        <TableCell align="right">{player.gender}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TabPanel>
+                    <TabPanel value="4">
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Rank</TableCell>
+                                    <TableCell align="right">Name</TableCell>
+                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="right">Location</TableCell>
+                                    <TableCell align="right">More</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {fdList.map((player, index) => (
+                                    <TableRow
+                                        key={player._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
+                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="right">{player.birthday}</TableCell>
+                                        <TableCell align="right">{player.gender}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TabPanel>
+                    <TabPanel value="5">
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Rank</TableCell>
+                                    <TableCell align="right">Name</TableCell>
+                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="right">Location</TableCell>
+                                    <TableCell align="right">More</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {mixdList.map((player, index) => (
                                     <TableRow
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
