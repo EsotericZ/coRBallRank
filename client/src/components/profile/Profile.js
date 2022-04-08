@@ -24,6 +24,14 @@ const Profile = () => {
     //         email: data.get('email'),
     //         password: data.get('password'),
     //     });
+    const isLoggedIn = window.localStorage.getItem("token");
+    console.log(isLoggedIn)
+    // const usertoken = req.headers.authorization;
+    const token = isLoggedIn.split(' ');
+    // const decoded = jwt.verify(token[1], 'fdbghsAUYDFAUYDGSayudgayudgaddhbayuida');
+    console.log(token);
+
+
     const [location, setLocation] = useState('');
     const [club, setClub] = useState('');
     const handleChange = (event) => {

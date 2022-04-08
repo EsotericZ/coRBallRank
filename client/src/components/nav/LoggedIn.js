@@ -69,7 +69,7 @@ function LoggedIn() {
           <DrawerComponent />
         ) : (
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               Home
             </Link>
             <Link to="/ranking" className={classes.link}>
@@ -132,17 +132,24 @@ function LoggedIn() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /><Link to='/profile'>Profile </Link> 
+          <Avatar /><Link to='/profile'>Profile</Link> 
         </MenuItem>
-        <MenuItem>
+        {/* <MenuItem>
           <Avatar /> My account
-        </MenuItem>
+        </MenuItem> */}
         <Divider />
         <MenuItem>
           <ListItemIcon>
             <Logout fontSize="small" />
+            <Link to='/home' 
+              onClick={() => {
+                window.localStorage.removeItem("token")
+                window.refresh();
+              }}
+            >
+              Logout
+            </Link> 
           </ListItemIcon>
-          Logout
         </MenuItem>
       </Menu>
           </div>
