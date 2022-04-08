@@ -51,8 +51,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoggedOut() {
+
   const classes = useStyles();
   const theme = useTheme();
+
   const isMobile = useMediaQuery(("md"));
 
   return (
