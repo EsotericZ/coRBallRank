@@ -21,6 +21,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Typography from '@mui/material/Typography';
+import TableSortLabel from '@mui/material/TableSortLabel';
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 
@@ -63,7 +64,7 @@ const Ranking = () => {
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
+                        <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
                             <Tab label="Male's Singles" value="1" />
                             <Tab label="Male's Doubles" value="2" />
                             <Tab label="Women's Singles" value="3" />
