@@ -18,7 +18,7 @@ import  rockies from "../../assets/cologo.png";
 
 import Login from "../login/Login";
 
-const createTheme = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(),
     marginTop: theme.spacing(),
@@ -51,8 +51,8 @@ const createTheme = makeStyles((theme) => ({
 }));
 
 function LoggedOut() {
-  const classes = createTheme();
-  const theme = createTheme();
+  const classes = makeStyles();
+  const theme = theme();
   const isMobile = useMediaQuery(("md"));
 
   return (
