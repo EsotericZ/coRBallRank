@@ -5,7 +5,7 @@ const utils = require('../utils/auth');
 const resolvers = {
 	Query: {
 		user: async (_root, {id}) => {
-			return await User.findById(id);
+			return await User.findById(id).populate({path:"playerId"});
 		},
 		users: async (_root, _args, context) => {
 			// if (!context.req?.user) {

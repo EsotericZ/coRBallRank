@@ -9,11 +9,12 @@ export const FETCH_USER = gql`
             email
             club
             location
-            # playerId {
-            #     singleRank
-            #     doubleRank
-            #     mixedRank
-            # }
+            playerId {
+                fullName
+                singleRank
+                doubleRank
+                mixedRank
+            }
         }
     }
 `;
