@@ -1,7 +1,7 @@
 .logo {
     width:25%;
-    background-color:(--nav);
+    background-color: green;
 }
-.logOutNav{
-    background-color:(--nav);
+#logOutNav{
+    background-color: green;
 }
