@@ -20,3 +20,9 @@
     margin-right: 35px;
     justify-content: center;
 }
+
+#signUp {
+    color: blue;
+    justify-content: end;
+    display: inline-flex;
+}
