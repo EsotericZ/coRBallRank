@@ -1,6 +1,29 @@
 #homeEvents {
-    /* position: absolute;
-    right: 0; */
-    float: right;
+    direction: row-reverse;
+    /* backgroundColor: blue; */
 }
 
+.home {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+/* =================================================================
+MEDIA QUERIES (MEDIUM)
+================================================================= */
+@media screen and (max-width: 1024px) {
+    .home {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =================================================================
+MEDIA QUERIES (SMALL)
+================================================================= */
+@media screen and (max-width: 600px) {
+    .home {
+        width: 90%;
+    }
+}
