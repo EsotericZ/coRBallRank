@@ -21,10 +21,13 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Typography from '@mui/material/Typography';
-import TableSortLabel from '@mui/material/TableSortLabel';
+// import TableSortLabel from '@mui/material/TableSortLabel';
 import TextField from '@mui/material/TextField';
 // import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
+import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 
@@ -51,6 +54,46 @@ const Ranking = () => {
         setValue(newValue);
     };
 
+    const Search = styled('div')(({ theme }) => ({
+        position: 'relative',
+        borderRadius: theme.shape.borderRadius,
+        backgroundColor: alpha(theme.palette.common.white, 0.15),
+        '&:hover': {
+            backgroundColor: alpha(theme.palette.common.white, 0.25),
+        },
+        marginLeft: 0,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(1),
+            width: 'auto',
+        },
+    }));
+
+    const SearchIconWrapper = styled('div')(({ theme }) => ({
+        padding: theme.spacing(0, 2),
+        height: '100%',
+        position: 'absolute',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }));
+
+    const StyledInputBase = styled(InputBase)(({ theme }) => ({
+        color: 'inherit',
+        '& .MuiInputBase-input': {
+            padding: theme.spacing(1, 1, 1, 0),
+            // vertical padding + font size from searchIcon
+            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+            transition: theme.transitions.create('width'),
+            width: '100%',
+            [theme.breakpoints.up('md')]: {
+                width: '20ch',
+            },
+        },
+    }));
+
+
     return loading ?
         <>
             <Nav />
@@ -64,12 +107,25 @@ const Ranking = () => {
             <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
                 Current Rankings
             </Box>
+            <Search>
+                <SearchIconWrapper>
+                    <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    placeholder="Search…"
+                    inputProps={{ 'aria-label': 'search' }}
+                />
+            </Search>
             <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={msList.map((option) => option.title)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" className="searchBar"/>}
-                        />
+
+                id="free-solo-demo"
+                freeSolo
+                options={rankList.map((option) => option.title)}
+
+                renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+
+            />
+
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -82,12 +138,14 @@ const Ranking = () => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
+
                         <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={msList.map((option) => option.title)}
                             renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" />}
                         />
+
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
