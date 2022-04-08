@@ -57,7 +57,7 @@ const Ranking = () => {
 
             <Nav />
 
-            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }}>
+            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
                 Current Rankings
             </Box>
             <Box sx={{ width: '100%', typography: 'body1' }}>
