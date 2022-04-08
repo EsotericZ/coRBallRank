@@ -12,26 +12,18 @@ import Box from '@mui/material/Box';
 
 const Home = () => {
     return (
-        <div>
-            <Nav />
-            <h1>TAKE ME HOME!! to the place!!! i BELONG!!!  </h1>
-            <Box sx={{ width: '100%' }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={12} md={6}>
-                        <HomeMain />
-                    </Grid>
-
-                    <Grid item xs={12} md={6}>
-                        <Ranking />
-
-                    </Grid>
-
-                    <Grid item xs={12} md={6} id="homeEvents">
-                        <HomeEvents />
-                    </Grid>
-                </Grid>
-            </Box>
-
+        <div className="container home">
+            <div>
+                <HomeMain />
+            </div>
+            <div>
+                <div>
+                    <Ranking />
+                </div>
+                <div>
+                    <HomeEvents />
+                </div>
+            </div>
         </div>
     )
 };
