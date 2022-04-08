@@ -1,5 +1,5 @@
 import * as React from 'react';
-import HomeNav from '../homenav/HomeNav';
+import Nav from '../nav/Nav';
 import HomeMain from './HomeMain.js';
 import HomeEvents from './HomeEvents.js';
 import Ranking from '../ranking/Ranking.js';
@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 const Home = () => {
     return (
         <div>
-            <HomeNav />
+            <Nav />
             <h1>TAKE ME HOME!! to the place!!! i BELONG!!!  </h1>
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

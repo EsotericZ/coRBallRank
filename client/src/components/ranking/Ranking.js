@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import './ranking.css';
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 
 // import Stack from '@mui/material/Stack';
 import Stack from '@mui/material/Stack';

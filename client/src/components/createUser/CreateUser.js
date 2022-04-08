@@ -17,7 +17,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 
 const theme = createTheme();
 

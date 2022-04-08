@@ -4,5 +4,8 @@ root {
     --nav: #D5DBB3;
     --text: #180A0A;
     --white: #F7F7F7;
+}
 
+body {
+    color: var(--background);
 }

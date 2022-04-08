@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   AppBar,
@@ -10,12 +9,14 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import DrawerComponent from "./Drawer";
+import DrawerComponent from "./LoggedOutDrawer";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import './homeNav.css'
+import './loggedOut.css'
 import { spacing } from "@mui/system";
 import  rockies from "../../assets/cologo.png";
+
+import Login from "../login/Login";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HomeNav() {
+function LoggedOut() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -80,7 +81,8 @@ function HomeNav() {
             <Link to="/create" className={classes.link}>
               Sign Up
             </Link>
-            <TextField 
+            <Login />
+            {/* <TextField 
               margin="normal"
               required
               id="email"
@@ -88,6 +90,8 @@ function HomeNav() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange = { (event, newValue) => 
+                this.setState({email: newValue})}
             />
             <TextField
               margin="normal"
@@ -97,14 +101,17 @@ function HomeNav() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange = { (event, newValue) => 
+                this.setState({password: newValue})}
             />
             <Button
               type="submit"
               variant="contained"
               sx={{ mt: 1, mb: 1 }}
+              onClick = { (event) => this.handleClick(event)}
             >
               Log In
-            </Button>
+            </Button> */}
           </div>
         )}
       </Toolbar>
@@ -112,4 +119,4 @@ function HomeNav() {
   );
 }
 
-export default HomeNav;
+export default LoggedOut;

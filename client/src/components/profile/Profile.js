@@ -13,7 +13,7 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import photo from '../../assets/photo.png';
 import { spacing } from '@mui/system';
-import Nav from '../navbar/Nav';
+import Nav from '../nav/Nav';
 import './profile.css';
 
 const Profile = () => {

@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import {
-	FETCH_SINGLES,
+	ALL_PLAYERS,
+	// FETCH_SINGLES,
 	MALE_SINGLES,
 	FEMALE_SINGLES,
 	MALE_DOUBLES,
