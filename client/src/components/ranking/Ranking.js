@@ -21,6 +21,10 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Typography from '@mui/material/Typography';
+import TableSortLabel from '@mui/material/TableSortLabel';
+import TextField from '@mui/material/TextField';
+// import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 
@@ -40,7 +44,7 @@ const Ranking = () => {
 
     const mixd = useQuery(MIXED_DOUBLES);
     const mixdList = mixd.data?.maleDoubles || [];
-    
+
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -57,13 +61,19 @@ const Ranking = () => {
 
             <Nav />
 
-            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }}>
+            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
                 Current Rankings
             </Box>
+            <Autocomplete
+                            id="free-solo-demo"
+                            freeSolo
+                            options={rankList.map((option) => option.title)}
+                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" className="searchBar"/>}
+                        />
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
+                        <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
                             <Tab label="Male's Singles" value="1" />
                             <Tab label="Male's Doubles" value="2" />
                             <Tab label="Women's Singles" value="3" />
@@ -72,6 +82,12 @@ const Ranking = () => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
+                        <Autocomplete
+                            id="free-solo-demo"
+                            freeSolo
+                            options={rankList.map((option) => option.title)}
+                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" />}
+                        />
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
@@ -88,6 +104,7 @@ const Ranking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
+
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
                                         <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
                                         <TableCell align="right">{player.singleRank}</TableCell>

@@ -1,4 +1,5 @@
-// import * as React from 'react';
+import { useQuery } from '@apollo/client';
+import jwt_decode from 'jwt-decode';
 import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,17 +14,17 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import photo from '../../assets/photo.png';
 import { spacing } from '@mui/system';
+
 import Nav from '../nav/Nav';
 import './profile.css';
 
 const Profile = () => {
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     console.log({
-    //         email: data.get('email'),
-    //         password: data.get('password'),
-    //     });
+    const token = window.localStorage.getItem("token");
+    const player = jwt_decode(token);
+    console.log(player)
+
+
+
     const [location, setLocation] = useState('');
     const [club, setClub] = useState('');
     const handleChange = (event) => {
@@ -46,19 +47,17 @@ const Profile = () => {
                 <TextField
                     autoComplete="given-name"
                     name="firstName"
-                    required
                     fullWidth
                     id="firstName"
-                    label="First Name"
+                    label={player.data.firstName}
                     autoFocus
                 />
             </Grid>
             <Grid item xs={12} sm={6}mb={1}>
                 <TextField
-                    required
                     fullWidth
                     id="lastName"
-                    label="Last Name"
+                    label={player.data.lastName}
                     name="lastName"
                     autoComplete="family-name"
                 />

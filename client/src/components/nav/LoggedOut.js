@@ -66,7 +66,7 @@ function LoggedOut() {
           <DrawerComponent />
         ) : (
           <div className={classes.navlinks} id="logOutNav"theme={theme}>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               Home
             </Link>
             <Link to="/ranking" className={classes.link}>
