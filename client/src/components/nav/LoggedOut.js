@@ -5,7 +5,7 @@ import {
   CssBaseline,
   Typography,
   makeStyles,
-  // useTheme,
+  useTheme,
   useMediaQuery,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -51,8 +51,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoggedOut() {
-  const classes = makeStyles();
-  const theme = theme();
+
+  const classes = useStyles();
+  const theme = useTheme();
+
   const isMobile = useMediaQuery(("md"));
 
   return (
@@ -60,7 +62,7 @@ function LoggedOut() {
       <CssBaseline className="logoutNav" theme={theme}/>
       <Toolbar className="logoutNav"theme={theme}>
         <Typography variant="h4" className={classes.logo}>
-          <img src={rockies} alt="logo" className="logo" />
+          <img src={rockies} alt="logo" className="logo"/>
         </Typography>
         {isMobile ? (
           <DrawerComponent />
