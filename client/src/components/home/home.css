@@ -6,8 +6,20 @@
 .home {
     width: 100%;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 60% 35%;
+    gap: 5%;
     text-align: center;
+    padding: 30px;
+}
+
+.rankings {
+    font-size: 30px;
+    /* py: 30px; */
+    margin-bottom: 30px;
+}
+
+.tabs {
+    font-size: 20px;
 }
 
 /* =================================================================
