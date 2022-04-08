@@ -80,7 +80,7 @@ const Ranking = () => {
                             id="free-solo-demo"
                             freeSolo
                             options={rankList.map((option) => option.title)}
-                            renderInput={(params) => <TextField {...params} label="freeSolo" />}
+                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" />}
                         />
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
