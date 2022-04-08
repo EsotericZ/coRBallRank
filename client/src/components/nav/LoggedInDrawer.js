@@ -117,7 +117,7 @@ function DrawerComponent() {
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: 'background.paper',
+              bgcolor: '#D5DBB3',
               transform: 'translateY(-50%) rotate(45deg)',
               zIndex: 0,
             },
