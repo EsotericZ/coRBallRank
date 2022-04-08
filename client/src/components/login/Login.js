@@ -17,7 +17,7 @@ const Login = () => {
 					onCompleted: (data) => {
 						console.log(data);
 						localStorage.setItem('token', data?.login?.token);
-						navigate('/');
+						navigate('/home');
 					}
 				});
 			}}
