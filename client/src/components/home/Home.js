@@ -25,14 +25,12 @@ const Home = () => {
                         <Ranking />
 
                     </Grid>
-
-                    <Grid item xs={12} md={6} id="homeEvents">
+                    <Grid item xs={12}>
                         <HomeEvents />
                     </Grid>
                 </Grid>
             </Box>
-
-        </div>
+        </div >
     )
 };
 
