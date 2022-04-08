@@ -1,16 +1,9 @@
 import { useQuery } from '@apollo/client';
 import jwt_decode from 'jwt-decode';
-// import { useState } from 'react';
 import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-// import Button from '@mui/material/Button';
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
-// import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import PHOTO from '../../assets/photo.png';
 
@@ -26,14 +19,6 @@ const Profile = () => {
     const {loading, data} = useQuery(FETCH_USER, {
         variables: {userId: playerId}
     });
-    console.log(data)
-
-    // const [location, setLocation] = useState('');
-    // const [club, setClub] = useState('');
-    // const handleChange = (event) => {
-    //     setLocation(event.target.value);
-    //     setClub(event.target.value);
-    // };
 
 return loading ? 
     <>
@@ -47,30 +32,7 @@ return loading ?
         <CardMedia>
             <img src={PHOTO} alt="Porfile Pic" height="200" />
         </CardMedia>
-            {/* component="img"
-            height="200"
-            image src={photo}
-            alt="picture"
-        /> */}
         <CardContent>
-        {/* <Grid item xs={12} sm={6} mb={1}>
-                <TextField
-                    fullWidth
-                    name="firstName"
-                    id="firstName"
-                    label="First Name"
-                    defaultValue={data.user.firstName}
-                />
-            </Grid>
-            <Grid item xs={12} sm={6}mb={1}>
-                <TextField
-                    fullWidth
-                    name="lastName"
-                    id="lastName"
-                    label="Last Name"
-                    defaultValue={data.user.lastName}
-                />
-            </Grid> */}
             <Grid item xs={12} sm={6}mb={1}>
                 <TextField
                     disabled
