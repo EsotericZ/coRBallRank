@@ -60,7 +60,7 @@ function LoggedOut() {
       <CssBaseline className="logoutNav" theme={theme}/>
       <Toolbar className="logoutNav"theme={theme}>
         <Typography variant="h4" className={classes.logo}>
-          <img src={rockies} alt="logo" className="logo"/>
+          <img src={rockies} alt="logo" className="logo" />
         </Typography>
         {isMobile ? (
           <DrawerComponent />
