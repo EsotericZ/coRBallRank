@@ -3,10 +3,6 @@
     /* backgroundColor: blue; */
 }
 
-div {
-    border: 1px solid black;
-}
-
 .home {
     width: 100%;
     display: grid;
