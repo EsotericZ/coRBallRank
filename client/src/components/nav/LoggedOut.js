@@ -5,7 +5,7 @@ import {
   CssBaseline,
   Typography,
   makeStyles,
-  useTheme,
+  // useTheme,
   useMediaQuery,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ import  rockies from "../../assets/cologo.png";
 
 import Login from "../login/Login";
 
-const useStyles = makeStyles((theme) => ({
+const createTheme = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(),
     marginTop: theme.spacing(),
@@ -44,28 +44,28 @@ const useStyles = makeStyles((theme) => ({
       color: "red",
       borderBottom: "1px solid white",
     },
-    logInNav: {
-      backgroundColor:"#D5DBB3",
+    logOutNav: {
+      backgroundColor:"green",
      }
   },
 }));
 
 function LoggedOut() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const classes = createTheme();
+  const theme = createTheme();
+  const isMobile = useMediaQuery(("md"));
 
   return (
-    <AppBar position="static" className="logOutNav">
-      <CssBaseline />
-      <Toolbar>
+    <AppBar position="static"className="logoutNav"theme={theme}>
+      <CssBaseline className="logoutNav" theme={theme}/>
+      <Toolbar className="logoutNav"theme={theme}>
         <Typography variant="h4" className={classes.logo}>
           <img src={rockies} alt="logo" className="logo"/>
         </Typography>
         {isMobile ? (
           <DrawerComponent />
         ) : (
-          <div className={classes.navlinks}>
+          <div className={classes.navlinks} id="logOutNav"theme={theme}>
             <Link to="/" className={classes.link}>
               Home
             </Link>

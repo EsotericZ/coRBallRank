@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: "1px solid white",
     },
    logInNav: {
-    backgroundColor:"#D5DBB3",
+    backgroundColor:"white",
    },
   },
 }));
