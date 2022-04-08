@@ -2,6 +2,13 @@
     width:25%;
     background-color: green;
 }
-#logOutNav{
+.logOutNav{
+    background-color: green;
+}
+
+.AppBar {
+    background-color: green;
+}
+.Toolbar {
     background-color: green;
 }
