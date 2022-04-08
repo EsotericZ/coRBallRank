@@ -18,15 +18,17 @@ import IconButton from '@mui/material/IconButton';
 import DrawerComponent from "./LoggedInDrawer";
 import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
+import  rockies from "../../assets/cologo.png";
 import './loggedIn.css'
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(1),
-    marginLeft: theme.spacing(1),
-    display: "inline-block",
-    align: "center",
-    justifyContent: "space-around"
+    marginLeft: theme.spacing(),
+    marginLeft: theme.spacing(),
+    verticalAlign: "center",
+    // display: "inline-block",
+    // align: "center",
+    // justifyContent: "space-around"
   },
   logo: {
     flexGrow: "1",
@@ -36,11 +38,14 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "white",
     fontSize: "20px",
-    marginLeft: theme.spacing(15),
+    marginLeft: theme.spacing(),
     "&:hover": {
       color: "red",
       borderBottom: "1px solid white",
     },
+   logInNav: {
+    backgroundColor:"#D5DBB3",
+   },
   },
 }));
 
@@ -58,18 +63,17 @@ function LoggedIn() {
   };
 
   return (
-    <AppBar position="static">
-      <CssBaseline />
-      <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Navbar
-          
+    <AppBar position="static" className="logInNav">
+      <CssBaseline className="logInNav"/>
+      <Toolbar className="logInNav">
+        <Typography className={classes.logo}>
+        <img src={rockies} alt="logo" className="logo"/> 
         </Typography>
         {isMobile ? (
-          <DrawerComponent />
+          <DrawerComponent className="logInNav"/>
         ) : (
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               Home
             </Link>
             <Link to="/ranking" className={classes.link}>
@@ -122,7 +126,7 @@ function LoggedIn() {
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: 'background.paper',
+              bgcolor: '#D5DBB3',
               transform: 'translateY(-50%) rotate(45deg)',
               zIndex: 0,
             },
@@ -132,17 +136,24 @@ function LoggedIn() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /><Link to='/profile'>Profile </Link> 
+          <Avatar /><Link to='/profile'>Profile</Link> 
         </MenuItem>
-        <MenuItem>
+        {/* <MenuItem>
           <Avatar /> My account
-        </MenuItem>
+        </MenuItem> */}
         <Divider />
         <MenuItem>
           <ListItemIcon>
             <Logout fontSize="small" />
+            <Link to='/home' 
+              onClick={() => {
+                window.localStorage.removeItem("token")
+                window.refresh();
+              }}
+            >
+              Logout
+            </Link> 
           </ListItemIcon>
-          Logout
         </MenuItem>
       </Menu>
           </div>

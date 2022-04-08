@@ -1,0 +1,10 @@
+.logo {
+    width:20%;
+    background-color:(--nav);
+}
+#logInNav{
+    background-color:(--nav);
+}
+.logInNav{
+    background-color:(--nav);
+}

@@ -10,7 +10,6 @@ const Login = () => {
 	return (
 		<Form
 			onSubmit={async (values) => {
-
 				await loginMutation({
 					variables: {
 						...values,
@@ -18,7 +17,7 @@ const Login = () => {
 					onCompleted: (data) => {
 						console.log(data);
 						localStorage.setItem('token', data?.login?.token);
-						navigate('/home');
+						navigate('/');
 					}
 				});
 			}}

@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
       color: "red",
       borderBottom: "1px solid white",
     },
+    logInNav: {
+      backgroundColor:"#D5DBB3",
+     }
   },
 }));
 
@@ -53,7 +56,7 @@ function LoggedOut() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="logOutNav">
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
@@ -63,7 +66,7 @@ function LoggedOut() {
           <DrawerComponent />
         ) : (
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               Home
             </Link>
             <Link to="/ranking" className={classes.link}>
