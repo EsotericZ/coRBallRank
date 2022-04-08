@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import './home.css';
 import Nav from '../nav/Nav';
 
@@ -80,9 +81,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="center">Rank</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -91,10 +92,9 @@ const HomeRanking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.singleRank}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -104,9 +104,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="center">Rank</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -115,9 +115,9 @@ const HomeRanking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.doubleRank}</TableCell>
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.doubleRank}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -127,9 +127,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="center">Rank</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -138,9 +138,9 @@ const HomeRanking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.singleRank}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -150,9 +150,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="center">Rank</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -161,9 +161,9 @@ const HomeRanking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.doubleRank}</TableCell>
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.doubleRank}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -173,9 +173,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
+                                    <TableCell align="center">Rank</TableCell>
+                                    <TableCell align="center">Name</TableCell>
+                                    <TableCell align="center">Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -184,15 +184,16 @@ const HomeRanking = () => {
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.mixedRank}</TableCell>
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.mixedRank}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
                         </Table>
                     </TabPanel>
                 </TabContext>
+                <Link to='/ranking' className='rankLink'>Full Rankings</Link>
             </Box>
         </TableContainer>
 }
