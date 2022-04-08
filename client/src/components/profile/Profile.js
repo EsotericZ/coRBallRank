@@ -15,15 +15,19 @@ import TextField from '@mui/material/TextField';
 import photo from '../../assets/photo.png';
 import { spacing } from '@mui/system';
 
+import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import Nav from '../nav/Nav';
 import './profile.css';
 
 const Profile = () => {
     const token = window.localStorage.getItem("token");
     const player = jwt_decode(token);
-    console.log(player)
+    const playerId = player.data._id;
 
-
+    const {loading, error, data} = useQuery(FETCH_USER, {
+        variables: {userId: playerId}
+    });
+    console.log(data)
 
     const [location, setLocation] = useState('');
     const [club, setClub] = useState('');
