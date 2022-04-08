@@ -1,3 +1,28 @@
 .logo {
-    width:25%;
+    max-width:100px;
+    overflow: hidden;
+}
+
+.logoutNav{
+    background-color: var(--color-nav);
+}
+
+#home,
+#ranking,
+#events,
+#history,
+#odds,
+#signUp{
+    display: inline;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    justify-content: center;
+}
+
+#signUp {
+    color: blue;
+    justify-content: end;
+    display: inline-flex;
 }

@@ -1,5 +1,51 @@
+
 #homeEvents {
     direction: row-reverse;
-    backgroundColor: #blue;
+    /* backgroundColor: blue; */
 }
 
+.home {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 35%;
+    gap: 5%;
+    text-align: center;
+    padding: 30px;
+}
+
+.rankings {
+    font-size: 30px;
+    /* py: 30px; */
+    margin-bottom: 30px;
+}
+
+.tabs {
+    font-size: 20px;
+}
+
+.rankLink {
+    color: green;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* =================================================================
+MEDIA QUERIES (MEDIUM)
+================================================================= */
+@media screen and (max-width: 1024px) {
+    .home {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =================================================================
+MEDIA QUERIES (SMALL)
+================================================================= */
+@media screen and (max-width: 600px) {
+    .home {
+        width: 90%;
+    }
+}

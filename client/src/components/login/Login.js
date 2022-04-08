@@ -10,7 +10,6 @@ const Login = () => {
 	return (
 		<Form
 			onSubmit={async (values) => {
-
 				await loginMutation({
 					variables: {
 						...values,
@@ -30,14 +29,16 @@ const Login = () => {
 
 				return (
 					<>
-						<Field
+						<Field id="email"
 							name='email'
 							component='input'
+							margin="dense"
 						/>
-						<Field
+						<Field id="pass"
 							name='password'
 							component='input'
 							type='password'
+							margin="dense"
 						/>
 						<button
 							disabled={

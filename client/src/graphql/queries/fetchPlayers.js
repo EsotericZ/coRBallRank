@@ -9,6 +9,7 @@ const ALL_PLAYERS = gql`
             gender
             singleRank
             birthday
+            fullName
         }
     }
 `;
@@ -17,6 +18,7 @@ const MALE_SINGLES = gql`
     query fetchPlayers {
         maleSingles {
             _id
+            fullName
             firstName
             lastName
             gender
@@ -30,6 +32,7 @@ const FEMALE_SINGLES = gql`
     query femalePlayers {
         femaleSingles {
             _id
+            fullName
             firstName
             lastName
             gender
@@ -43,6 +46,7 @@ const MALE_DOUBLES = gql`
     query fetchPlayers {
         maleDoubles {
             _id
+            fullName
             firstName
             lastName
             gender
@@ -56,6 +60,7 @@ const FEMALE_DOUBLES = gql`
     query fetchPlayers {
         femaleDoubles {
             _id
+            fullName
             firstName
             lastName
             gender
@@ -69,6 +74,7 @@ const MIXED_DOUBLES = gql`
     query fetchPlayers {
         mixedDoubles {
             _id
+            fullName
             firstName
             lastName
             gender

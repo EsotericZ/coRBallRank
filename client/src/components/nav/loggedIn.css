@@ -1,0 +1,23 @@
+.logo {
+    max-width:100px;
+    overflow: hidden;
+    
+}
+.logoutNav{
+    /* background-color: #D5DBB3; */
+    background-color: var(--color-nav);
+}
+#home,
+#ranking,
+#events,
+#history,
+#odds,
+#signUp{
+    display: inline;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    justify-content: center;
+
+}

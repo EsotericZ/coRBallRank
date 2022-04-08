@@ -26,6 +26,7 @@ import './odds.css';
 const Odds = () => {
     const {loading, data, error} = useQuery(ALL_PLAYERS);
 	const playerList = data?.allPlayers || [];
+    const player2List = data?.allPlayers || [];
 	console.log(playerList);
 
     const [Player1, setPlayer1] = useState('');
@@ -45,46 +46,41 @@ const Odds = () => {
                     <FormControl sx={{ width: 550 }}>
                         <InputLabel id="">Player 1</InputLabel>
                         <Select
-                            labelId="l"
-                            id=""
+                            labelId="playerl"
+                            id="player1"
                             value={Player1}
                             onChange={handleChange}
                             fullWidth
                             label="Player 1"
                         >
-                            <option value="">Select Player 1</option>
+                            <MenuItem value="">Select Player 1</MenuItem>
                             {playerList.map((player) => (
-                                <option key={player.id} value={player.firstName}>
-                                    {player.firstName}
-                                </option>
+                                <MenuItem key={player.id} value={player.fullName}>
+                                    {player.fullName}
+                                </MenuItem>
                             ))}
-
-                            {/* <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem> */}
                         </Select>
                     </FormControl>
                 </Grid>
+
+
                 <Grid item xs={5}>
                     <FormControl sx={{ width: 550 }}>
                         <InputLabel id="">Player 2</InputLabel>
                         <Select
-                            labelId="l"
-                            id=""
+                            labelId="player2"
+                            id="player2"
                             value={Player2}
                             onChange={handleChange}
                             fullWidth
                             label="Player 2"
                         >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value="">Select Player 1</MenuItem>
+                            {player2List.map((player2) => (
+                                <MenuItem key={player2.id} value={player2.firstName}>
+                                    {player2.fullName}
+                                </MenuItem>
+                            ))}
                         </Select>
                     </FormControl>
                 </Grid>

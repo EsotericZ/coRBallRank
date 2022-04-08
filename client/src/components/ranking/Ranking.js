@@ -33,20 +33,20 @@ import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBL
 
 const Ranking = () => {
     const ms = useQuery(MALE_SINGLES);
-    const rankList = ms.data?.maleSingles || [];
+    const msList = ms.data?.maleSingles || [];
     const loading = ms.loading;
 
     const md = useQuery(MALE_DOUBLES);
     const mdList = md.data?.maleDoubles || [];
 
     const fs = useQuery(FEMALE_SINGLES);
-    const femmeList = fs.data?.femaleSingles || [];
+    const fsList = fs.data?.femaleSingles || [];
 
     const fd = useQuery(FEMALE_DOUBLES);
-    const fdList = fd.data?.maleDoubles || [];
+    const fdList = fd.data?.femaleDoubles || [];
 
-    const mixd = useQuery(MIXED_DOUBLES);
-    const mixdList = mixd.data?.maleDoubles || [];
+    const mix = useQuery(MIXED_DOUBLES);
+    const mixList = mix.data?.mixedDoubles || [];
 
     const [value, setValue] = React.useState('1');
 
@@ -117,6 +117,7 @@ const Ranking = () => {
                 />
             </Search>
             <Autocomplete
+
                 id="free-solo-demo"
                 freeSolo
                 options={rankList.map((option) => option.title)}
@@ -124,6 +125,7 @@ const Ranking = () => {
                 renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
 
             />
+
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -136,6 +138,14 @@ const Ranking = () => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
+
+                        <Autocomplete
+                            id="free-solo-demo"
+                            freeSolo
+                            options={msList.map((option) => option.title)}
+                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" />}
+                        />
+
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
@@ -147,14 +157,14 @@ const Ranking = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rankList.map((player, index) => (
+                                {msList.map((player, index) => (
                                     <TableRow
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
 
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
+                                        <TableCell align="right">{player.fullName}</TableCell>
                                         <TableCell align="right">{player.singleRank}</TableCell>
                                         <TableCell align="right">{player.birthday}</TableCell>
                                         <TableCell align="right">{player.gender}</TableCell>
@@ -181,8 +191,8 @@ const Ranking = () => {
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="right">{player.fullName}</TableCell>
+                                        <TableCell align="right">{player.doubleRank}</TableCell>
                                         <TableCell align="right">{player.birthday}</TableCell>
                                         <TableCell align="right">{player.gender}</TableCell>
                                     </TableRow>
@@ -202,13 +212,13 @@ const Ranking = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {femmeList.map((player, index) => (
+                                {fsList.map((player, index) => (
                                     <TableRow
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
+                                        <TableCell align="right">{player.fullName}</TableCell>
                                         <TableCell align="right">{player.singleRank}</TableCell>
                                         <TableCell align="right">{player.birthday}</TableCell>
                                         <TableCell align="right">{player.gender}</TableCell>
@@ -235,8 +245,8 @@ const Ranking = () => {
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="right">{player.fullName}</TableCell>
+                                        <TableCell align="right">{player.doubleRank}</TableCell>
                                         <TableCell align="right">{player.birthday}</TableCell>
                                         <TableCell align="right">{player.gender}</TableCell>
                                     </TableRow>
@@ -256,14 +266,14 @@ const Ranking = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {mixdList.map((player, index) => (
+                                {mixList.map((player, index) => (
                                     <TableRow
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.firstName} {player.lastName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
+                                        <TableCell align="right">{player.fullName}</TableCell>
+                                        <TableCell align="right">{player.mixedRank}</TableCell>
                                         <TableCell align="right">{player.birthday}</TableCell>
                                         <TableCell align="right">{player.gender}</TableCell>
                                     </TableRow>

@@ -1,0 +1,8 @@
+.email,
+.pass {
+    display: inline-flex;
+    justify-content: end;
+    margin-left: 100px;
+    padding: 25px;
+    background-color: red;
+}
