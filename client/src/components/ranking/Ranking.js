@@ -64,6 +64,12 @@ const Ranking = () => {
             <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
                 Current Rankings
             </Box>
+            <Autocomplete
+                            id="free-solo-demo"
+                            freeSolo
+                            options={rankList.map((option) => option.title)}
+                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="search" className="searchBar"/>}
+                        />
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
