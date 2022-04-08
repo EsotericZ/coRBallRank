@@ -23,6 +23,14 @@
     font-size: 20px;
 }
 
+.rankLink {
+    color: green;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
 /* =================================================================
 MEDIA QUERIES (MEDIUM)
 ================================================================= */
