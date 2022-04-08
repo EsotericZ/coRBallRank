@@ -1,0 +1,11 @@
+#email,
+#pass {
+    display: inline-flex;
+    justify-content: end;
+    margin-left: 20px;
+}
+
+button {
+    margin-right: 15px;
+    color: red;
+}

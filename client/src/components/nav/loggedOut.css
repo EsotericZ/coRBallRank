@@ -1,14 +1,27 @@
 .logo {
-    width:25%;
-    background-color: green;
+    max-width:10%;
+    overflow: hidden;
+    
 }
-.logOutNav{
-    background-color: green;
+.logoutNav{
+    /* background-color: #D5DBB3; */
+    background-color: var(--color-nav);
 }
+#home,
+#ranking,
+#events,
+#history,
+#odds{
+    display: inline;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    justify-content: center;
 
-.AppBar {
-    background-color: green;
 }
-.Toolbar {
-    background-color: green;
+#signUp {
+    color: blue;
+    justify-content: end;
+    display: inline-flex;
 }
