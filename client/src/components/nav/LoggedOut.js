@@ -21,11 +21,12 @@ import Login from "../login/Login";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(5),
+    marginLeft: theme.spacing(),
     marginTop: theme.spacing(),
     marginRight: theme.spacing(),
     // display: "inline-block",
     verticalAlign: "center",
+    justifyContent: "start",
   },
   logo: {
     flexGrow: "1",
@@ -57,9 +58,9 @@ function LoggedOut() {
     <AppBar position="static"className="logoutNav">
       <CssBaseline className="logoutNav" />
       <Toolbar className="logoutNav">
-        <Typography variant="h4" className={classes.logo}>
+        {/* <Typography className={classes.logo}> */}
           <img src={rockies} alt="logo" className="logo"/>
-        </Typography>
+        {/* </Typography> */}
         {isMobile ? (
           <DrawerComponent />
         ) : (
@@ -79,7 +80,7 @@ function LoggedOut() {
             <Link to="/odds" className={classes.link}id="odds">
               Odds
             </Link>
-            <Link to="/create" className={classes.link}>
+            <Link to="/create" className={classes.link} id="signUp">
               Sign Up
             </Link>
             <Login />

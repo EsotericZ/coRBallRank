@@ -1,6 +1,7 @@
 .logo {
-    width:15%;
+    max-width:10%;
     overflow: hidden;
+    
 }
 .logoutNav{
     /* background-color: #D5DBB3; */
@@ -12,12 +13,15 @@
 #history,
 #odds{
     display: inline;
-    font-size: 18px;
+    font-size: 20px;
     text-decoration: none;
     color: white;
-    padding-right: 20px;
-    text-align: justify;
-    align-items: flex-start;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 35px;
+    justify-content: center;
+
+}
+#signUp {
+    color: blue;
+    justify-content: end;
+    display: inline-flex;
 }

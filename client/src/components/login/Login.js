@@ -29,11 +29,11 @@ const Login = () => {
 
 				return (
 					<>
-						<Field
+						<Field id="email"
 							name='email'
 							component='input'
 						/>
-						<Field
+						<Field id="pass"
 							name='password'
 							component='input'
 							type='password'
