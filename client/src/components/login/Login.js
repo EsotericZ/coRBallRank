@@ -32,11 +32,13 @@ const Login = () => {
 						<Field id="email"
 							name='email'
 							component='input'
+							margin="dense"
 						/>
 						<Field id="pass"
 							name='password'
 							component='input'
 							type='password'
+							margin="dense"
 						/>
 						<button
 							disabled={

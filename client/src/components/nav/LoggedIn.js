@@ -66,26 +66,26 @@ function LoggedIn() {
     <AppBar position="static" className="logInNav">
       <CssBaseline className="logInNav"/>
       <Toolbar className="logInNav">
-        <Typography className={classes.logo}>
+        {/* <Typography className={classes.logo}> */}
         <img src={rockies} alt="logo" className="logo"/> 
-        </Typography>
+        {/* </Typography> */}
         {isMobile ? (
           <DrawerComponent className="logInNav"/>
         ) : (
           <div className={classes.navlinks}>
-            <Link to="/home" className={classes.link}>
+            <Link to="/home" className={classes.link} id="home">
               Home
             </Link>
-            <Link to="/ranking" className={classes.link}>
+            <Link to="/ranking" className={classes.link} id="ranking">
               Ranking
             </Link>
-            <Link to="/events" className={classes.link}>
+            <Link to="/events" className={classes.link}id="events">
               Events
             </Link>
-            <Link to="/history" className={classes.link}>
+            <Link to="/history" className={classes.link}id="history">
               History
             </Link>
-            <Link to="/odds" className={classes.link}>
+            <Link to="/odds" className={classes.link}id="odds">
               Odds
             </Link>
             <Tooltip title="My Account">

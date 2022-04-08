@@ -1,5 +1,5 @@
 .logo {
-    max-width:10%;
+    max-width:100px;
     overflow: hidden;
     
 }
@@ -11,7 +11,8 @@
 #ranking,
 #events,
 #history,
-#odds{
+#odds,
+#signUp{
     display: inline;
     font-size: 20px;
     text-decoration: none;
@@ -19,9 +20,4 @@
     margin-right: 35px;
     justify-content: center;
 
-}
-#signUp {
-    color: blue;
-    justify-content: end;
-    display: inline-flex;
 }
