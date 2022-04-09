@@ -52,10 +52,10 @@ const Odds = () => {
         <Nav />
         {/* <PlayerSelector />
         <PlayerSelector /> */}
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+        <Box display="flex"sx={{ flexGrow: 1 }}>
+            <Grid justify="center" container spacing={1}>
                 <Grid item xs={5}>
-                    <FormControl sx={{ width: 550 }}>
+                    <FormControl id="player"sx={{ width: 400 }}>
                         <InputLabel id="">Player 1</InputLabel>
                         <Select
                             labelId="playerl"
@@ -75,7 +75,7 @@ const Odds = () => {
                     </FormControl>
                 </Grid>
                 <Grid item xs={5}>
-                    <FormControl sx={{ width: 550 }}>
+                    <FormControl id="player"sx={{ width: 400 }}>
                         <InputLabel id="">Player 2</InputLabel>
                         <Select
                             labelId="player2"
@@ -94,8 +94,8 @@ const Odds = () => {
                         </Select>
                     </FormControl>
                 </Grid>
-                <Grid item xs={2}>
-                    <button 
+                <Grid id="player"item xs={2}>
+                    <button id="playerBtn"
                         onClick={() => {
                             console.log('clicked!')
                             setShow(true);

@@ -1,0 +1,10 @@
+#player {
+    margin-top: 50px;
+}
+
+
+#playerBtn {
+    background-color: red;
+    padding: 8px;
+    font-size: 16px;
+}
