@@ -26,8 +26,10 @@ import TextField from '@mui/material/TextField';
 // import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
+import { styled, alpha } from '@mui/material/styles';
+
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 
@@ -35,6 +37,7 @@ const Ranking = () => {
     const ms = useQuery(MALE_SINGLES);
     const msList = ms.data?.maleSingles || [];
     const loading = ms.loading;
+    console.log(msList);
 
     const md = useQuery(MALE_DOUBLES);
     const mdList = md.data?.maleDoubles || [];
@@ -117,13 +120,10 @@ const Ranking = () => {
                 />
             </Search>
             <Autocomplete
-
                 id="free-solo-demo"
                 freeSolo
-                options={msList.map((option) => option.title)}
-
+                options={msList.map((option) => option.fullName)}
                 renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
-
             />
 
             <Box sx={{ width: '100%', typography: 'body1' }}>
@@ -148,7 +148,7 @@ const Ranking = () => {
 
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow>
+                                <TableRow className="tab1">
                                     <TableCell>Rank</TableCell>
                                     <TableCell align="right">Name</TableCell>
                                     <TableCell align="right">Level</TableCell>
