@@ -1,6 +1,8 @@
 .logo {
     max-width:100px;
     overflow: hidden;
+    cursor: "pointer";
+    float: left;
 }
 
 #logOutNav{
@@ -28,8 +30,3 @@
     margin-right: 35px;
 
 }
-
-.logo {
-    cursor: "pointer";
-    float: left;
-  }
