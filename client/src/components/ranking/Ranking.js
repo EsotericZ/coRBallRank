@@ -120,7 +120,7 @@ const Ranking = () => {
 
                 id="free-solo-demo"
                 freeSolo
-                options={rankList.map((option) => option.title)}
+                options={msList.map((option) => option.title)}
 
                 renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
 
