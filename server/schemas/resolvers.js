@@ -73,7 +73,7 @@ const resolvers = {
 			console.log(token);
 			return {token, user};
 		},
-		createPlayer: async (_root, {firstName, lastName, birthday, gender, singleRank, doubleRank, mixedRank}) => {
+		createPlayer: async (_root, {firstName, lastName, birthday, gender, singleRank, doubleRank, mixedRank, avatar}) => {
 			const player = await Player.create({
 				firstName,
 				lastName,
@@ -82,6 +82,7 @@ const resolvers = {
 				singleRank,
 				doubleRank,
 				mixedRank,
+				avatar,
 			});
 			console.log('Created Player', player)
 		},

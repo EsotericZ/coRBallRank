@@ -11,6 +11,7 @@ const FETCH_PLAYER = gql`
             doubleRank
             mixedRank
             birthday
+            avatar
             fullName
         }
     }
@@ -25,6 +26,7 @@ const ALL_PLAYERS = gql`
             gender
             singleRank
             birthday
+            avatar
             fullName
         }
     }
@@ -40,6 +42,7 @@ const MALE_SINGLES = gql`
             gender
             singleRank
             birthday
+            avatar
         }
     }
 `;
@@ -54,6 +57,7 @@ const FEMALE_SINGLES = gql`
             gender
             singleRank
             birthday
+            avatar
         }
     }
 `;
@@ -68,6 +72,7 @@ const MALE_DOUBLES = gql`
             gender
             doubleRank
             birthday
+            avatar
         }
     }
 `;
@@ -82,6 +87,7 @@ const FEMALE_DOUBLES = gql`
             gender
             doubleRank
             birthday
+            avatar
         }
     }
 `;
@@ -96,6 +102,7 @@ const MIXED_DOUBLES = gql`
             gender
             mixedRank
             birthday
+            avatar
         }
     }
 `;

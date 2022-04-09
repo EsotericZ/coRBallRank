@@ -17,6 +17,7 @@ const PlayerSelector = ({player}) => {
         </>
         :
         <>
+            <img src={data.player.avatar} alt="Porfile Pic" height="200" />
             <h1>{data.player.fullName}</h1>
             <h1>{data.player.singleRank}</h1>
             <h1>{data.player.doubleRank}</h1>
