@@ -34,13 +34,37 @@ const Odds = () => {
         const player2Rank = playerList.filter(player => player._id === player2);
         const p1SingleRank = player1Rank[0].singleRank;
         const p2SingleRank = player2Rank[0].singleRank;
+        expected(p1SingleRank, p2SingleRank);
+    }
+
+    const expected = (p1Rank, p2Rank) => {
+        // if (p1rank > p2Rank) {
+        //     favorite = p1rank;
+        //     underdog = p2Rank;
+        // } else {
+        //     favorite = p2Rank;
+        //     underdog = p1rank;
+        // }
+        
+        const player1Diff = (p1Rank - p2Rank);
+        const player2Diff = (p2Rank - p1Rank);
+        
+        const expPlayer1 = 1/((Math.pow(10,(-player1Diff/400)))+1)
+        const expPlayer2 = 1/((Math.pow(10,(-player2Diff/400)))+1)
+        
+        console.log('Player 1', expPlayer1)
+        console.log('Player 2', expPlayer2)
     }
 
     const [show, setShow] = useState(false);
 
     return loading ?
         <>
-
+            <Nav />
+            <h1>Loading...</h1>
+        </>
+        :
+        <>
         <Nav />
         {/* <PlayerSelector />
         <PlayerSelector /> */}
@@ -98,17 +122,16 @@ const Odds = () => {
                     </button>
                 </Grid>
                 <Box className="left">
-                <Grid item xs={5}>
+                <Grid item xs={4}>
                     { show ? <PlayerSelector player={ player1 } /> : null }
                 </Grid>
                 </Box>
-                <Grid item xs={2}>
-                    { show ? <h1>VS!</h1> : null }
-                </Grid>
                 <Box className="right">
-                <Grid item xs={5}>
+                <Grid item xs={4}>
                     { show ? <PlayerSelector player={ player2 } /> : null }
-
+                </Grid>
+                <Grid item xs={4}>
+                    { show ? <History p1={player1} p2={player2} /> : null }
                 </Grid>
                 </Box>
             </Grid>
