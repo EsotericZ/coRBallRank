@@ -10,6 +10,7 @@ const typeDefs = gql`
         singleRank: Int
         doubleRank: Int
         mixedRank: Int
+        avatar: String
         fullName: String
     }
 

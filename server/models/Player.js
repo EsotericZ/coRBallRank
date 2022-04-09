@@ -8,6 +8,7 @@ const playerSchema = new Schema({
     singleRank: Number,
     doubleRank: Number,
     mixedRank: Number,
+    avatar: String,
 });
 
 module.exports = model('Player', playerSchema);
