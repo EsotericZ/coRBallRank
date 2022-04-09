@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
@@ -14,7 +14,7 @@ import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
 
 const Odds = () => {
-    const {loading, data, error} = useQuery(ALL_PLAYERS);
+    const {loading, data} = useQuery(ALL_PLAYERS);
 	const playerList = data?.allPlayers || [];
     const player2List = data?.allPlayers || [];
 
@@ -27,6 +27,14 @@ const Odds = () => {
     const handleChange2 = (event) => {
         setPlayer2(event.target.value);
     };
+
+    const playerRanks = () => {
+        setShow(true);
+        const player1Rank = playerList.filter(player => player._id === player1);
+        const player2Rank = playerList.filter(player => player._id === player2);
+        const p1SingleRank = player1Rank[0].singleRank;
+        const p2SingleRank = player2Rank[0].singleRank;
+    }
 
     const [show, setShow] = useState(false);
 
@@ -84,7 +92,7 @@ const Odds = () => {
                         <button 
                             onClick={() => {
                                 console.log('clicked!')
-                                setShow(true);
+                                playerRanks();
                                 console.log(show)
                             }}
                         >
@@ -92,13 +100,13 @@ const Odds = () => {
                         </button>
                     </Grid>
                     <Grid item xs={4}>
-                        { show ? <PlayerSelector player={ player1 } /> : null }
+                        { show ? <PlayerSelector player={player1} /> : null }
                     </Grid>
                     <Grid item xs={4}>
-                        { show ? <PlayerSelector player={ player2 } /> : null }
+                        { show ? <PlayerSelector player={player2} /> : null }
                     </Grid>
                     <Grid item xs={4}>
-                        { show ? <History /> : null }
+                        { show ? <History p1={player1} p2={player2} /> : null }
                     </Grid>
                 </Grid>
             </Box>
