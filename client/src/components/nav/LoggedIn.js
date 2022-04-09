@@ -25,11 +25,23 @@ import './loggedIn.css'
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(),
-    marginLeft: theme.spacing(),
-    verticalAlign: "center",
+    marginTop: theme.spacing(),
+    marginRight: theme.spacing(),
     // display: "inline-block",
-    // align: "center",
-    // justifyContent: "space-around"
+    verticalAlign: "center",
+    fontSize: '20px',
+    textDecoration: 'none',
+    color: 'white',
+    marginRight: '35px',
+    display: "flex",
+    justifyContent: "space-between",
+ 
+
+  },
+  account: {
+    display: "block",
+    float: "right",
+    backgroundColor:"#BB371A", 
   },
   logo: {
     flexGrow: "1",
@@ -44,15 +56,12 @@ const useStyles = makeStyles((theme) => ({
       color: "red",
       borderBottom: "1px solid white",
     },
-   logInNav: {
-    backgroundColor:"white",
-   },
   },
 }));
 
 function LoggedIn() {
   const classes = useStyles();
-
+  const theme = useTheme();
   const isMobile = useMediaQuery(("md"));
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -75,7 +84,7 @@ function LoggedIn() {
         ) : (
           
           <div className={classes.navlinks}>
-            <Box>
+            <Box display="flex">
             <Link to="/home" className={classes.link} id="home">
               Home
             </Link>
@@ -92,7 +101,7 @@ function LoggedIn() {
               Odds
             </Link>
             </Box>
-            <Tooltip title="My Account">
+            <Tooltip className="account"title="My Account">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -101,7 +110,7 @@ function LoggedIn() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar className="avatar"sx={{ width: 32, height: 32 }}>M</Avatar>
           </IconButton>
         </Tooltip>
         <Menu
@@ -121,6 +130,7 @@ function LoggedIn() {
               height: 32,
               ml: -0.5,
               mr: 1,
+              bgcolor: '#BB371A',
             },
             '&:before': {
               content: '""',
@@ -130,7 +140,7 @@ function LoggedIn() {
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: '#D5DBB3',
+              bgcolor: '#BB371A',
               transform: 'translateY(-50%) rotate(45deg)',
               zIndex: 0,
             },
@@ -160,6 +170,7 @@ function LoggedIn() {
           </ListItemIcon>
         </MenuItem>
       </Menu>
+      {/* </Box> */}
           </div>
         )}
       </Toolbar>

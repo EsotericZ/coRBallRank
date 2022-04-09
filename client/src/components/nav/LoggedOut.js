@@ -43,22 +43,21 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
     cursor: "pointer",
   },
- 
-  // link: {
-  //   textDecoration: "none",
-  //   color: "white",
-  //   fontSize: "18px",
-  //   marginLeft: theme.spacing(),
-  //   "&:hover": {
-  //     color: "red",
-  //     borderBottom: "1px solid white",
-  //   },
-  //   marginRight: theme.spacing(10),
-  //   "&:hover": {
-  //     color: "red",
-  //     borderBottom: "1px solid white",
-  //   },
-  // },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "18px",
+    marginLeft: theme.spacing(),
+    "&:hover": {
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+    marginRight: theme.spacing(10),
+    "&:hover": {
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+  },
 }));
 
 function LoggedOut() {
