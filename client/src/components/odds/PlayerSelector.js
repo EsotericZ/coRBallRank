@@ -4,12 +4,9 @@ import { FETCH_PLAYER } from '../../graphql/queries/fetchPlayers';
 const PlayerSelector = ({player}) => {
     const player1 = {player};
     const player2 = player1.player;
-    console.log(player1)
-    console.log(player2)
     const {loading, data} = useQuery(FETCH_PLAYER, {
         variables: {playerId: player2}
     });
-    console.log(data)
 
     return loading ?
         <>
