@@ -82,11 +82,19 @@ const Ranking = () => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
-                        <Autocomplete
+                    <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={msList.map((option) => option.fullName)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                <TextField
+                                    {...params} 
+                                    label="Search" 
+                                    sx={{ width: 300, textIndent: 30 }}
+                                    style={{ textIndent: 30 }}
+                                />
+                            </div>}
                         />
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
@@ -116,140 +124,172 @@ const Ranking = () => {
                         </Table>
                     </TabPanel>
                     <TabPanel value="2">
-                    <Autocomplete
+                        <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={mdList.map((option) => option.fullName)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                <TextField
+                                    {...params} 
+                                    label="Search" 
+                                    sx={{ width: 300, textIndent: 30 }}
+                                    style={{ textIndent: 30 }}
+                                />
+                            </div>}
                         />
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
-                                    <TableCell align="right">Location</TableCell>
-                                    <TableCell align="right">More</TableCell>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Rank</TableCell>
+                                <TableCell align="right">Name</TableCell>
+                                <TableCell align="right">Level</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                                <TableCell align="right">More</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {mdList.map((player, index) => (
+                                <TableRow
+                                    key={player._id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                    <TableCell align="right">{player.fullName}</TableCell>
+                                    <TableCell align="right">{player.doubleRank}</TableCell>
+                                    <TableCell align="right">{player.birthday}</TableCell>
+                                    <TableCell align="right">{player.gender}</TableCell>
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {mdList.map((player, index) => (
-                                    <TableRow
-                                        key={player._id}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.doubleRank}</TableCell>
-                                        <TableCell align="right">{player.birthday}</TableCell>
-                                        <TableCell align="right">{player.gender}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TabPanel>
-                    <TabPanel value="3">
-                    <Autocomplete
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TabPanel>
+                <TabPanel value="3">
+                <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={fsList.map((option) => option.fullName)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                <TextField
+                                    {...params} 
+                                    label="Search" 
+                                    sx={{ width: 300, textIndent: 30 }}
+                                    style={{ textIndent: 30 }}
+                                />
+                            </div>}
                         />
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
-                                    <TableCell align="right">Location</TableCell>
-                                    <TableCell align="right">More</TableCell>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Rank</TableCell>
+                                <TableCell align="right">Name</TableCell>
+                                <TableCell align="right">Level</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                                <TableCell align="right">More</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {fsList.map((player, index) => (
+                                <TableRow
+                                    key={player._id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                    <TableCell align="right">{player.fullName}</TableCell>
+                                    <TableCell align="right">{player.singleRank}</TableCell>
+                                    <TableCell align="right">{player.birthday}</TableCell>
+                                    <TableCell align="right">{player.gender}</TableCell>
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {fsList.map((player, index) => (
-                                    <TableRow
-                                        key={player._id}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.singleRank}</TableCell>
-                                        <TableCell align="right">{player.birthday}</TableCell>
-                                        <TableCell align="right">{player.gender}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TabPanel>
-                    <TabPanel value="4">
-                    <Autocomplete
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TabPanel>
+                <TabPanel value="4">
+                <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={fdList.map((option) => option.fullName)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                <TextField
+                                    {...params} 
+                                    label="Search" 
+                                    sx={{ width: 300, textIndent: 30 }}
+                                    style={{ textIndent: 30 }}
+                                />
+                            </div>}
                         />
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
-                                    <TableCell align="right">Location</TableCell>
-                                    <TableCell align="right">More</TableCell>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Rank</TableCell>
+                                <TableCell align="right">Name</TableCell>
+                                <TableCell align="right">Level</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                                <TableCell align="right">More</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {fdList.map((player, index) => (
+                                <TableRow
+                                    key={player._id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                    <TableCell align="right">{player.fullName}</TableCell>
+                                    <TableCell align="right">{player.doubleRank}</TableCell>
+                                    <TableCell align="right">{player.birthday}</TableCell>
+                                    <TableCell align="right">{player.gender}</TableCell>
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {fdList.map((player, index) => (
-                                    <TableRow
-                                        key={player._id}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.doubleRank}</TableCell>
-                                        <TableCell align="right">{player.birthday}</TableCell>
-                                        <TableCell align="right">{player.gender}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TabPanel>
-                    <TabPanel value="5">
-                    <Autocomplete
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TabPanel>
+                <TabPanel value="5">
+                <Autocomplete
                             id="free-solo-demo"
                             freeSolo
                             options={mixList.map((option) => option.fullName)}
-                            renderInput={(params) => <TextField {...params} label="Search" sx={{ width: 300 }} className="searchBar" />}
+                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                <TextField
+                                    {...params} 
+                                    label="Search" 
+                                    sx={{ width: 300, textIndent: 30 }}
+                                    style={{ textIndent: 30 }}
+                                />
+                            </div>}
                         />
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Level</TableCell>
-                                    <TableCell align="right">Location</TableCell>
-                                    <TableCell align="right">More</TableCell>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Rank</TableCell>
+                                <TableCell align="right">Name</TableCell>
+                                <TableCell align="right">Level</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                                <TableCell align="right">More</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {mixList.map((player, index) => (
+                                <TableRow
+                                    key={player._id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell component="th" scope="row">{index + 1}</TableCell>
+                                    <TableCell align="right">{player.fullName}</TableCell>
+                                    <TableCell align="right">{player.mixedRank}</TableCell>
+                                    <TableCell align="right">{player.birthday}</TableCell>
+                                    <TableCell align="right">{player.gender}</TableCell>
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {mixList.map((player, index) => (
-                                    <TableRow
-                                        key={player._id}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell component="th" scope="row">{index + 1}</TableCell>
-                                        <TableCell align="right">{player.fullName}</TableCell>
-                                        <TableCell align="right">{player.mixedRank}</TableCell>
-                                        <TableCell align="right">{player.birthday}</TableCell>
-                                        <TableCell align="right">{player.gender}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TabPanel>
-                </TabContext>
-            </Box>
-        </TableContainer>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TabPanel>
+            </TabContext>
+        </Box>
+        </TableContainer >
 }
 
 export default Ranking;
