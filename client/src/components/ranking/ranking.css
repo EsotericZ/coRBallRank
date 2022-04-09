@@ -20,3 +20,12 @@ searchBar {
     padding-top: 30px;
     padding-bottom: 30%;
 }
+
+/* =================================================================
+MEDIA QUERIES (SMALL)
+================================================================= */
+@media screen and (max-width: 600px) {
+    .TableContainer {
+        width: 90%;
+    }
+}
