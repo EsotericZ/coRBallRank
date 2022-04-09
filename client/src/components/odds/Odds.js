@@ -28,6 +28,9 @@ const Odds = () => {
         setPlayer2(event.target.value);
     };
 
+    const [expPlayer1, setExpPlayer1] = useState(0);
+    const [expPlayer2, setExpPlayer2] = useState(0);
+
     const playerRanks = () => {
         setShow(true);
         const player1Rank = playerList.filter(player => player._id === player1);
@@ -38,22 +41,12 @@ const Odds = () => {
     }
 
     const expected = (p1Rank, p2Rank) => {
-        // if (p1rank > p2Rank) {
-        //     favorite = p1rank;
-        //     underdog = p2Rank;
-        // } else {
-        //     favorite = p2Rank;
-        //     underdog = p1rank;
-        // }
-        
         const player1Diff = (p1Rank - p2Rank);
         const player2Diff = (p2Rank - p1Rank);
-        
-        const expPlayer1 = 1/((Math.pow(10,(-player1Diff/400)))+1)
-        const expPlayer2 = 1/((Math.pow(10,(-player2Diff/400)))+1)
-        
-        console.log('Player 1', expPlayer1)
-        console.log('Player 2', expPlayer2)
+        const exp1 = 1/((Math.pow(10,(-player1Diff/400)))+1)
+        const exp2 = 1/((Math.pow(10,(-player2Diff/400)))+1)
+        setExpPlayer1(exp1);
+        setExpPlayer2(exp2);
     }
 
     const [show, setShow] = useState(false);
@@ -66,8 +59,6 @@ const Odds = () => {
         :
         <>
         <Nav />
-        {/* <PlayerSelector />
-        <PlayerSelector /> */}
         <Box display="flex"sx={{ flexGrow: 1 }}>
             <Grid justify="center" container spacing={1}>
                 <Grid item xs={5}>
@@ -114,27 +105,26 @@ const Odds = () => {
                     <button id="playerBtn"
                         onClick={() => {
                             console.log('clicked!')
-                            setShow(true);
+                            playerRanks();
                             console.log(show)
                         }}
                     >
                         Click Me
                     </button>
                 </Grid>
-                <Box className="answer">
-                <Grid className="left"item xs={4}>
-                    { show ? <PlayerSelector player={ player1 } /> : null }
+                <Box className="left">
+                <Grid item xs={4}>
+                    { show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null }
                 </Grid>
-                {/* </Box>
-                <Box > */}
-                <Grid className="middle"item xs={4}>
-                    { show ? <PlayerSelector player={ player2 } /> : null }
+                </Box>
+                <Box className="right">
+                <Grid item xs={4}>
+                    { show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null }
                 </Grid>
                 </Box>
                 <Grid className=""item xs={4}>
                     { show ? <History p1={player1} p2={player2} /> : null }
                 </Grid>
-                
             </Grid>
         </Box>
         </>
