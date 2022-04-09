@@ -69,8 +69,12 @@ const HomeRanking = () => {
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
-                            <Tab label="Male's Singles" value="1" />
+                        <TabList onChange={handleChange} aria-label="wrapped label tabs example" className="tabs">
+                            <Tab 
+                            label="Male's Singles" 
+                            value="1"
+                            wrapped 
+                            />
                             <Tab label="Male's Doubles" value="2" />
                             <Tab label="Women's Singles" value="3" />
                             <Tab label="Women's Doubles" value="4" />
