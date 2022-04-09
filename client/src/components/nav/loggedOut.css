@@ -14,6 +14,10 @@
 
 .logOutNav{
     overflow: hidden;
+    background-color: var(--color-nav);
+}
+.logoutNav{
+    background-color: var(--color-nav);
 }
 
 #home,

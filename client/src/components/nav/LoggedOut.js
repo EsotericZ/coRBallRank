@@ -56,8 +56,11 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "red",
       borderBottom: "1px solid white",
-    },
+    },  
   },
+  logoutNav:{
+      backgroundColor: '#D5DBB3',
+    }
 }));
 
 function LoggedOut() {
