@@ -1,11 +1,13 @@
 import { useQuery } from '@apollo/client';
 import { ODDS_HISTORY } from '../../graphql/queries/fetchPlayers';
 
-const History = () => {
-    // const player1 = {player};
-    // const player2 = player1.player;
-    // console.log(player1)
-    // console.log(player2)
+const History = ({p1, p2}) => {
+    const player1 = {p1};
+    const player1Info = player1.p1;
+    const player2 = {p2};
+    const player2Info = player2.p2;
+    console.log('hp1', player1Info)
+    console.log('hp2', player2Info)
     // const {loading, data} = useQuery(FETCH_PLAYER, {
     //     variables: {playerId: player2}
     // });
