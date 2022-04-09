@@ -32,76 +32,77 @@ const Odds = () => {
 
     return loading ?
         <>
-            <Nav />
-            <h1>Loading...</h1>
-        </>
-        :
-        <>
-            <Nav />
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
-                    <Grid item xs={5}>
-                        <FormControl sx={{ width: 550 }}>
-                            <InputLabel id="">Player 1</InputLabel>
-                            <Select
-                                labelId="playerl"
-                                id="player1"
-                                value={player1}
-                                onChange={handleChange1}
-                                fullWidth
-                                label="Player 1"
-                            >
-                                <MenuItem value="">Select Player 1</MenuItem>
-                                {playerList.map((player) => (
-                                    <MenuItem key={player._id} value={player._id}>
-                                        {player.fullName}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item xs={5}>
-                        <FormControl sx={{ width: 550 }}>
-                            <InputLabel id="">Player 2</InputLabel>
-                            <Select
-                                labelId="player2"
-                                id="player2"
-                                value={player2}
-                                onChange={handleChange2}
-                                fullWidth
-                                label="Player 2"
-                            >
-                                <MenuItem value="">Select Player 1</MenuItem>
-                                {player2List.map((player2) => (
-                                    <MenuItem key={player2._id} value={player2._id}>
-                                        {player2.fullName}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <button 
-                            onClick={() => {
-                                console.log('clicked!')
-                                setShow(true);
-                                console.log(show)
-                            }}
+        <Nav />
+        {/* <PlayerSelector />
+        <PlayerSelector /> */}
+        <Box display="flex"sx={{ flexGrow: 1 }}>
+            <Grid justify="center" container spacing={1}>
+                <Grid item xs={5}>
+                    <FormControl id="player"sx={{ width: 400 }}>
+                        <InputLabel id="">Player 1</InputLabel>
+                        <Select
+                            labelId="playerl"
+                            id="player1"
+                            value={player1}
+                            onChange={handleChange1}
+                            fullWidth
+                            label="Player 1"
                         >
-                            Click Me
-                        </button>
-                    </Grid>
-                    <Grid item xs={4}>
-                        { show ? <PlayerSelector player={ player1 } /> : null }
-                    </Grid>
-                    <Grid item xs={4}>
-                        { show ? <PlayerSelector player={ player2 } /> : null }
-                    </Grid>
-                    <Grid item xs={4}>
-                        { show ? <History /> : null }
-                    </Grid>
+                            <MenuItem value="">Select Player 1</MenuItem>
+                            {playerList.map((player) => (
+                                <MenuItem key={player._id} value={player._id}>
+                                    {player.fullName}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
                 </Grid>
-            </Box>
+                <Grid item xs={5}>
+                    <FormControl id="player"sx={{ width: 400 }}>
+                        <InputLabel id="">Player 2</InputLabel>
+                        <Select
+                            labelId="player2"
+                            id="player2"
+                            value={player2}
+                            onChange={handleChange2}
+                            fullWidth
+                            label="Player 2"
+                        >
+                            <MenuItem value="">Select Player 1</MenuItem>
+                            {player2List.map((player2) => (
+                                <MenuItem key={player2._id} value={player2._id}>
+                                    {player2.fullName}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid id="player"item xs={2}>
+                    <button id="playerBtn"
+                        onClick={() => {
+                            console.log('clicked!')
+                            setShow(true);
+                            console.log(show)
+                        }}
+                    >
+                        Click Me
+                    </button>
+                </Grid>
+                <Box className="left">
+                <Grid item xs={5}>
+                    { show ? <PlayerSelector player={ player1 } /> : null }
+                </Grid>
+                </Box>
+                <Grid item xs={2}>
+                    { show ? <h1>VS!</h1> : null }
+                </Grid>
+                <Box className="right">
+                <Grid item xs={5}>
+                    { show ? <PlayerSelector player={ player2 } /> : null }
+                </Grid>
+                </Box>
+            </Grid>
+        </Box>
         </>
 };
 
