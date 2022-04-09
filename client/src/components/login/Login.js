@@ -28,7 +28,7 @@ const Login = () => {
 			render={({values, handleSubmit, form}) => {
 
 				return (
-					<>
+					<div>
 						<Field className="email"
 							name='email'
 							component='input'
@@ -50,7 +50,7 @@ const Login = () => {
 							}}>
 							Submit
 						</button>
-					</>
+					</div>
 				)
 			}}
 		/>

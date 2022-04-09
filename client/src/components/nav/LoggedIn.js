@@ -7,6 +7,7 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
+  Box,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Tooltip from '@mui/material/Tooltip';
@@ -51,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 function LoggedIn() {
   const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const isMobile = useMediaQuery(("md"));
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -72,7 +73,9 @@ function LoggedIn() {
         {isMobile ? (
           <DrawerComponent className="logInNav"/>
         ) : (
+          
           <div className={classes.navlinks}>
+            <Box>
             <Link to="/home" className={classes.link} id="home">
               Home
             </Link>
@@ -88,6 +91,7 @@ function LoggedIn() {
             <Link to="/odds" className={classes.link}id="odds">
               Odds
             </Link>
+            </Box>
             <Tooltip title="My Account">
           <IconButton
             onClick={handleClick}

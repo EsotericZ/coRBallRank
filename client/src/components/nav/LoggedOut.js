@@ -7,6 +7,7 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
+  Box,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./LoggedOutDrawer";
@@ -15,6 +16,7 @@ import Button from '@mui/material/Button';
 import './loggedOut.css'
 import '../../index.css';
 import { spacing } from "@mui/system";
+
 import  rockies from "../../assets/cologo.png";
 
 import Login from "../login/Login";
@@ -26,12 +28,22 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(),
     // display: "inline-block",
     verticalAlign: "center",
-    justifyContent: "start",
+    fontSize: '20px',
+    textDecoration: 'none',
+    color: 'white',
+    marginRight: '35px',
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  login:{
+    display: "block",
+    float: "right",
   },
   logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
+ 
   // link: {
   //   textDecoration: "none",
   //   color: "white",
@@ -55,9 +67,9 @@ function LoggedOut() {
   const isMobile = useMediaQuery(("md"));
 
   return (
-    <AppBar position="static"className="logoutNav">
-      <CssBaseline className="logoutNav" />
-      <Toolbar className="logoutNav">
+    <AppBar position="static"className="logOutNav">
+      <CssBaseline className="logOutNav" />
+      <Toolbar className="logOutNav">
         {/* <Typography className={classes.logo}> */}
           <img src={rockies} alt="logo" className="logo"/>
         {/* </Typography> */}
@@ -65,6 +77,7 @@ function LoggedOut() {
           <DrawerComponent />
         ) : (
           <div className={classes.navlinks} id="logOutNav">
+            <Box display="flex"> 
             <Link to="/home" className={classes.link} id="home">
               Home
             </Link>
@@ -83,7 +96,8 @@ function LoggedOut() {
             <Link to="/create" className={classes.link} id="signUp">
               Sign Up
             </Link>
-            <Login />
+            </Box>
+            <Login className="login"/>
             {/* <TextField 
               margin="normal"
               required
