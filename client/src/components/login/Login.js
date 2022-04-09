@@ -28,29 +28,29 @@ const Login = () => {
 			render={({values, handleSubmit, form}) => {
 
 				return (
-					<>
-						<Field id="email"
+					<div>
+						<Field className="email"
 							name='email'
 							component='input'
 							margin="dense"
 						/>
-						<Field id="pass"
+						<Field className="pass"
 							name='password'
 							component='input'
 							type='password'
 							margin="dense"
 						/>
-						<button
-							disabled={
-								values?.password?.length === 0 || values?.email?.length === 0
-							}
+						<button type="submit"
+							// disabled={
+							// 	values?.password?.length === 0 || values?.email?.length === 0
+							// }
 							onClick={async () => {
 								await handleSubmit();
 								form.reset();
 							}}>
 							Submit
 						</button>
-					</>
+					</div>
 				)
 			}}
 		/>

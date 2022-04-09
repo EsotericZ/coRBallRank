@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+// import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -29,17 +29,29 @@ const Odds = () => {
     const player2List = data?.allPlayers || [];
 	console.log(playerList);
 
-    const [Player1, setPlayer1] = useState('');
-    const [Player2, setPlayer2] = useState('');
-    const handleChange = (event) => {
+    const [player1, setPlayer1] = useState('');
+    const [player2, setPlayer2] = useState('');
+    const handleChange1 = (event) => {
         setPlayer1(event.target.value);
+    };
+    const handleChange2 = (event) => {
         setPlayer2(event.target.value);
     };
+
+    const [show, setShow] = useState(false);
+
+    // buttonClick() {
+    //     console.log('I Was Clicked!')
+    // }
+
+    console.log(player1)
+    console.log(player2)
+
     return (
         <>
         <Nav />
-        <PlayerSelector />
-        <PlayerSelector />
+        {/* <PlayerSelector />
+        <PlayerSelector /> */}
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={5}>
@@ -48,69 +60,60 @@ const Odds = () => {
                         <Select
                             labelId="playerl"
                             id="player1"
-                            value={Player1}
-                            onChange={handleChange}
+                            value={player1}
+                            onChange={handleChange1}
                             fullWidth
                             label="Player 1"
                         >
                             <MenuItem value="">Select Player 1</MenuItem>
                             {playerList.map((player) => (
-                                <MenuItem key={player.id} value={player.fullName}>
+                                <MenuItem key={player._id} value={player._id}>
                                     {player.fullName}
                                 </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
                 </Grid>
-
-
                 <Grid item xs={5}>
                     <FormControl sx={{ width: 550 }}>
                         <InputLabel id="">Player 2</InputLabel>
                         <Select
                             labelId="player2"
                             id="player2"
-                            value={Player2}
-                            onChange={handleChange}
+                            value={player2}
+                            onChange={handleChange2}
                             fullWidth
                             label="Player 2"
                         >
                             <MenuItem value="">Select Player 1</MenuItem>
                             {player2List.map((player2) => (
-                                <MenuItem key={player2.id} value={player2.firstName}>
+                                <MenuItem key={player2._id} value={player2._id}>
                                     {player2.fullName}
                                 </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
                 </Grid>
-                {/* <Grid item xs={5}>
-                    <Item>Player Avatar 1</Item>
-                </Grid>
-                <Grid item xs={1}>
-                    <Item>VS</Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Avatar 2</Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Profile 1</Item>
-                </Grid>
-                <Grid item xs={1}>
-                    <Item></Item>
+                <Grid item xs={2}>
+                    <button 
+                        onClick={() => {
+                            console.log('clicked!')
+                            setShow(true);
+                            console.log(show)
+                        }}
+                    >
+                        Click Me
+                    </button>
                 </Grid>
                 <Grid item xs={5}>
-                    <Item>Player Profile 2</Item>
+                    { show ? <PlayerSelector player={ player1 } /> : null }
+                </Grid>
+                <Grid item xs={2}>
+                    { show ? <h1>VS!</h1> : null }
                 </Grid>
                 <Grid item xs={5}>
-                    <Item>Player Odds 1</Item>
+                    { show ? <PlayerSelector player={ player2 } /> : null }
                 </Grid>
-                <Grid item xs={1}>
-                    <Item></Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Odds 2</Item>
-                </Grid> */}
             </Grid>
         </Box>
         </>

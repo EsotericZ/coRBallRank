@@ -14,6 +14,7 @@ export const FETCH_USER = gql`
                 singleRank
                 doubleRank
                 mixedRank
+                avatar
             }
         }
     }
@@ -28,6 +29,7 @@ export const FETCH_USERS = gql`
             email
             playerId {
                 firstName
+                avatar
             }
         }
     }

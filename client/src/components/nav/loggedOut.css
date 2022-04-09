@@ -1,10 +1,19 @@
 .logo {
     max-width:100px;
     overflow: hidden;
+    cursor: "pointer";
+    float: left;
 }
 
-.logoutNav{
+#logOutNav{
     background-color: var(--color-nav);
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.logOutNav{
+    overflow: hidden;
 }
 
 #home,
@@ -13,16 +22,10 @@
 #history,
 #odds,
 #signUp{
-    display: inline;
+    display: block;
+    float: left;
     font-size: 20px;
     text-decoration: none;
     color: white;
     margin-right: 35px;
-    justify-content: center;
-}
-
-#signUp {
-    color: blue;
-    justify-content: end;
-    display: inline-flex;
 }
