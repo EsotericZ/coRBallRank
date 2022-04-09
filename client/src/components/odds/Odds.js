@@ -114,33 +114,6 @@ const Odds = () => {
                 <Grid item xs={5}>
                     { show ? <PlayerSelector player={ player2 } /> : null }
                 </Grid>
-                {/* <Grid item xs={5}>
-                    <Item>Player Avatar 1</Item>
-                </Grid>
-                <Grid item xs={1}>
-                    <Item>VS</Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Avatar 2</Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Profile 1</Item>
-                </Grid>
-                <Grid item xs={1}>
-                    <Item></Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Profile 2</Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Odds 1</Item>
-                </Grid>
-                <Grid item xs={1}>
-                    <Item></Item>
-                </Grid>
-                <Grid item xs={5}>
-                    <Item>Player Odds 2</Item>
-                </Grid> */}
             </Grid>
         </Box>
         </>

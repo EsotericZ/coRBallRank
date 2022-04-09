@@ -14,6 +14,7 @@ db.once('open', async () => {
             singleRank: 0,
             doubleRank: 0,
             mixedRank: 0,
+            avatar: '',
         },
         {
             // 01
@@ -24,6 +25,7 @@ db.once('open', async () => {
             singleRank: 1312,
             doubleRank: 1313,
             mixedRank: 1289,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/186770_large.jpg',
         },
         {
             // 02
@@ -33,7 +35,8 @@ db.once('open', async () => {
             gender: 'M',
             singleRank: 1212,
             doubleRank: 1318,
-            mixedRank: 0,
+            mixedRank: 1205,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/102032_large.jpg',
         },
         {
             // 03
@@ -43,7 +46,8 @@ db.once('open', async () => {
             gender: 'M',
             singleRank: 1112,
             doubleRank: 1183,
-            mixedRank: 0,
+            mixedRank: 1100,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/317309_large.jpg',
         },
         {
             // 04
@@ -54,6 +58,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/279312_large.jpg',
         },
         {
             // 05
@@ -63,7 +68,8 @@ db.once('open', async () => {
             gender: 'M',
             singleRank: 1112,
             doubleRank: 1183,
-            mixedRank: 0,
+            mixedRank: 1300,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/67020_large.jpg',
         },
         {
             // 06
@@ -74,6 +80,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/18373_large.gif',
         },
         {
             // 07
@@ -84,6 +91,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/180050_large.jpg',
         },
         {
             // 08
@@ -94,6 +102,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/27024_large.jpg',
         },
         {
             // 09
@@ -104,6 +113,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/275445_large.jpg',
         },
         {
             // 10
@@ -114,6 +124,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/262238_large.jpg',
         },
         {
             // 11
@@ -124,6 +135,7 @@ db.once('open', async () => {
             singleRank: 1212,
             doubleRank: 1218,
             mixedRank: 1287,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/37675_large.jpg',
         },
         {
             // 12
@@ -134,6 +146,7 @@ db.once('open', async () => {
             singleRank: 1012,
             doubleRank: 1113,
             mixedRank: 1389,
+            avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/281354_b0a5_sm.png',
         },
         {
             // 13
@@ -144,6 +157,7 @@ db.once('open', async () => {
             singleRank: 1112,
             doubleRank: 1183,
             mixedRank: 0,
+            avatar: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetdrawings.com%2Fimg%2Fracquetball-silhouette-23.jpg&f=1&nofb=1',
         },
     ]);
 
