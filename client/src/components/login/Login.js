@@ -40,10 +40,10 @@ const Login = () => {
 							type='password'
 							margin="dense"
 						/>
-						<button
-							disabled={
-								values?.password?.length === 0 || values?.email?.length === 0
-							}
+						<button type="submit"
+							// disabled={
+							// 	values?.password?.length === 0 || values?.email?.length === 0
+							// }
 							onClick={async () => {
 								await handleSubmit();
 								form.reset();

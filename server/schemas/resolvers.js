@@ -20,6 +20,9 @@ const resolvers = {
 		// player: async (_root, {id}) => {
 		// 	return await Player.findById(id);
 		// },
+		player: async (_root, {id}) => {
+			return await Player.findById(id);
+		},
 		allPlayers: async (_root, _args, context) => {
 			return await Player.find({"singleRank": {$ne: 0}}).sort({lastName: 1});
 		},

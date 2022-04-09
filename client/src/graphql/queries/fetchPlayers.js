@@ -1,5 +1,21 @@
 import { gql } from '@apollo/client';
 
+const FETCH_PLAYER = gql`
+    query Player($playerId: String!) {
+        player(id: $playerId) {
+            _id
+            firstName
+            lastName
+            gender
+            singleRank
+            doubleRank
+            mixedRank
+            birthday
+            fullName
+        }
+    }
+`;
+
 const ALL_PLAYERS = gql`
     query allPlayers {
         allPlayers {
@@ -85,6 +101,7 @@ const MIXED_DOUBLES = gql`
 `;
 
 export {
+    FETCH_PLAYER,
     ALL_PLAYERS,
     MALE_SINGLES,
     FEMALE_SINGLES,

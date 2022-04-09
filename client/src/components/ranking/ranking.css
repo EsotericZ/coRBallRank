@@ -6,6 +6,10 @@
 
 .tabs {
     font-size: 20px;
+    font-weight: bold;
+}
+.tab1{
+    font-size: 50px;
 }
 
 /* .search {
