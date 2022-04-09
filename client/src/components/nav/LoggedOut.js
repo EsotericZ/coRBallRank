@@ -56,12 +56,11 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "red",
       borderBottom: "1px solid white",
-    },
-    logoutNav:{
+    },  
+  },
+  logoutNav:{
       backgroundColor: '#D5DBB3',
     }
-    
-  },
 }));
 
 function LoggedOut() {
@@ -70,9 +69,9 @@ function LoggedOut() {
   const isMobile = useMediaQuery(("md"));
 
   return (
-    <AppBar position="static"className="logOutNav">
-      <CssBaseline className="logOutNav" />
-      <Toolbar className="logOutNav">
+    <AppBar position="static"className="logoutNav">
+      <CssBaseline className="logoutNav" />
+      <Toolbar className="logoutNav">
         {/* <Typography className={classes.logo}> */}
           <img src={rockies} alt="logo" className="logo"/>
         {/* </Typography> */}
