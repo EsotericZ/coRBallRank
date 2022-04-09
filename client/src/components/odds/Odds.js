@@ -121,19 +121,20 @@ const Odds = () => {
                         Click Me
                     </button>
                 </Grid>
-                <Box className="left">
-                <Grid item xs={4}>
+                <Box className="answer">
+                <Grid className="left"item xs={4}>
                     { show ? <PlayerSelector player={ player1 } /> : null }
                 </Grid>
-                </Box>
-                <Box className="right">
-                <Grid item xs={4}>
+                {/* </Box>
+                <Box > */}
+                <Grid className="middle"item xs={4}>
                     { show ? <PlayerSelector player={ player2 } /> : null }
                 </Grid>
-                <Grid item xs={4}>
+                </Box>
+                <Grid className=""item xs={4}>
                     { show ? <History p1={player1} p2={player2} /> : null }
                 </Grid>
-                </Box>
+                
             </Grid>
         </Box>
         </>
