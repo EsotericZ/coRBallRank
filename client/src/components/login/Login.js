@@ -29,12 +29,12 @@ const Login = () => {
 
 				return (
 					<>
-						<Field id="email"
+						<Field className="email"
 							name='email'
 							component='input'
 							margin="dense"
 						/>
-						<Field id="pass"
+						<Field className="pass"
 							name='password'
 							component='input'
 							type='password'
