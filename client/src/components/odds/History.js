@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { ODDS_HISTORY } from '../../graphql/queries/fetchPlayers';
+import './odds.css';
 
 const History = ({p1, p2}) => {
     const player1 = {p1};
@@ -26,7 +27,7 @@ const History = ({p1, p2}) => {
     //         <h1>{data.player.mixedRank}</h1>
     //     </>
     return (
-        <h1>I'm working on this Kirtley</h1>
+        <h1 className="right">I'm working on this Kirtley</h1>
     )
 };
 
