@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { FETCH_PLAYER } from '../../graphql/queries/fetchPlayers';
 
-const PlayerSelector = ({player}) => {
+const PlayerSelector = ({player, winChance}) => {
     const player1 = {player};
     const player2 = player1.player;
     const {loading, data} = useQuery(FETCH_PLAYER, {
@@ -19,6 +19,7 @@ const PlayerSelector = ({player}) => {
             <h1>{data.player.singleRank}</h1>
             <h1>{data.player.doubleRank}</h1>
             <h1>{data.player.mixedRank}</h1>
+            <h1>{winChance}</h1>
         </>
 };
 
