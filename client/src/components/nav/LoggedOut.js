@@ -43,22 +43,21 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
     cursor: "pointer",
   },
- 
-  // link: {
-  //   textDecoration: "none",
-  //   color: "white",
-  //   fontSize: "18px",
-  //   marginLeft: theme.spacing(),
-  //   "&:hover": {
-  //     color: "red",
-  //     borderBottom: "1px solid white",
-  //   },
-  //   marginRight: theme.spacing(10),
-  //   "&:hover": {
-  //     color: "red",
-  //     borderBottom: "1px solid white",
-  //   },
-  // },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "18px",
+    marginLeft: theme.spacing(),
+    "&:hover": {
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+    marginRight: theme.spacing(10),
+    "&:hover": {
+      color: "red",
+      borderBottom: "1px solid white",
+    },
+  },
 }));
 
 function LoggedOut() {
@@ -67,9 +66,9 @@ function LoggedOut() {
   const isMobile = useMediaQuery(("md"));
 
   return (
-    <AppBar position="static"className="logOutNav">
-      <CssBaseline className="logOutNav" />
-      <Toolbar className="logOutNav">
+    <AppBar position="static"className="logoutNav">
+      <CssBaseline className="logoutNav" />
+      <Toolbar className="logoutNav">
         {/* <Typography className={classes.logo}> */}
           <img src={rockies} alt="logo" className="logo"/>
         {/* </Typography> */}
