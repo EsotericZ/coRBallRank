@@ -198,35 +198,38 @@ db.once('open', async () => {
         {
             // 00
             name: '2020 Apex Open',
-            location: 'Arvada',
+            location: 'Arvada, CO',
             club: 'Apex',
             startDate: '02/07/20',
             endDate: '02/09/20',
             weightIndex: 20,
             link: 'https://www.r2sports.com/website/event-website.asp?TID=31675',
             status: 'completed',
+            image: 'https://www.r2sports.com/tourney/imageGallery/gallery/tourneyLogo/16735_large.jpg',
         },
         {
             // 01
             name: '2022 State Singles',
-            location: 'Denver',
+            location: 'Denver, CO',
             club: 'Denver Athletic Club',
             startDate: '05/13/22',
             endDate: '05/15/22',
             weightIndex: 30,
             link: 'none',
             status: 'future',
+            image: 'https://www.r2sports.com/tourney/imageGallery/gallery/tourneyLogo/24770_large.jpg',
         },
         {
             // 02
             name: '2022 Rocky Mountain State Games',
-            location: 'Colorado Springs',
+            location: 'Colorado Springs, CO',
             club: 'Denver Athletic Club',
             startDate: '07/22/22',
             endDate: '07/24/22',
             weightIndex: 20,
             link: 'https://www.r2sports.com/tourney/home.asp?TID=39071',
             status: 'future',
+            image: 'https://www.r2sports.com/tourney/imageGallery/gallery/tourneyLogo/rmsg_rokstories_1493_large.jpg',
         },
     ]);
 

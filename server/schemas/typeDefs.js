@@ -36,6 +36,7 @@ const typeDefs = gql`
         weightIndex: Int
         link: String
         status: String
+        image: String
     }
 
     type Match {
