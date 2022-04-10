@@ -106,7 +106,7 @@ const Odds = () => {
                     </Grid>
                 </div>
                 <div className="submit">
-                    <button className="submit"
+                    <button 
                         onClick={() => {
                             console.log('clicked!')
                             playerRanks();
@@ -142,14 +142,14 @@ const Odds = () => {
             </div>
             {/* </div> */}
 
-            <Box display="flex" sx={{ flexGrow: 1 }}>
+            {/* <Box display="flex" sx={{ flexGrow: 1 }}>
                 <Grid justify="center" container spacing={1}>
                     <Box className="left">
                     </Box>
                     <Box className="right">
                     </Box>
                 </Grid>
-            </Box>
+            </Box> */}
         </>
 };
 
