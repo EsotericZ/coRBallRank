@@ -18,7 +18,7 @@
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   .player2{
     border: 1px black solid;
@@ -69,3 +69,6 @@
     transition: 0.3s;
     border-radius: 5px;
 }
+img {
+    border-radius: 5px 5px 5px 5px;
+  }

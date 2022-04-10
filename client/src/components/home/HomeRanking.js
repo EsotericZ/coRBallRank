@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import './home.css';
+//import './home.css';
 import Nav from '../nav/Nav';
 
 import Box from '@mui/material/Box';
@@ -63,38 +63,40 @@ const HomeRanking = () => {
         </>
         :
         <TableContainer component={Paper}>
-            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
+            <Box sx={{ textAlign: 'center', borderColor: 'divider' }} className="rankings">
                 Current Top 10
             </Box>
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="wrapped label tabs example" className="tabs">
-                            <Tab 
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
+                        <TabList onChange={handleChange} aria-label="wrapped label tabs" className="tabs">
+                            <Tab className="tab"
                             label="Male's Singles" 
                             value="1"
+                            scrollButtons='auto'
                             wrapped 
                             />
-                            <Tab label="Male's Doubles" value="2" />
-                            <Tab label="Women's Singles" value="3" />
-                            <Tab label="Women's Doubles" value="4" />
-                            <Tab label="Mixed Doubles" value="5" />
+                            <Tab className="tab" label="Male's Doubles" value="2"  wrapped/>
+                            <Tab className="tab" label="Women's Singles" value="3" wrapped/>
+                            <Tab className="tab" label="Women's Doubles" value="4" wrapped/>
+                            <Tab className="tab" label="Mixed Doubles" value="5" wrapped/>
                         </TabList>
                     </Box>
                     <TabPanel value="1">
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center">Name</TableCell>
-                                    <TableCell align="center">Level</TableCell>
+                                    <TableCell align="center" >Name</TableCell>
+                                    <TableCell align="center" >Level</TableCell>
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
+                            <TableBody >
                                 {msList.map((player, index) => (
-                                    <TableRow
+                                    <TableRow className="tablerow"
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        width='100'
                                     >
                                         <TableCell align="center">{index + 1}</TableCell>
                                         <TableCell align="center">{player.fullName}</TableCell>
@@ -105,7 +107,7 @@ const HomeRanking = () => {
                         </Table>
                     </TabPanel>
                     <TabPanel value="2">
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Rank</TableCell>
@@ -128,7 +130,7 @@ const HomeRanking = () => {
                         </Table>
                     </TabPanel>
                     <TabPanel value="3">
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Rank</TableCell>
@@ -151,7 +153,7 @@ const HomeRanking = () => {
                         </Table>
                     </TabPanel>
                     <TabPanel value="4">
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Rank</TableCell>
@@ -174,7 +176,7 @@ const HomeRanking = () => {
                         </Table>
                     </TabPanel>
                     <TabPanel value="5">
-                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Rank</TableCell>

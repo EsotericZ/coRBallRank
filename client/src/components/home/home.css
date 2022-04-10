@@ -16,18 +16,30 @@
 .rankings {
     font-size: 30px;
     /* py: 30px; */
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    padding: 0;
 }
-
-.tabs {
-    /* font-size: 20px; */
+.tab {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    /* inline-size: 100px; */
+    overflow-wrap: break-word;
+    inline-size: auto;
+    max-width: 120px;
+}
+.tabs {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    inline-size: auto;
     padding: 0;
     margin: 0 auto;
     overflow-wrap: break-word;
-    
+    max-width: fit-content;
+}
+
+.tablerow{
+    /* background-color: palegoldenrod; */
 }
 
 .rankLink {

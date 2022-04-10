@@ -14,8 +14,8 @@ import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
 
 const Odds = () => {
-    const {loading, data} = useQuery(ALL_PLAYERS);
-	const playerList = data?.allPlayers || [];
+    const { loading, data } = useQuery(ALL_PLAYERS);
+    const playerList = data?.allPlayers || [];
     const player2List = data?.allPlayers || [];
 
     const [player1, setPlayer1] = useState('');
@@ -43,8 +43,8 @@ const Odds = () => {
     const expected = (p1Rank, p2Rank) => {
         const player1Diff = (p1Rank - p2Rank);
         const player2Diff = (p2Rank - p1Rank);
-        const exp1 = 1/((Math.pow(10,(-player1Diff/400)))+1)
-        const exp2 = 1/((Math.pow(10,(-player2Diff/400)))+1)
+        const exp1 = 1 / ((Math.pow(10, (-player1Diff / 400))) + 1)
+        const exp2 = 1 / ((Math.pow(10, (-player2Diff / 400))) + 1)
         setExpPlayer1(exp1);
         setExpPlayer2(exp2);
     }
@@ -58,99 +58,99 @@ const Odds = () => {
         </>
         :
         <>
-        <Nav />
-  <div container className="odds">
-      <h1 >Player Odds</h1>
-  <div className="player1">
-    <Grid item xs={5}>
-    <FormControl id="player"sx={{ width: 400 }}>
-        <InputLabel id="">Player 1</InputLabel>
-        <Select
-            labelId="playerl"
-            id="player1"
-            value={player1}
-            onChange={handleChange1}
-            fullWidth
-            label="Player 1"
-        >
-            <MenuItem value="">Select Player 1</MenuItem>
-            {playerList.map((player) => (
-                <MenuItem key={player._id} value={player._id}>
-                    {player.fullName}
-                </MenuItem>
-            ))}
-        </Select>
-    </FormControl>
-    </Grid>
-  </div>
-  <div className="player2">
-    <Grid item xs={5}>
-    <FormControl id="player"sx={{ width: 400 }}>
-        <InputLabel id="">Player 2</InputLabel>
-        <Select
-            labelId="player2"
-            id="player2"
-            value={player2}
-            onChange={handleChange2}
-            fullWidth
-            label="Player 2"
-        >
-            <MenuItem value="">Select Player 2</MenuItem>
-            {player2List.map((player2) => (
-                <MenuItem key={player2._id} value={player2._id}>
-                    {player2.fullName}
-                </MenuItem>
-            ))}
-        </Select>
-    </FormControl>
-    </Grid>
-  </div>
-  <div className="submit">
-    <button className="submit"
-        onClick={() => {
-            console.log('clicked!')
-            playerRanks();
-            console.log(show)
-        }}
-    >
-        Click Me
-    </button>
-  </div>
-  <div container className="results">
-    <div className="left">
-        {/* <Box className="">
+            <Nav />
+            <div container className="odds" alignItems="center">
+                <h1 >Player Odds</h1>
+                <div className="player1">
+                    <Grid item xs={5}>
+                        <FormControl id="player" sx={{ width: 400 }}>
+                            <InputLabel id="">Player 1</InputLabel>
+                            <Select
+                                labelId="playerl"
+                                id="player1"
+                                value={player1}
+                                onChange={handleChange1}
+                                fullWidth
+                                label="Player 1"
+                            >
+                                <MenuItem value="">Select Player 1</MenuItem>
+                                {playerList.map((player) => (
+                                    <MenuItem key={player._id} value={player._id}>
+                                        {player.fullName}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                </div>
+                <div className="player2">
+                    <Grid item xs={5}>
+                        <FormControl id="player" sx={{ width: 400 }}>
+                            <InputLabel id="">Player 2</InputLabel>
+                            <Select
+                                labelId="player2"
+                                id="player2"
+                                value={player2}
+                                onChange={handleChange2}
+                                fullWidth
+                                label="Player 2"
+                            >
+                                <MenuItem value="">Select Player 2</MenuItem>
+                                {player2List.map((player2) => (
+                                    <MenuItem key={player2._id} value={player2._id}>
+                                        {player2.fullName}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                </div>
+                <div className="submit">
+                    <button className="submit"
+                        onClick={() => {
+                            console.log('clicked!')
+                            playerRanks();
+                            console.log(show)
+                        }}
+                    >
+                        Click Me
+                    </button>
+                </div>
+                <div container className="results">
+                    <div className="left">
+                        {/* <Box className="">
         <Grid className=""item> */}
-            { show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null }
-        {/* </Grid>
+                        {show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null}
+                        {/* </Grid>
         </Box> */}
-    </div>
-    <div className="middle">
-        {/* <Box className="">
+                    </div>
+                    <div className="middle">
+                        {/* <Box className="">
         <Grid className="" item> */}
-            { show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null }
-        {/* </Grid>
+                        {show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null}
+                        {/* </Grid>
         </Box> */}
-    </div>
-    <div className="right">
-        {/* <Box className="">
+                    </div>
+                    <div className="right">
+                        {/* <Box className="">
         <Grid className=""item> */}
-            { show ? <History p1={player1} p2={player2} /> : null }
-        {/* </Grid>
+                        {show ? <History p1={player1} p2={player2} /> : null}
+                        {/* </Grid>
         </Box> */}
-    </div>
-  </div>
-</div>  
-        {/* </div> */}
-        
-        <Box display="flex"sx={{ flexGrow: 1 }}>
-            <Grid justify="center" container spacing={1}>
-                <Box className="left">
-                </Box>
-                <Box className="right">
-                </Box>
-            </Grid>
-        </Box>
-    </>
+                    </div>
+                </div>
+            </div>
+            {/* </div> */}
+
+            <Box display="flex" sx={{ flexGrow: 1 }}>
+                <Grid justify="center" container spacing={1}>
+                    <Box className="left">
+                    </Box>
+                    <Box className="right">
+                    </Box>
+                </Grid>
+            </Box>
+        </>
 };
 
 export default Odds;
