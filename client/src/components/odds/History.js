@@ -1,11 +1,7 @@
 import { useQuery } from '@apollo/client';
-<<<<<<< HEAD
 import { useState } from 'react';
 import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
-=======
-import { ODDS_HISTORY } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
->>>>>>> main
 
 const History = ({p1, p2}) => {
     const player1 = {p1};
@@ -42,14 +38,7 @@ const History = ({p1, p2}) => {
     console.log(results);
 
     return (
-<<<<<<< HEAD
-        <>
-            <h1>I'm working on this Kirtley</h1>
-            <h1>{results[0]}</h1>
-        </>
-=======
         <h1 className="right">I'm working on this Kirtley</h1>
->>>>>>> main
     )
 };
 
