@@ -19,7 +19,7 @@ import IconButton from '@mui/material/IconButton';
 import DrawerComponent from "./LoggedInDrawer";
 import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
-import  rockies from "../../assets/cologo.png";
+import rockies from "../../assets/cologo.png";
 import './loggedIn.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -32,16 +32,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '20px',
     textDecoration: 'none',
     color: 'white',
-    marginRight: '35px',
+    // marginRight: '35px',
     display: "flex",
     justifyContent: "space-between",
- 
-
   },
   account: {
     display: "block",
     float: "right",
-    backgroundColor:"#BB371A", 
+    backgroundColor: "#BB371A",
   },
   logo: {
     flexGrow: "1",
@@ -74,103 +72,107 @@ function LoggedIn() {
 
   return (
     <AppBar position="static" className="logInNav">
-      <CssBaseline className="logInNav"/>
-      <Toolbar className="logInNav">
+      <CssBaseline className="logInNav" />
+      <Toolbar className="logInNav" sx={{width:"600px"}}>
         {/* <Typography className={classes.logo}> */}
-        <img src={rockies} alt="logo" className="logo"/> 
+        <img src={rockies} alt="logo" className="logo" />
         {/* </Typography> */}
         {isMobile ? (
-          <DrawerComponent className="logInNav"/>
+          <DrawerComponent className="logInNav" />
         ) : (
-          
+
           <div className={classes.navlinks}>
-            <Box display="flex">
-            <Link to="/home" className={classes.link} id="home">
-              Home
-            </Link>
-            <Link to="/ranking" className={classes.link} id="ranking">
-              Ranking
-            </Link>
-            <Link to="/events" className={classes.link}id="events">
-              Events
-            </Link>
-            <Link to="/history" className={classes.link}id="history">
-              History
-            </Link>
-            <Link to="/odds" className={classes.link}id="odds">
-              Odds
-            </Link>
+            <Box display="flex" sx={{width:900}} justifyContent="space-between">
+              <div>
+              <Link to="/home" className={classes.link} id="home">
+                Home
+              </Link>
+              <Link to="/ranking" className={classes.link} id="ranking">
+                Ranking
+              </Link>
+              <Link to="/events" className={classes.link} id="events">
+                Events
+              </Link>
+              <Link to="/history" className={classes.link} id="history">
+                History
+              </Link>
+              <Link to="/odds" className={classes.link} id="odds">
+                Odds
+              </Link>
+              </div>
+
+              <Tooltip witdh="300px" justify="right" className="account" title="My Account">
+                <IconButton
+                  onClick={handleClick}
+                  size="small"
+                  sx={{ ml: 2 }}
+                  aria-controls={open ? 'account-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                >
+                  <Avatar className="avatar" sx={{ width: 32, height: 32 }}>M</Avatar>
+                </IconButton>
+              </Tooltip>
             </Box>
-            <Tooltip className="account"title="My Account">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar className="avatar"sx={{ width: 32, height: 32 }}>M</Avatar>
-          </IconButton>
-        </Tooltip>
-        <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: 'visible',
-            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 1.5,
-            '& .MuiAvatar-root': {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-              bgcolor: '#BB371A',
-            },
-            '&:before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: '#BB371A',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
-        }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem>
-          <Avatar /><Link to='/profile'>Profile</Link> 
-        </MenuItem>
-        {/* <MenuItem>
+
+            <Menu
+              anchorEl={anchorEl}
+              id="account-menu"
+              open={open}
+              onClose={handleClose}
+              onClick={handleClose}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: 'visible',
+                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                  mt: 1.5,
+                  '& .MuiAvatar-root': {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                    bgcolor: '#BB371A',
+                  },
+                  '&:before': {
+                    content: '""',
+                    display: 'block',
+                    position: 'absolute',
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: '#BB371A',
+                    transform: 'translateY(-50%) rotate(45deg)',
+                    zIndex: 0,
+                  },
+                },
+              }}
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+            >
+              <MenuItem>
+                <Avatar /><Link to='/profile'>Profile</Link>
+              </MenuItem>
+              {/* <MenuItem>
           <Avatar /> My account
         </MenuItem> */}
-        <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-            <Link to='/home' 
-              onClick={() => {
-                window.localStorage.removeItem("token")
-                window.refresh();
-              }}
-            >
-              Logout
-            </Link> 
-          </ListItemIcon>
-        </MenuItem>
-      </Menu>
-      {/* </Box> */}
+              <Divider />
+              <MenuItem>
+                <ListItemIcon>
+                  <Logout fontSize="small" />
+                  <Link to='/home'
+                    onClick={() => {
+                      window.localStorage.removeItem("token")
+                      window.refresh();
+                    }}
+                  >
+                    Logout
+                  </Link>
+                </ListItemIcon>
+              </MenuItem>
+            </Menu>
+            {/* </Box> */}
           </div>
         )}
       </Toolbar>

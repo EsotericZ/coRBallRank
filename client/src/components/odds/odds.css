@@ -14,14 +14,14 @@
     /* margin-left: 50%; */
 }
   .player1 {
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   .player2{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10px;
@@ -29,10 +29,23 @@
   }
   .submit{
       display: inline-flex;
-      margin-left: 20px;
+      margin-left: 15px;
+      margin-top: 15px;
       /* width: 150px; */
       padding: 10px;
       font-size: 18px;
+      height: 58px;
+      /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px; */
+      vertical-align: auto;
+  }
+  button {
+    margin-top: 25px;
+    padding-bottom: 5px;
+    height: 40px;
+    width: 100px;
+    
   }
 .results{
     display: inline-flex;
@@ -45,7 +58,9 @@
     justify-content: center;
     margin-left: 55%;
     padding: 15px;
+    /* margin-top: 10px; */
 }
+
 .middle{
     /* border: 1px solid black; */
     /* width: 40%; */
@@ -54,11 +69,16 @@
     margin-left: 10%;
     padding: 15px;
 }
-.right{
-    /* width: 200px; */
+#right{
+    width: 300px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
     /* border: 1px solid black; */
-    margin-left: 15%;
-    padding: 15px;
+    margin-left: 65%;
+    margin-top: 15px;
+
+
 }
 .card {
     display: inline-block;
@@ -68,4 +88,12 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+    /* margin-top: 10px; */
 }
+img {
+    border-radius: 5px 5px 5px 5px;
+    justify-content: center;
+    max-height: 200px;
+    max-width: 260px;
+
+  }
