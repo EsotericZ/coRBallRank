@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { ODDS_HISTORY } from '../../graphql/queries/fetchPlayers';
+import { useState } from 'react';
 import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
 import './odds.css';
 
