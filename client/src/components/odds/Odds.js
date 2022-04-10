@@ -15,8 +15,8 @@ import './odds.css';
 import { alertClasses } from '@mui/material';
 
 const Odds = () => {
-    const {loading, data} = useQuery(ALL_PLAYERS);
-	const playerList = data?.allPlayers || [];
+    const { loading, data } = useQuery(ALL_PLAYERS);
+    const playerList = data?.allPlayers || [];
     const player2List = data?.allPlayers || [];
 
     const [player1, setPlayer1] = useState('');
@@ -48,8 +48,8 @@ const Odds = () => {
     const expected = (p1Rank, p2Rank) => {
         const player1Diff = (p1Rank - p2Rank);
         const player2Diff = (p2Rank - p1Rank);
-        const exp1 = 1/((Math.pow(10,(-player1Diff/400)))+1)
-        const exp2 = 1/((Math.pow(10,(-player2Diff/400)))+1)
+        const exp1 = 1 / ((Math.pow(10, (-player1Diff / 400))) + 1)
+        const exp2 = 1 / ((Math.pow(10, (-player2Diff / 400))) + 1)
         setExpPlayer1(exp1);
         setExpPlayer2(exp2);
     }
@@ -64,6 +64,7 @@ const Odds = () => {
         :
         <>
             <Nav />
+
             <div container className="odds">
                 <h1 >Player Odds</h1>
             <div className="player1" id="p1">
@@ -157,6 +158,7 @@ const Odds = () => {
             </Grid>
         </Box>
     </>
+
 };
 
 export default Odds;

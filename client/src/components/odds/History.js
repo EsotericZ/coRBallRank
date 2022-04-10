@@ -44,10 +44,17 @@ const History = ({p1, p2}) => {
         </>
         :
         <>
-            <h1 className="right">Match History</h1>
-            {results.map((match) => (
+            
+                
+            <div class="card" id="right">
+            <h2 className="right">Match History</h2>
+            <div className= "container">
+{results.map((match) => (
                 <Details match={match} />
             ))}
+
+            </div>
+        </div>
             
         </>
 };

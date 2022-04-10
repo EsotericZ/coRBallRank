@@ -1,6 +1,8 @@
 .logo {
     max-width:100px;
     overflow: hidden;
+    cursor: "pointer";
+    float: left;
     
 }
 .logInNav{
@@ -24,11 +26,14 @@
 }
 
 .avatar{
-  background-color:#BB371A ;
+  background-color:red ;
   float: right;
-  display: block;
+  display: flex;
+  justify-content: end;
+
 }
 .account{
     float: right;
-    display: block;
+    display: flex;
+    background-color:red;
 }
