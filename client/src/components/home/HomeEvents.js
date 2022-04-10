@@ -1,13 +1,28 @@
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { useQuery } from '@apollo/client';
+import { FETCH_EVENTS } from '../../graphql/queries/fetchEvents';
+import Complete from './Complete';
+import Upcoming from './Upcoming';
 
 const HomeEvents = () => {
-    return (
-        <div id="homeEvents">
-            <h1>Home Events</h1>
+    const { loading, data } = useQuery(FETCH_EVENTS);
+    const eventList = data?.tournaments || [];
 
-        </div>
-    )
+    const upcomingEvents = eventList.filter(event => event.status === 'future');
+    const completedEvents = eventList.filter(event => event.status === 'completed');
+
+    return loading ? 
+        <>
+            <h1>Loading...</h1>
+        </>
+        :
+        <>
+            <div id="homeEvents">
+                <h1>Upcoming Events</h1>
+                    <Upcoming events={upcomingEvents} />
+                <h1>Past Events</h1>
+                    <Complete events={completedEvents} />
+            </div>
+        </>
 };
-
 
 export default HomeEvents;
