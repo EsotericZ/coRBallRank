@@ -1,3 +1,5 @@
+import './home.css';
+
 const Upcoming = ({events}) => {
     return (
         <>
