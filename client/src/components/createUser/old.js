@@ -159,8 +159,9 @@ const CreateUser = () => {
                                 //     values?.password?.length === 0 || values?.email?.length === 0
                                 // }
                                 onClick={async () => {
-                                    await handleSubmit();
-                                    // form.reset();
+                                	await handleSubmit();
+								    form.reset();
+                                    console.log('click')
                                 }}>
                                 Submit
                             </Button>
