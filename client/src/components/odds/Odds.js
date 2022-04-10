@@ -121,10 +121,10 @@ const Odds = () => {
                 <Grid item xs={4}>
                     { show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null }
                 </Grid>
-                <Grid item xs={4}>
+                </Box>
+                <Grid className=""item xs={4}>
                     { show ? <History p1={player1} p2={player2} /> : null }
                 </Grid>
-                </Box>
             </Grid>
         </Box>
         </>
