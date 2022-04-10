@@ -8,17 +8,13 @@ const resolvers = {
 			return await User.findById(id).populate({path:"playerId"});
 		},
 		users: async (_root, _args, context) => {
-			// if (!context.req?.user) {
-			// 	throw new AuthenticationError('You must be logged in to do that');
-			// }
 			return await User.find({}).populate({path:"playerId"});
 		},
-		playerMatchHistory: async (_root, _args, context) => {
-			// return await PlayerHistory.findById(id).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
-			return await PlayerHistory.find({}).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
-		},
-		// player: async (_root, {id}) => {
-		// 	return await Player.findById(id);
+		// playerMatchHistory: async (_root, _args, context) => {
+		// 	return await PlayerHistory.find({}).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
+		// },
+		// oddsMatchHistory: async (_root, {id}) => {
+		// 	return await Player.findById(id).populate({path:"matchId"});
 		// },
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
@@ -45,7 +41,7 @@ const resolvers = {
 			return await Match.findById(id);
 		},
 		matches: async (_root, _args, context) => {
-			return await Match.find({}).populate({path:"winningPlayerId"}).populate({path:"losingPlayerId"});
+			return await Match.find({}).populate({path:"winningPlayerId"}).populate({path:"losingPlayerId"}).populate({path:"tournamentId"});
 		},
 		tournament: async (_root, {id}) => {
 			return await Tournament.findById(id);
@@ -86,9 +82,9 @@ const resolvers = {
 			});
 			console.log('Created Player', player)
 		},
-		createMatch: async (_root, {matchId, winningPlayerId, losingPlayerId, pointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
+		createMatch: async (_root, {winningPlayerId, losingPlayerId, pointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
 			const match = await Match.create({
-				matchId,
+				// matchId,
 				winningPlayerId,
 				losingPlayerId,
 				pointDifferential,

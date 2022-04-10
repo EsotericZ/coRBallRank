@@ -1,11 +1,10 @@
 import Nav from '../nav/Nav';
 import './history.css';
-import  rockies from "../../assets/cologo.png";
+// import  rockies from "../../assets/cologo.png";
 import { useState, useRef } from 'react';
 
 const INITIAL_HEIGHT = 46;
 const History = () => {
-
     const[isExpanded, setIsExpanded] = useState(false);
     const [commentValue, setCommentValue] = useState("");
 

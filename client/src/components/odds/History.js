@@ -1,33 +1,55 @@
 import { useQuery } from '@apollo/client';
+<<<<<<< HEAD
+import { useState } from 'react';
+import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
+=======
 import { ODDS_HISTORY } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
+>>>>>>> main
 
 const History = ({p1, p2}) => {
     const player1 = {p1};
-    const player1Info = player1.p1;
+    const player1Id = player1.p1;
     const player2 = {p2};
-    const player2Info = player2.p2;
-    console.log('hp1', player1Info)
-    console.log('hp2', player2Info)
-    // const {loading, data} = useQuery(FETCH_PLAYER, {
-    //     variables: {playerId: player2}
-    // });
-    // console.log(data)
+    const player2Id = player2.p2;
 
-    // return loading ?
-    //     <>
-    //         <h1>Loading...</h1>
-    //     </>
-    //     :
-    //     <>
-    //         <img src={data.player.avatar} alt="Porfile Pic" height="200" />
-    //         <h1>{data.player.fullName}</h1>
-    //         <h1>{data.player.singleRank}</h1>
-    //         <h1>{data.player.doubleRank}</h1>
-    //         <h1>{data.player.mixedRank}</h1>
-    //     </>
+    const {loading, data} = useQuery(ODDS_MATCHES);
+    const matchList = data?.matches || [];
+
+    const winner = matchList.filter(win => win.winningPlayerId._id === player1Id);
+    const winnerLoser = winner.filter(win => win.losingPlayerId._id === player2Id);
+
+    const loser = matchList.filter(lose => lose.losingPlayerId._id === player1Id);
+    const loserWinner = loser.filter(win => win.winningPlayerId._id === player2Id);
+
+    const resWL = [];
+    if (winnerLoser) {
+        winnerLoser.forEach(win => {
+            let matchDetails = [win.winningPlayerId.fullName, win.score, win.division, win.tournamentId.name];
+            resWL.push(matchDetails);
+        });
+    };
+
+    const resLW = [];
+    if (loserWinner) {
+        loserWinner.forEach(lose => {
+            let matchDetails = [lose.winningPlayerId.fullName, lose.score, lose.division, lose.tournamentId.name];
+            resLW.push(matchDetails);
+        });
+    };
+
+    const results = resWL.concat(resLW);
+    console.log(results);
+
     return (
+<<<<<<< HEAD
+        <>
+            <h1>I'm working on this Kirtley</h1>
+            <h1>{results[0]}</h1>
+        </>
+=======
         <h1 className="right">I'm working on this Kirtley</h1>
+>>>>>>> main
     )
 };
 
