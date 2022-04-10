@@ -12,6 +12,7 @@ import History from './History';
 import Nav from '../nav/Nav';
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
+import { alertClasses } from '@mui/material';
 
 const Odds = () => {
     const { loading, data } = useQuery(ALL_PLAYERS);
@@ -40,6 +41,10 @@ const Odds = () => {
         expected(p1SingleRank, p2SingleRank);
     }
 
+    const reset = () => {
+        setShow(false);
+    }
+
     const expected = (p1Rank, p2Rank) => {
         const player1Diff = (p1Rank - p2Rank);
         const player2Diff = (p2Rank - p1Rank);
@@ -59,98 +64,101 @@ const Odds = () => {
         :
         <>
             <Nav />
-            <div container className="odds" alignItems="center">
+
+            <div container className="odds">
                 <h1 >Player Odds</h1>
-                <div className="player1">
-                    <Grid item xs={5}>
-                        <FormControl id="player" sx={{ width: 400 }}>
-                            <InputLabel id="">Player 1</InputLabel>
-                            <Select
-                                labelId="playerl"
-                                id="player1"
-                                value={player1}
-                                onChange={handleChange1}
-                                fullWidth
-                                label="Player 1"
-                            >
-                                <MenuItem value="">Select Player 1</MenuItem>
-                                {playerList.map((player) => (
-                                    <MenuItem key={player._id} value={player._id}>
-                                        {player.fullName}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
+            <div className="player1" id="p1">
+                <Grid item xs={5}>
+                    <FormControl id="player"sx={{ width: 400 }}>
+                        <InputLabel id="">Player 1</InputLabel>
+                        <Select
+                            labelId="playerl"
+                            id="player1"
+                            value={player1}
+                            onChange={handleChange1}
+                            fullWidth
+                            label="Player 1"
+                        >
+                            <MenuItem value="">Select Player 1</MenuItem>
+                            {playerList.map((player) => (
+                                <MenuItem key={player._id} value={player._id}>
+                                    {player.fullName}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+            </div>
+            <div className="player2" id="p2">
+                <Grid item xs={5}>
+                    <FormControl id="player"sx={{ width: 400 }}>
+                        <InputLabel id="">Player 2</InputLabel>
+                        <Select
+                            labelId="player2"
+                            id="player2"
+                            value={player2}
+                            onChange={handleChange2}
+                            fullWidth
+                            label="Player 2"
+                        >
+                            <MenuItem value="">Select Player 2</MenuItem>
+                            {player2List.map((player2) => (
+                                <MenuItem key={player2._id} value={player2._id}>
+                                    {player2.fullName}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+            </div>
+            <div className="submit" id="submitBtn">
+                <button className="submit"
+                    onClick={() => {
+                        playerRanks();
+                        document.getElementById('p1').classList.toggle('hidden');
+                        document.getElementById('p2').classList.toggle('hidden');
+                        document.getElementById('submitBtn').classList.toggle('hidden');
+                        document.getElementById('resetBtn').classList.toggle('hidden');
+                    }}
+                >
+                    Click Me
+                </button>
+            </div>
+            <div container className="results">
+                <div className="left">
+                    { show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null }
                 </div>
-                <div className="player2">
-                    <Grid item xs={5}>
-                        <FormControl id="player" sx={{ width: 400 }}>
-                            <InputLabel id="">Player 2</InputLabel>
-                            <Select
-                                labelId="player2"
-                                id="player2"
-                                value={player2}
-                                onChange={handleChange2}
-                                fullWidth
-                                label="Player 2"
-                            >
-                                <MenuItem value="">Select Player 2</MenuItem>
-                                {player2List.map((player2) => (
-                                    <MenuItem key={player2._id} value={player2._id}>
-                                        {player2.fullName}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </Grid>
+                <div className="middle">
+                    { show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null }
                 </div>
-                <div className="submit">
-                    <button 
-                        onClick={() => {
-                            console.log('clicked!')
-                            playerRanks();
-                            console.log(show)
-                        }}
-                    >
-                        Click Me
-                    </button>
-                </div>
-                <div container className="results">
-                    <div className="left">
-                        {/* <Box className="">
-        <Grid className=""item> */}
-                        {show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null}
-                        {/* </Grid>
-        </Box> */}
-                    </div>
-                    <div className="middle">
-                        {/* <Box className="">
-        <Grid className="" item> */}
-                        {show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null}
-                        {/* </Grid>
-        </Box> */}
-                    </div>
-                    <div className="right">
-                        {/* <Box className="">
-        <Grid className=""item> */}
-                        {show ? <History p1={player1} p2={player2} /> : null}
-                        {/* </Grid>
-        </Box> */}
-                    </div>
+                <div className="right">
+                    { show ? <History p1={player1} p2={player2} /> : null }
                 </div>
             </div>
-            {/* </div> */}
+            <div className="submit hidden" id="resetBtn">
+                <button className="submit"
+                    onClick={() => {
+                        reset();
+                        document.getElementById('p1').classList.toggle('hidden');
+                        document.getElementById('p2').classList.toggle('hidden');
+                        document.getElementById('submitBtn').classList.toggle('hidden');
+                        document.getElementById('resetBtn').classList.toggle('hidden');
+                    }}
+                >
+                    Try Again!
+                </button>
+            </div>
+        </div>  
+        <Box display="flex"sx={{ flexGrow: 1 }}>
+            <Grid justify="center" container spacing={1}>
+                <Box className="left">
+                </Box>
+                <Box className="right">
+                </Box>
+            </Grid>
+        </Box>
+    </>
 
-            {/* <Box display="flex" sx={{ flexGrow: 1 }}>
-                <Grid justify="center" container spacing={1}>
-                    <Box className="left">
-                    </Box>
-                    <Box className="right">
-                    </Box>
-                </Grid>
-            </Box> */}
-        </>
 };
 
 export default Odds;
