@@ -3,7 +3,7 @@ import './history.css';
 import { Row, Col, Container, Dropdown, OverlayTrigger, Tooltip, Modal} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Card from '../../components/Card'
-import CustomToggle from '../../components/dropdowns'
+import CustomToggle from '../dropdown'
 import ShareOffcanvas from '../share-offcanvas'
 import { useState } from 'react';
 import  rockies from "../../assets/cologo.png";

@@ -1,4 +1,4 @@
-
+import CREATE_USER from '../../graphql/mutations/createUser'
 // export const CreateUser = () => {
 // 	const [createMutation,] = useMutation(CREATE_USER);
 // 	const navigate = useNavigate();
@@ -99,14 +99,6 @@
 // 		/>
 // 	)
 // }
-
-
-
-
-
-
-
-
 
 onSubmit={async (values) => {
 
