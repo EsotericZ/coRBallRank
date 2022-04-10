@@ -65,7 +65,7 @@ const Odds = () => {
         <>
             <Nav />
 
-            <div container className="odds">
+            <div container className="odds" alignItems="center">
                 <h1 >Player Odds</h1>
             <div className="player1" id="p1">
                 <Grid item xs={5}>
@@ -135,8 +135,9 @@ const Odds = () => {
                     { show ? <History p1={player1} p2={player2} /> : null }
                 </div>
             </div>
-            <div className="submit hidden" id="resetBtn">
-                <button className="submit"
+        <div className="reset">
+            <div className="reset hidden" id="resetBtn">
+                <button className="resetBtn"
                     onClick={() => {
                         reset();
                         document.getElementById('p1').classList.toggle('hidden');
@@ -148,15 +149,16 @@ const Odds = () => {
                     Try Again!
                 </button>
             </div>
+        </div>
         </div>  
-        <Box display="flex"sx={{ flexGrow: 1 }}>
+        {/* <Box display="flex"sx={{ flexGrow: 1 }}>
             <Grid justify="center" container spacing={1}>
                 <Box className="left">
                 </Box>
                 <Box className="right">
                 </Box>
             </Grid>
-        </Box>
+        </Box> */}
     </>
 
 };
