@@ -106,8 +106,7 @@ const Odds = () => {
     </Grid>
   </div>
   <div className="submit">
-    <Grid id="player"item xs={2}>
-    <button id="playerBtn"
+    <button className="submit"
         onClick={() => {
             console.log('clicked!')
             playerRanks();
@@ -116,29 +115,28 @@ const Odds = () => {
     >
         Click Me
     </button>
-    </Grid>
   </div>
   <div container className="results">
     <div className="left">
-        <Box className="">
-        <Grid className=""item>
+        {/* <Box className="">
+        <Grid className=""item> */}
             { show ? <PlayerSelector player={player1} winChance={expPlayer1} /> : null }
-        </Grid>
-        </Box>
+        {/* </Grid>
+        </Box> */}
     </div>
     <div className="middle">
-        <Box className="">
-        <Grid className="" item>
+        {/* <Box className="">
+        <Grid className="" item> */}
             { show ? <PlayerSelector player={player2} winChance={expPlayer2} /> : null }
-        </Grid>
-        </Box>
+        {/* </Grid>
+        </Box> */}
     </div>
     <div className="right">
-        <Box className="">
-        <Grid className=""item>
+        {/* <Box className="">
+        <Grid className=""item> */}
             { show ? <History p1={player1} p2={player2} /> : null }
-        </Grid>
-        </Box>
+        {/* </Grid>
+        </Box> */}
     </div>
   </div>
 </div>  
