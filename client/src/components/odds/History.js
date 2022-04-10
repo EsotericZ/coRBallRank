@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
 import Details from './Details';
 import './odds.css';

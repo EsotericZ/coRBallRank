@@ -5,40 +5,50 @@
     justify-content: center;
     margin-left: auto;
     margin-right:auto;
-        margin-top: 50px;
-  }
-  h1{
+    margin-top: 50px;
+}
+
+h1 {
     display: flex;
     text-align: center;
     justify-content: center;
     /* margin-left: 50%; */
 }
-  .player1 {
+
+.player1 {
     border: 1px black solid;
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10%;
     margin-top: 50px;
-  }
-  .player2{
+}
+
+.player2 {
     border: 1px black solid;
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10px;
+}
 
-  }
-  .submit{
-      display: inline-flex;
-      margin-left: 20px;
-      /* width: 150px; */
-      padding: 10px;
-      font-size: 18px;
-  }
-.results{
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.submit {
+    display: inline-flex;
+    margin-left: 20px;
+    /* width: 150px; */
+    padding: 10px;
+    font-size: 18px;
+}
+
+.results {
     display: inline-flex;
     justify-content: center;
 }
-.card{
+
+.card {
     /* border: 1px solid black; */
     /* width: 40%; */
     display: inline-block;
@@ -46,7 +56,8 @@
     margin-left: 55%;
     padding: 15px;
 }
-.middle{
+
+.middle {
     /* border: 1px solid black; */
     /* width: 40%; */
     display: inline-block;
@@ -54,12 +65,14 @@
     margin-left: 10%;
     padding: 15px;
 }
-.right{
+
+.right {
     /* width: 200px; */
     /* border: 1px solid black; */
     margin-left: 15%;
     padding: 15px;
 }
+
 .card {
     display: inline-block;
     justify-content: center;
@@ -69,3 +82,7 @@
     transition: 0.3s;
     border-radius: 5px;
 }
+
+/* #player1 {
+    display: hidden;
+} */
