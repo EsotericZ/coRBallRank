@@ -14,6 +14,7 @@ img {
     text-align: center;
     padding: 30px;
 }
+
 .homeRankings{
     /* height: 500px; */
     line-height: 1;
@@ -62,6 +63,18 @@ img {
     margin-bottom: 20px;
     font-weight: bold;
 }
+
+.card {
+    display: inline-block;
+    justify-content: center;
+    /* margin-left: 65%; */
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+}
+
 
 /* =================================================================
 MEDIA QUERIES (MEDIUM)
