@@ -3,6 +3,8 @@ import './home.css';
 const Upcoming = ({events}) => {
     return (
         <>
+        <div class="card" id="right">
+            
             {events.map((event) => (
                 <>
                     <img src={event.image} alt="Event Pic" height="200" />
@@ -12,6 +14,7 @@ const Upcoming = ({events}) => {
                     Event Information <a href={event.link} target="_blank">Here</a>
                 </>
             ))}
+            </div>
         </>
     )
 };

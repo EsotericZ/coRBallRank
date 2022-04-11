@@ -49,8 +49,8 @@ const Odds = () => {
     const expected = (p1Rank, p2Rank) => {
         const player1Diff = (p1Rank - p2Rank);
         const player2Diff = (p2Rank - p1Rank);
-        const exp1 = 1 / ((Math.pow(10, (-player1Diff / 400))) + 1)
-        const exp2 = 1 / ((Math.pow(10, (-player2Diff / 400))) + 1)
+        const exp1 = (1 / ((Math.pow(10, (-player1Diff / 400))) + 1))*100
+        const exp2 = (1 / ((Math.pow(10, (-player2Diff / 400))) + 1))*100
         setExpPlayer1(exp1);
         setExpPlayer2(exp2);
     }
