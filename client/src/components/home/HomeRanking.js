@@ -67,7 +67,7 @@ const HomeRanking = () => {
             <Box sx={{ textAlign: 'center', borderColor: 'divider', padding: 'none'}} className="rankings">
                 Current Top 10
             </Box>
-            <Box sx={{ width: '100%', typography: 'body1' }}>
+            <Box sx={{ width: '100%',  }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap'  }}>
                         <TabList onChange={handleChange} aria-label="wrapped label tabs" className="tabs">
