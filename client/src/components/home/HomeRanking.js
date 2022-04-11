@@ -1,8 +1,13 @@
 import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-//import './home.css';
 import Nav from '../nav/Nav';
+import MS_IMG from '../../assets/MSINGLE.PNG';
+import MD_IMG from '../../assets/MDOUBLE.PNG';
+import FS_IMG from '../../assets/FSINGLE.PNG';
+import FD_IMG from '../../assets/FDOUBLE.PNG';
+import MIX_IMG from '../../assets/MIX.PNG';
+import './home.css';
 
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -16,6 +21,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import Avatar from '@mui/material/Avatar';
 import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 const HomeRanking = () => {
@@ -71,25 +77,20 @@ const HomeRanking = () => {
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap'  }}>
                         <TabList onChange={handleChange} aria-label="wrapped label tabs" className="tabs">
-                            <Tab className="tab"
-                            label="Male's Singles" 
-                            value="1"
-                            scrollButtons='auto'
-                            wrapped 
-                            />
-                            <Tab className="tab" label="Male's Doubles" value="2"  wrapped/>
-                            <Tab className="tab" label="Women's Singles" value="3" wrapped/>
-                            <Tab className="tab" label="Women's Doubles" value="4" wrapped/>
-                            <Tab className="tab" label="Mixed Doubles" value="5" wrapped/>
+                            <Tab className="tab" icon={<Avatar src={MS_IMG} />} value="1" wrapped />
+                            <Tab className="tab" icon={<Avatar src={MD_IMG} variant='square' sx={{ width: 60 }} />} value="2" wrapped />
+                            <Tab className="tab" icon={<Avatar src={FS_IMG} />} value="3" wrapped />
+                            <Tab className="tab" icon={<Avatar src={FD_IMG} variant='square' sx={{ width: 60 }} />} value="4" wrapped />
+                            <Tab className="tab" icon={<Avatar src={MIX_IMG} variant='square' sx={{ width: 60 }} />} value="5" wrapped />
                         </TabList>
                     </Box>
                     <TabPanel value="1">
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className='titles'>
-                                    <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center" >Name</TableCell>
-                                    <TableCell align="center" >Level</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody >
@@ -111,9 +112,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center">Name</TableCell>
-                                    <TableCell align="center">Level</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -134,9 +135,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center">Name</TableCell>
-                                    <TableCell align="center">Level</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -157,9 +158,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center">Name</TableCell>
-                                    <TableCell align="center">Level</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -180,9 +181,9 @@ const HomeRanking = () => {
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="center">Rank</TableCell>
-                                    <TableCell align="center">Name</TableCell>
-                                    <TableCell align="center">Level</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Level</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
