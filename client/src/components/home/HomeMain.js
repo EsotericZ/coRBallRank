@@ -1,14 +1,12 @@
-// import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import PDF from '../../../src/assets/2020SINGLES.png';
+import IMG from '../../../src/assets/SINGLES2022.PNG';
 
 const HomeMain = () => {
     return (
         <div>
             <h1>Home Main </h1>
-            <img src={PDF} alt="Singles" />
+            <img src={IMG} alt="Singles" />
         </div>
     )
 };
-
 
 export default HomeMain;

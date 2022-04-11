@@ -1,0 +1,19 @@
+footer {
+    background: var(--color-nav);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.permalinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto 25px;
+}
+
+/* .copyright { */
+    /* margin-bottom: 20px; */
+/* } */

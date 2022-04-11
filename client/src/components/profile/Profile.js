@@ -16,7 +16,7 @@ const Profile = () => {
     const player = jwt_decode(token);
     const playerId = player.data._id;
 
-    const {loading, data} = useQuery(FETCH_USER, {
+    const { loading, data } = useQuery(FETCH_USER, {
         variables: {userId: playerId}
     });
 
