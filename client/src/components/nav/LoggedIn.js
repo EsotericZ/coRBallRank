@@ -82,7 +82,7 @@ function LoggedIn() {
         ) : (
 
           <div className={classes.navlinks}>
-            <Box display="flex" sx={{width:900}} justifyContent="space-between">
+            <Box display="flex" sx={{width:1400}} justifyContent="space-between">
               <div>
               <Link to="/home" className={classes.link} id="home">
                 Home
