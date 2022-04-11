@@ -10,6 +10,7 @@ export const FETCH_USER = gql`
             club
             location
             playerId {
+                _id
                 fullName
                 singleRank
                 doubleRank
