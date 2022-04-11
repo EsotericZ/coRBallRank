@@ -1,3 +1,7 @@
+img {
+    width: 350%;
+    /* height: 350%; */
+}
 
 #homeEvents {
     direction: row-reverse;

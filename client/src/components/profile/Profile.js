@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import PHOTO from '../../assets/photo.png';
+// import PHOTO from '../../assets/photo.png';
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import Nav from '../nav/Nav';
