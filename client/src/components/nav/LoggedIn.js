@@ -1,4 +1,7 @@
-import React from "react";
+// import React from "react";
+import { useQuery } from '@apollo/client';
+import { useState } from 'react';
+import jwt_decode from 'jwt-decode';
 import {
   AppBar,
   Toolbar,
@@ -19,6 +22,7 @@ import IconButton from '@mui/material/IconButton';
 import DrawerComponent from "./LoggedInDrawer";
 import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
+import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import rockies from "../../assets/cologo.png";
 import './loggedIn.css'
 
@@ -58,10 +62,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoggedIn() {
+  const token = window.localStorage.getItem("token");
+  const player = jwt_decode(token);
+  const playerId = player.data._id;
+
+  const { loading, data } = useQuery(FETCH_USER, {
+      variables: {userId: playerId}
+  });
+
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(("md"));
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -70,7 +82,10 @@ function LoggedIn() {
     setAnchorEl(null);
   };
 
-  return (
+  return loading ?
+    <>
+    </>
+    :
     <AppBar position="static" className="logInNav">
       <CssBaseline className="logInNav" />
       <Toolbar className="logInNav" sx={{width:"600px"}}>
@@ -110,7 +125,7 @@ function LoggedIn() {
                   aria-haspopup="true"
                   aria-expanded={open ? 'true' : undefined}
                 >
-                  <Avatar className="avatar" sx={{ width: 32, height: 32 }}>M</Avatar>
+                  <Avatar className="avatar" sx={{ width: 52, height: 52 }} src={data.user.playerId.avatar}></Avatar>
                 </IconButton>
               </Tooltip>
             </Box>
@@ -177,6 +192,6 @@ function LoggedIn() {
         )}
       </Toolbar>
     </AppBar>
-  );
+  // );
 }
 export default LoggedIn;
