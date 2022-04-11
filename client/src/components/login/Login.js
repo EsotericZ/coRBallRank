@@ -2,6 +2,7 @@ import { Form, Field } from 'react-final-form';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { LOGIN } from '../../graphql/mutations/login';
+import './login.css';
 
 const Login = () => {
 	const [loginMutation,] = useMutation(LOGIN);
@@ -28,11 +29,11 @@ const Login = () => {
 			render={({values, handleSubmit, form}) => {
 
 				return (
-					<div>
+					<div className='login'>
 						<Field className="email"
 							name='email'
 							component='input'
-							margin="dense"
+							
 						/>
 						<Field className="pass"
 							name='password'
@@ -40,7 +41,7 @@ const Login = () => {
 							type='password'
 							margin="dense"
 						/>
-						<button type="submit"
+						<button type="submit" className="loginBtn"
 							// disabled={
 							// 	values?.password?.length === 0 || values?.email?.length === 0
 							// }
@@ -48,7 +49,7 @@ const Login = () => {
 								await handleSubmit();
 								form.reset();
 							}}>
-							Submit
+							LOGIN
 						</button>
 					</div>
 				)
