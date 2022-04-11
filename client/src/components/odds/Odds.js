@@ -10,6 +10,7 @@ import InputLabel from '@mui/material/InputLabel';
 import PlayerSelector from './PlayerSelector';
 import History from './History';
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
 import { alertClasses } from '@mui/material';
@@ -150,7 +151,8 @@ const Odds = () => {
                 </button>
             </div>
         </div>
-        </div>  
+        </div> 
+        <Footer />
         {/* <Box display="flex"sx={{ flexGrow: 1 }}>
             <Grid justify="center" container spacing={1}>
                 <Box className="left">

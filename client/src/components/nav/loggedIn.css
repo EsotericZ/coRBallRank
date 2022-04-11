@@ -14,9 +14,10 @@
 }
 #home,
 #ranking,
-#events,
+/* #events, */
 #history,
-#odds{
+#odds,
+#contact {
     display: block;
     float: left;
     font-size: 20px;

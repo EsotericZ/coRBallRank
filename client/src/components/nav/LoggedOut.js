@@ -86,14 +86,17 @@ function LoggedOut() {
               <Link to="/ranking" className={classes.link} id="ranking">
                 Ranking
               </Link>
-              <Link to="/events" className={classes.link} id="events">
+              {/* <Link to="/events" className={classes.link} id="events">
                 Events
-              </Link>
+              </Link> */}
               <Link to="/history" className={classes.link} id="history">
                 History
               </Link>
               <Link to="/odds" className={classes.link} id="odds">
                 Odds
+              </Link>
+              <Link to="/contact" className={classes.link} id="contact">
+                Contact
               </Link>
               <Link to="/create" className={classes.link} id="signUp">
                 Sign Up
