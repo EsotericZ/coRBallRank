@@ -34,7 +34,7 @@ img {
     flex-wrap: wrap;
     overflow-wrap: break-word;
     inline-size: auto;
-    max-width: 120px;
+    max-width: 15px;
     max-height: 15px;
 }
 .tabs {
@@ -42,7 +42,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     inline-size: auto;
-    padding: 0;
+    padding: 0 auto;
     margin: 0 auto;
     overflow-wrap: break-word;
     max-width: fit-content;
@@ -50,7 +50,8 @@ img {
 }
 
 .titles{
-    background-color: #D5DBB3;
+    /* background-color: #D5DBB3; */
+    font-weight: bold;
     padding: 0;
 
 }

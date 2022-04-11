@@ -85,7 +85,7 @@ const CreateUser = () => {
                         <Typography component="h1" variant="h5">
                             Sign up
                         </Typography>
-                        <form noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                        <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
