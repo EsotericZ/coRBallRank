@@ -30,16 +30,19 @@ const Login = () => {
 
 				return (
 					<div className='login'>
-						<Field className="email"
+						<Field 
+							className="email"
 							name='email'
 							component='input'
-							
+							placeholder='Email'
 						/>
-						<Field className="pass"
+						<Field 
+							className="pass"
 							name='password'
 							component='input'
 							type='password'
 							margin="dense"
+							placeholder='Password'
 						/>
 						<button type="submit" className="loginBtn"
 							// disabled={
@@ -49,7 +52,7 @@ const Login = () => {
 								await handleSubmit();
 								form.reset();
 							}}>
-							LOGIN
+							Login
 						</button>
 					</div>
 				)

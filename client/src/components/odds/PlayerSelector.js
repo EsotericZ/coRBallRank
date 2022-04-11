@@ -21,7 +21,7 @@ const PlayerSelector = ({player, winChance}) => {
             <h3>Single Rank: {data.player.singleRank}</h3>
             <h3>Double Rank: {data.player.doubleRank}</h3>
             <h3>Mixed Rank: {data.player.mixedRank}</h3>
-            <h4>Win Chance: {winChance}</h4>
+            <h4>Win Chance: {winChance.toFixed(0)}%</h4>
             </div>
         </div>
 };
