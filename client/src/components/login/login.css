@@ -1,13 +1,9 @@
 .email,
 .pass {
-
-    /* margin-left: 100px; */
-    padding: 25px;
-    background-color: red;
+    padding: 5px;
+    margin: 10px;
+    width: 150px;
 }
-
-.login {
-
-    
-
+.loginBtn{
+    padding:5px
 }

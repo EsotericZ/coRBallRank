@@ -15,13 +15,13 @@ const PlayerSelector = ({player, winChance}) => {
         </>
         :
         <div class="card">
-            <img src={data.player.avatar} alt="Porfile Pic" height="200" />
+            <img src={data.player.avatar} alt="Porfile Pic" height="200"className="img" />
             <div className= "container">
             <h1>{data.player.fullName}</h1>
-            <h1>{data.player.singleRank}</h1>
-            <h1>{data.player.doubleRank}</h1>
-            <h1>{data.player.mixedRank}</h1>
-            <h1>{winChance}</h1>
+            <h3>Single Rank: {data.player.singleRank}</h3>
+            <h3>Double Rank: {data.player.doubleRank}</h3>
+            <h3>Mixed Rank: {data.player.mixedRank}</h3>
+            <h4>Win Chance: {winChance}</h4>
             </div>
         </div>
 };

@@ -99,8 +99,8 @@ const Ranking = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className="tab1">
-                                    <TableCell>Rank</TableCell>
-                                    <TableCell align="right">Name</TableCell>
+                                    <TableCell sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="right"sx={{ fontWeight: 'bold' }}>Name</TableCell>
                                     <TableCell align="right">Level</TableCell>
                                     <TableCell align="right">Location</TableCell>
                                     <TableCell align="right">More</TableCell>

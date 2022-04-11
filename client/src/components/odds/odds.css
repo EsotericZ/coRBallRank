@@ -93,9 +93,10 @@ h1 {
     /* margin-top: 10px; */
 }
 
-img {
+.img {
     border-radius: 5px 5px 5px 5px;
     justify-content: center;
+    display: flex;
     max-height: 200px;
     max-width: 260px;
 }
@@ -109,4 +110,14 @@ img {
     height: 35px;
     width: 150px;
     margin-bottom: 10px;
+}
+h3 {
+    display: flex;
+    justify-content: center;
+}
+h4 {
+    padding-top: 10px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
