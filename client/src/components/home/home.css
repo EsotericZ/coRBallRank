@@ -12,12 +12,20 @@
     text-align: center;
     padding: 30px;
 }
+.homeRankings{
+    /* height: 500px; */
+    line-height: 1;
+    padding: 0;
+    margin: 0;
 
+    /* background-color: pink; */
+}
 .rankings {
     font-size: 30px;
     /* py: 30px; */
     /* margin-bottom: 30px; */
     padding: 0;
+    padding-top: 15px;
 }
 .tab {
     padding: 0;
@@ -26,6 +34,7 @@
     overflow-wrap: break-word;
     inline-size: auto;
     max-width: 120px;
+    max-height: 15px;
 }
 .tabs {
     font-size: 20px;
@@ -36,10 +45,13 @@
     margin: 0 auto;
     overflow-wrap: break-word;
     max-width: fit-content;
+    height: 15px;
 }
 
-.tablerow{
-    /* background-color: palegoldenrod; */
+.titles{
+    background-color: #D5DBB3;
+    padding: 0;
+
 }
 
 .rankLink {

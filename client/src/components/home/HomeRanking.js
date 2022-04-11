@@ -62,13 +62,14 @@ const HomeRanking = () => {
             <h1>Loading...</h1>
         </>
         :
-        <TableContainer component={Paper}>
-            <Box sx={{ textAlign: 'center', borderColor: 'divider' }} className="rankings">
+        <TableContainer  component={Paper}>
+            <Box className='homeRankings'>
+            <Box sx={{ textAlign: 'center', borderColor: 'divider', padding: 'none'}} className="rankings">
                 Current Top 10
             </Box>
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap' }}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider', flexWrap: 'wrap'  }}>
                         <TabList onChange={handleChange} aria-label="wrapped label tabs" className="tabs">
                             <Tab className="tab"
                             label="Male's Singles" 
@@ -85,7 +86,7 @@ const HomeRanking = () => {
                     <TabPanel value="1">
                         <Table sx={{ minWidth: 100 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow>
+                                <TableRow className='titles'>
                                     <TableCell align="center">Rank</TableCell>
                                     <TableCell align="center" >Name</TableCell>
                                     <TableCell align="center" >Level</TableCell>
@@ -200,6 +201,7 @@ const HomeRanking = () => {
                     </TabPanel>
                 </TabContext>
                 <Link to='/ranking' className='rankLink'>Full Rankings</Link>
+            </Box>
             </Box>
         </TableContainer>
 }
