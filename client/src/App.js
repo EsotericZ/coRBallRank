@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/home/Home';
-import Ranking from './components/ranking/Ranking';
 import CreateUser from './components/createUser/CreateUser';
-import Profile  from './components/profile/Profile';
-import Odds from './components/odds/Odds';
+import Contact from './components/contact/Contact';
 import Events from './components/events/Events';
 import History from './components/history/History';
+import Home from './components/home/Home';
+import Odds from './components/odds/Odds';
+import Profile  from './components/profile/Profile';
+import Ranking from './components/ranking/Ranking';
 
 // THIS IS A TEST PAGE DELETE IT WHEN DONE WITH IT 
 import Users from './users/Users';
@@ -48,9 +49,13 @@ const App = () => {
             element={<History />}
           >
           </Route>
-          <Route
+          {/* <Route
             path='/events'
             element={<Events />}
+          > */}
+          <Route
+            path='/contact'
+            element={<Contact />}
           >
           </Route>
       </Routes>

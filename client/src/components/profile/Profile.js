@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 import './profile.css';
 
 const Profile = () => {
@@ -97,6 +98,7 @@ return loading ?
             </Grid>
         </CardContent>
         </Card>
+        <Footer />
     </div>
 }
 
