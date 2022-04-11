@@ -249,7 +249,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 01
@@ -262,7 +262,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 02
@@ -275,7 +275,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 03
@@ -288,7 +288,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 04
@@ -301,7 +301,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 05
@@ -314,7 +314,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 06
@@ -327,7 +327,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 07
@@ -340,7 +340,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 08
@@ -353,7 +353,7 @@ db.once('open', async () => {
             division: 'Open',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 09
@@ -366,7 +366,7 @@ db.once('open', async () => {
             division: 'Open Consolation',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 10
@@ -379,7 +379,7 @@ db.once('open', async () => {
             division: 'Open Consolation',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 11
@@ -392,7 +392,7 @@ db.once('open', async () => {
             division: 'Open Consolation',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
         },
         {
             // 12
@@ -405,32 +405,58 @@ db.once('open', async () => {
             division: 'Open Consolation',
             status: 'completed',
             tournamentId: tournaments[0]._id,
-            matchType: 'singles',
+            matchType: 'Singles',
+        },
+        {
+            // 13
+            matchId: 'cMO1a',
+            winningPlayerId: players[1]._id,
+            losingPlayerId: players[4]._id,
+            pointDifferential: 15,
+            score: '15-2, 15-13',
+            tieBreaker: false,
+            division: 'Test Match',
+            status: 'completed',
+            tournamentId: tournaments[0]._id,
+            matchType: 'Singles',
+        },
+        {
+            // 14
+            matchId: 'cMO1b',
+            winningPlayerId: players[1]._id,
+            losingPlayerId: players[4]._id,
+            pointDifferential: 20,
+            score: '15-5, 15-5',
+            tieBreaker: true,
+            division: 'Test Match 2',
+            status: 'completed',
+            tournamentId: tournaments[0]._id,
+            matchType: 'Singles',
         },
     ]);
 
     console.log('Matches Seeded')
     
-    await PlayerHistory.deleteMany();
+    // await PlayerHistory.deleteMany();
 
-    const playerHistory = await PlayerHistory.insertMany([
-        {
-            // CJ SANDERS
-            playerId: players[1]._id,
-            matchesWon: [
-                {
-                    matches: [matches[9]._id, matches[11]._id, matches[12]._id]
-                }
-            ],
-            matchesLost: [
-                {
-                    matches: [matches[5]._id,]
-                }
-            ],
-        },
-    ]);
+    // const playerHistory = await PlayerHistory.insertMany([
+    //     {
+    //         // CJ SANDERS
+    //         playerId: players[1]._id,
+    //         matchesWon: [
+    //             {
+    //                 matches: [matches[9]._id, matches[11]._id, matches[12]._id, matches[13]._id, matches[14]._id]
+    //             }
+    //         ],
+    //         matchesLost: [
+    //             {
+    //                 matches: [matches[5]._id,]
+    //             }
+    //         ],
+    //     },
+    // ]);
 
-    console.log('Player Match History Seeded')
+    // console.log('Player Match History Seeded')
 
     process.exit();
 });
