@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { useState } from 'react';
 import './ranking.css';
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -52,41 +53,82 @@ const Ranking = () => {
             <h1>Loading...</h1>
         </>
         :
-
-        <TableContainer component={Paper} className="rankPage">
-            <Nav />
-            <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
-                Current Rankings
-            </Box>
-            <Box sx={{ width: '100%', typography: 'body1' }}>
-                <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
-                            <Tab label="Male's Singles" value="1" />
-                            <Tab label="Male's Doubles" value="2" />
-                            <Tab label="Women's Singles" value="3" />
-                            <Tab label="Women's Doubles" value="4" />
-                            <Tab label="Mixed Doubles" value="5" />
-                        </TabList>
-                    </Box>
-                    <TabPanel value="1">
-                    {/* <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={msList.map((option) => option.fullName)}
-                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
-                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
-                                <TextField
-                                    {...params} 
-                                    label="Search" 
-                                    sx={{ width: 300, textIndent: 30 }}
-                                    style={{ textIndent: 30 }}
-                                />
-                            </div>}
-                        /> */}
+        <>
+            <TableContainer component={Paper} className="rankPage">
+                <Nav />
+                <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
+                    Current Rankings
+                </Box>
+                <Box sx={{ width: '100%', typography: 'body1' }}>
+                    <TabContext value={value}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                            <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
+                                <Tab label="Male's Singles" value="1" />
+                                <Tab label="Male's Doubles" value="2" />
+                                <Tab label="Women's Singles" value="3" />
+                                <Tab label="Women's Doubles" value="4" />
+                                <Tab label="Mixed Doubles" value="5" />
+                            </TabList>
+                        </Box>
+                        <TabPanel value="1">
+                        {/* <Autocomplete
+                                id="free-solo-demo"
+                                freeSolo
+                                options={msList.map((option) => option.fullName)}
+                                renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                    <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                    <TextField
+                                        {...params} 
+                                        label="Search" 
+                                        sx={{ width: 300, textIndent: 30 }}
+                                        style={{ textIndent: 30 }}
+                                    />
+                                </div>}
+                            /> */}
+                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow className="tab1">
+                                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
+                                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
+                                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {msList.map((player, index) => (
+                                        <TableRow
+                                            key={player._id}
+                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        >
+                                            <TableCell align="center">{index + 1}</TableCell>
+                                            <TableCell align="center">{player.fullName}</TableCell>
+                                            <TableCell align="center">{player.singleRank}</TableCell>
+                                            <TableCell align="center">{player.birthday}</TableCell>
+                                            <TableCell align="center">{player.gender}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TabPanel>
+                        <TabPanel value="2">
+                            {/* <Autocomplete
+                                id="free-solo-demo"
+                                freeSolo
+                                options={mdList.map((option) => option.fullName)}
+                                renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                    <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                    <TextField
+                                        {...params} 
+                                        label="Search" 
+                                        sx={{ width: 300, textIndent: 30 }}
+                                        style={{ textIndent: 30 }}
+                                    />
+                                </div>}
+                            /> */}
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow className="tab1">
+                                <TableRow>
                                     <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
                                     <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
                                     <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
@@ -95,7 +137,48 @@ const Ranking = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {msList.map((player, index) => (
+                                {mdList.map((player, index) => (
+                                    <TableRow
+                                        key={player._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.doubleRank}</TableCell>
+                                        <TableCell align="center">{player.birthday}</TableCell>
+                                        <TableCell align="center">{player.gender}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TabPanel>
+                    <TabPanel value="3">
+                    {/* <Autocomplete
+                                id="free-solo-demo"
+                                freeSolo
+                                options={fsList.map((option) => option.fullName)}
+                                renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                    <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                    <TextField
+                                        {...params} 
+                                        label="Search" 
+                                        sx={{ width: 300, textIndent: 30 }}
+                                        style={{ textIndent: 30 }}
+                                    />
+                                </div>}
+                            /> */}
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {fsList.map((player, index) => (
                                     <TableRow
                                         key={player._id}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -110,173 +193,93 @@ const Ranking = () => {
                             </TableBody>
                         </Table>
                     </TabPanel>
-                    <TabPanel value="2">
-                        {/* <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={mdList.map((option) => option.fullName)}
-                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
-                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
-                                <TextField
-                                    {...params} 
-                                    label="Search" 
-                                    sx={{ width: 300, textIndent: 30 }}
-                                    style={{ textIndent: 30 }}
-                                />
-                            </div>}
-                        /> */}
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {mdList.map((player, index) => (
-                                <TableRow
-                                    key={player._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell align="center">{index + 1}</TableCell>
-                                    <TableCell align="center">{player.fullName}</TableCell>
-                                    <TableCell align="center">{player.doubleRank}</TableCell>
-                                    <TableCell align="center">{player.birthday}</TableCell>
-                                    <TableCell align="center">{player.gender}</TableCell>
+                    <TabPanel value="4">
+                    {/* <Autocomplete
+                                id="free-solo-demo"
+                                freeSolo
+                                options={fdList.map((option) => option.fullName)}
+                                renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                    <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                    <TextField
+                                        {...params} 
+                                        label="Search" 
+                                        sx={{ width: 300, textIndent: 30 }}
+                                        style={{ textIndent: 30 }}
+                                    />
+                                </div>}
+                            /> */}
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabPanel>
-                <TabPanel value="3">
-                {/* <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={fsList.map((option) => option.fullName)}
-                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
-                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
-                                <TextField
-                                    {...params} 
-                                    label="Search" 
-                                    sx={{ width: 300, textIndent: 30 }}
-                                    style={{ textIndent: 30 }}
-                                />
-                            </div>}
-                        /> */}
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {fsList.map((player, index) => (
-                                <TableRow
-                                    key={player._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell align="center">{index + 1}</TableCell>
-                                    <TableCell align="center">{player.fullName}</TableCell>
-                                    <TableCell align="center">{player.singleRank}</TableCell>
-                                    <TableCell align="center">{player.birthday}</TableCell>
-                                    <TableCell align="center">{player.gender}</TableCell>
+                            </TableHead>
+                            <TableBody>
+                                {fdList.map((player, index) => (
+                                    <TableRow
+                                        key={player._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.doubleRank}</TableCell>
+                                        <TableCell align="center">{player.birthday}</TableCell>
+                                        <TableCell align="center">{player.gender}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TabPanel>
+                    <TabPanel value="5">
+                    {/* <Autocomplete
+                                id="free-solo-demo"
+                                freeSolo
+                                options={mixList.map((option) => option.fullName)}
+                                renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
+                                    <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
+                                    <TextField
+                                        {...params} 
+                                        label="Search" 
+                                        sx={{ width: 300, textIndent: 30 }}
+                                        style={{ textIndent: 30 }}
+                                    />
+                                </div>}
+                            /> */}
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
+                                    <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabPanel>
-                <TabPanel value="4">
-                {/* <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={fdList.map((option) => option.fullName)}
-                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
-                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
-                                <TextField
-                                    {...params} 
-                                    label="Search" 
-                                    sx={{ width: 300, textIndent: 30 }}
-                                    style={{ textIndent: 30 }}
-                                />
-                            </div>}
-                        /> */}
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {fdList.map((player, index) => (
-                                <TableRow
-                                    key={player._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell align="center">{index + 1}</TableCell>
-                                    <TableCell align="center">{player.fullName}</TableCell>
-                                    <TableCell align="center">{player.doubleRank}</TableCell>
-                                    <TableCell align="center">{player.birthday}</TableCell>
-                                    <TableCell align="center">{player.gender}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabPanel>
-                <TabPanel value="5">
-                {/* <Autocomplete
-                            id="free-solo-demo"
-                            freeSolo
-                            options={mixList.map((option) => option.fullName)}
-                            renderInput={(params) => <div style={{ position: 'relative', display: 'inline-block' }}>
-                                <SearchIcon style={{ position: 'absolute', left: 10, top: 15, width: 25, height: 25 }} />
-                                <TextField
-                                    {...params} 
-                                    label="Search" 
-                                    sx={{ width: 300, textIndent: 30 }}
-                                    style={{ textIndent: 30 }}
-                                />
-                            </div>}
-                        /> */}
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Rank</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Score</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>Birthday</TableCell>
-                                <TableCell align="center" sx={{ fontWeight: 'bold' }}>More</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {mixList.map((player, index) => (
-                                <TableRow
-                                    key={player._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell align="center">{index + 1}</TableCell>
-                                    <TableCell align="center">{player.fullName}</TableCell>
-                                    <TableCell align="center">{player.mixedRank}</TableCell>
-                                    <TableCell align="center">{player.birthday}</TableCell>
-                                    <TableCell align="center">{player.gender}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabPanel>
-            </TabContext>
-        </Box>
-        </TableContainer >
+                            </TableHead>
+                            <TableBody>
+                                {mixList.map((player, index) => (
+                                    <TableRow
+                                        key={player._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell align="center">{index + 1}</TableCell>
+                                        <TableCell align="center">{player.fullName}</TableCell>
+                                        <TableCell align="center">{player.mixedRank}</TableCell>
+                                        <TableCell align="center">{player.birthday}</TableCell>
+                                        <TableCell align="center">{player.gender}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TabPanel>
+                </TabContext>
+            </Box>
+            </TableContainer >
+            <Footer />
+        </>
 }
 
 export default Ranking;

@@ -10,6 +10,7 @@ import InputLabel from '@mui/material/InputLabel';
 import PlayerSelector from './PlayerSelector';
 import History from './History';
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
 import { alertClasses } from '@mui/material';
@@ -79,7 +80,7 @@ const Odds = () => {
                             fullWidth
                             label="Player 1"
                         >
-                            <MenuItem value="">Select Player 1</MenuItem>
+                     npm       <MenuItem value="">Select Player 1</MenuItem>
                             {playerList.map((player) => (
                                 <MenuItem key={player._id} value={player._id}>
                                     {player.fullName}
@@ -150,7 +151,8 @@ const Odds = () => {
                 </button>
             </div>
         </div>
-        </div>  
+        </div> 
+        <Footer />
         {/* <Box display="flex"sx={{ flexGrow: 1 }}>
             <Grid justify="center" container spacing={1}>
                 <Box className="left">

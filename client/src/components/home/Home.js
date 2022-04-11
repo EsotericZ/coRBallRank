@@ -3,6 +3,7 @@ import Nav from '../nav/Nav';
 import HomeMain from './HomeMain';
 import HomeEvents from './HomeEvents';
 import HomeRanking from './HomeRanking';
+import Footer from '../footer/Footer';
 // import Ranking from '../ranking/Ranking.js';
 import './home.css';
 // import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
@@ -29,6 +30,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 };

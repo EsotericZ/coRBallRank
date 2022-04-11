@@ -41,7 +41,6 @@ const typeDefs = gql`
 
     type Match {
         _id: ID
-        # matchId: String
         winningPlayerId: Player
         losingPlayerId: Player
         pointDifferential: Int
@@ -53,13 +52,6 @@ const typeDefs = gql`
         matchType: String
     }
 
-    # type PlayerHistory {
-    #     _id: ID
-    #     playerId: Player
-    #     matchesWon: [Match]
-    #     matchesLost: [Match]
-    # }
-
     type Auth {
         token: String
         user: User
@@ -68,10 +60,6 @@ const typeDefs = gql`
     type Query {
         user(id: String!): User
         users: [User]
-        # playerMatchHistory(id: String!): PlayerHistory
-        # playerMatchHistory: [PlayerHistory]
-        # player(id: String!): Player
-        # playersSingles: [Player]
         player(id: String!): Player
         allPlayers: [Player]
         maleSingles: [Player]
@@ -107,7 +95,6 @@ const typeDefs = gql`
             mixedRank: Int,
         ): Player
         createMatch(
-            # matchId: String!,
             winningPlayerId: String!,
             losingPlayerId: String!,
             pointDifferential: Int!,

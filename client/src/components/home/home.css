@@ -1,11 +1,9 @@
 img {
-    width: 350%;
-    /* height: 350%; */
+    width: 100%;
 }
 
 #homeEvents {
     direction: row-reverse;
-    /* backgroundColor: blue; */
 }
 
 .home {

@@ -10,12 +10,6 @@ const resolvers = {
 		users: async (_root, _args, context) => {
 			return await User.find({}).populate({path:"playerId"});
 		},
-		// playerMatchHistory: async (_root, _args, context) => {
-		// 	return await PlayerHistory.find({}).populate({path:"playerId"}).populate({path:"matchesLost"}).populate({path:"matchesLost"});
-		// },
-		// oddsMatchHistory: async (_root, {id}) => {
-		// 	return await Player.findById(id).populate({path:"matchId"});
-		// },
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
 		},

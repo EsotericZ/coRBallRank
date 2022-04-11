@@ -23,9 +23,10 @@
 
 #home,
 #ranking,
-#events,
+/* #events, */
 #history,
 #odds,
+#contact,
 #signUp{
     display: block;
     float: left;

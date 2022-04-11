@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 import './profile.css';
 
 const Profile = () => {
@@ -16,7 +17,7 @@ const Profile = () => {
     const player = jwt_decode(token);
     const playerId = player.data._id;
 
-    const {loading, data} = useQuery(FETCH_USER, {
+    const { loading, data } = useQuery(FETCH_USER, {
         variables: {userId: playerId}
     });
 
@@ -97,6 +98,7 @@ return loading ?
             </Grid>
         </CardContent>
         </Card>
+        <Footer />
     </div>
 }
 

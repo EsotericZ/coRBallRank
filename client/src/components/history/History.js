@@ -1,4 +1,5 @@
 import Nav from '../nav/Nav';
+import Footer from '../footer/Footer';
 import './history.css';
 import { Row, Col, Container, Dropdown, OverlayTrigger, Tooltip, Modal} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -13,7 +14,7 @@ const History = () => {
         const handleClose = () => setShow(false);
         const handleShow = () => setShow(true);
     return (
-         <>
+        <>
         <Nav />
         <Container>
                 <Row>
@@ -1231,6 +1232,7 @@ const History = () => {
                     </div>
                 </Row>
             </Container>
+            <Footer />
        </>
     )
 };
