@@ -61,7 +61,7 @@ return loading ?
         <Nav />
         <Card variant="outlined" sx={{ mx: "auto", width: 500 }}>
         <CardMedia>
-            <img src={data.user.playerId.avatar} alt="Porfile Pic" height="200" />
+            <img src={data.user.playerId.avatar} alt="Porfile Pic"/>
         </CardMedia>
         <CardContent>
             <Grid item xs={12} sm={6}mb={1}>
