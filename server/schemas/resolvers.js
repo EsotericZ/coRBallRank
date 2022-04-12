@@ -106,11 +106,9 @@ const resolvers = {
 		},
 		login: async (_root, {email, password}) => {
 			const userFound = await User.findOne({email});
-
 			if (!userFound) {
 				throw new AuthenticationError('No user found with this email');
 			}
-
 			// successfully logged in
 			if (userFound.password === password) {
 				const token = utils.signToken(userFound.firstName, userFound._id);

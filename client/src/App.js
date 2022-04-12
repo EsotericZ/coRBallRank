@@ -1,15 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import CreateUser from './components/createUser/CreateUser';
 import Contact from './components/contact/Contact';
-import Events from './components/events/Events';
+// import Events from './components/events/Events';
 import History from './components/history/History';
 import Home from './components/home/Home';
 import Odds from './components/odds/Odds';
 import Profile  from './components/profile/Profile';
 import Ranking from './components/ranking/Ranking';
 import Admin from './components/admin/Admin'
-// THIS IS A TEST PAGE DELETE IT WHEN DONE WITH IT 
-import Users from './users/Users';
 
 const App = () => {
   return (
@@ -36,10 +34,6 @@ const App = () => {
             element={<Profile />}
           />
           <Route
-            path='/users'
-            element={<Users />}
-          />
-          <Route
             path='/ranking'
             element={<Ranking />}
           >
@@ -49,10 +43,6 @@ const App = () => {
             element={<History />}
           >
           </Route>
-          {/* <Route
-            path='/events'
-            element={<Events />}
-          > */}
           <Route
             path='/contact'
             element={<Contact />}

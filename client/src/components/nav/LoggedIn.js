@@ -71,6 +71,9 @@ function LoggedIn() {
       variables: {userId: playerId}
   });
 
+  const roleData = data?.user.role;
+  console.log(roleData);
+
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(("md"));
@@ -172,9 +175,11 @@ function LoggedIn() {
               <MenuItem>
                 <Avatar /><Link to='/profile'>Profile</Link>
               </MenuItem>
-              {/* <MenuItem>
-          <Avatar /> My account
-        </MenuItem> */}
+              {roleData === 'admin' ? (
+              <MenuItem>
+                <Avatar /><Link to='/admin'>Admin Page</Link>
+              </MenuItem>
+              ) : <></>}
               <Divider />
               <MenuItem>
                 <ListItemIcon>
