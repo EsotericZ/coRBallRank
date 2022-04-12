@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -11,9 +11,10 @@ import PlayerSelector from './PlayerSelector';
 import History from './History';
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
+import { RotateSpinner } from "react-spinners-kit";
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
-import { alertClasses } from '@mui/material';
+// import { alertClasses } from '@mui/material';
 
 const Odds = () => {
     const { loading, data } = useQuery(ALL_PLAYERS);
@@ -60,7 +61,7 @@ const Odds = () => {
     return loading ?
         <>
             <Nav />
-            <h1>Loading...</h1>
+            <RotateSpinner />
         </>
         :
         <>
