@@ -4,7 +4,6 @@ const Upcoming = ({events}) => {
     return (
         <>
         <div class="card" id="right">
-            
             {events.map((event) => (
                 <>
                     <img src={event.image} alt="Event Pic" height="200" />

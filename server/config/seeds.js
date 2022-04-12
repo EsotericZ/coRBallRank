@@ -170,9 +170,9 @@ db.once('open', async () => {
             firstName: 'Admin',
             lastName: 'Admin',
             username: 'admin',
-            email: 'a@a.com',
+            email: 'admin@admin.com',
             playerId: players[0]._id,
-            role: 'amdin',
+            role: 'admin',
             password: 'pass',
             club: 'None',
             location: 'None',
@@ -436,27 +436,6 @@ db.once('open', async () => {
     ]);
 
     console.log('Matches Seeded')
-    
-    // await PlayerHistory.deleteMany();
-
-    // const playerHistory = await PlayerHistory.insertMany([
-    //     {
-    //         // CJ SANDERS
-    //         playerId: players[1]._id,
-    //         matchesWon: [
-    //             {
-    //                 matches: [matches[9]._id, matches[11]._id, matches[12]._id, matches[13]._id, matches[14]._id]
-    //             }
-    //         ],
-    //         matchesLost: [
-    //             {
-    //                 matches: [matches[5]._id,]
-    //             }
-    //         ],
-    //     },
-    // ]);
-
-    // console.log('Player Match History Seeded')
 
     process.exit();
 });

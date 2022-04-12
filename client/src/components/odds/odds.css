@@ -21,6 +21,7 @@ h1 {
     /* width: 30%; */
     margin-left: 10%;
     /* margin-top: 50px; */
+    line-height: 4;
 }
 
 .player2 {
@@ -28,6 +29,7 @@ h1 {
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10px;
+    line-height: 4;
 }
 
 .hidden {
@@ -36,17 +38,31 @@ h1 {
 }
 
 .submit {
-      display: inline-flex;
-      margin-left: 15px;
-      margin-top: 15px;
-      /* width: 150px; */
-      padding: 10px;
-      font-size: 18px;
-      height: 58px;
-      /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px; */
-      vertical-align: auto;
+    display: inline;
+    /* margin-left: 15px; */
+    /* margin-top: 15px; */
+    /* width: 150px; */
+    /* padding: 10px; */
+    font-size: 18px;
+    height: 58px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; */
+    vertical-align: auto;
+}
+
+.submitBtn {
+    margin-left: 10px;
+    margin-top: 15px;
+    height: 56px;
+    width: 150px;
+    display: inline-flex;
+    background-color: var(--color-nav);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 3;
 }
  
 .results {
@@ -110,14 +126,37 @@ h1 {
     height: 35px;
     width: 150px;
     margin-bottom: 10px;
+    background-color: var(--color-nav);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    justify-content: center;
+    font-size: 18px;
 }
+
 h3 {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 h4 {
     padding-top: 10px;
     border-top: 1px solid black;
     display: flex;
     justify-content: center;
+}
+
+.cardDetails{
+    /* display: inline-block; */
+    justify-content: center;
+    /* margin-left: 65%; */
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    flex-direction: column;
 }

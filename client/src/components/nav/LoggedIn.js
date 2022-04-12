@@ -24,6 +24,7 @@ import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import rockies from "../../assets/cologo.png";
+import { RotateSpinner } from "react-spinners-kit";
 import './loggedIn.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -70,6 +71,9 @@ function LoggedIn() {
       variables: {userId: playerId}
   });
 
+  const roleData = data?.user.role;
+  console.log(roleData);
+
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(("md"));
@@ -83,8 +87,7 @@ function LoggedIn() {
   };
 
   return loading ?
-    <>
-    </>
+    <RotateSpinner />
     :
     <AppBar position="static" className="logInNav">
       <CssBaseline className="logInNav" />
@@ -97,7 +100,7 @@ function LoggedIn() {
         ) : (
 
           <div className={classes.navlinks}>
-            <Box display="flex" sx={{width:1400}} justifyContent="space-between">
+            <Box display="flex" sx={{width:1300}} justifyContent="space-between">
               <div>
               <Link to="/home" className={classes.link} id="home">
                 Home
@@ -172,9 +175,11 @@ function LoggedIn() {
               <MenuItem>
                 <Avatar /><Link to='/profile'>Profile</Link>
               </MenuItem>
-              {/* <MenuItem>
-          <Avatar /> My account
-        </MenuItem> */}
+              {roleData === 'admin' ? (
+              <MenuItem>
+                <Avatar /><Link to='/admin'>Admin Page</Link>
+              </MenuItem>
+              ) : <></>}
               <Divider />
               <MenuItem>
                 <ListItemIcon>

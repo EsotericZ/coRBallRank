@@ -1,9 +1,16 @@
 footer {
     background: var(--color-nav);
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 15px;
     margin-top: 20px;
+    width: 100%;
+
+    /* position: fixed;
+    bottom: 0; */
+    
+    position: absolute;
+    height: auto;
 }
 
 .permalinks {
@@ -11,7 +18,11 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
+    text-decoration: none;
+    font: 25px;
+    color: white;
+    font-weight: bold;
 }
 
 /* .copyright { */

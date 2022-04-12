@@ -1,0 +1,24 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.proHistory {
+    width: 350;
+    margin-left: 15px;
+}
+.matchHistory {
+    /* display: inline-block; */
+    justify-content: center;
+    /* margin-left: 65%; */
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+}
+.player1{
+    margin-top: 10px;
+}

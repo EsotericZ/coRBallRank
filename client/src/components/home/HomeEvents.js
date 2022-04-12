@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { FETCH_EVENTS } from '../../graphql/queries/fetchEvents';
+import { RotateSpinner } from "react-spinners-kit";
 import Complete from './Complete';
 import Upcoming from './Upcoming';
 
@@ -11,9 +12,7 @@ const HomeEvents = () => {
     const completedEvents = eventList.filter(event => event.status === 'completed');
 
     return loading ? 
-        <>
-            <h1>Loading...</h1>
-        </>
+        <RotateSpinner />
         :
         <>
             <div id="homeEvents">
