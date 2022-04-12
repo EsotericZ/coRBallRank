@@ -68,6 +68,7 @@ const Odds = () => {
 
             <div container className="odds" alignItems="center">
                 <h1 >Player Odds</h1>
+                <h3> CJ Add Description Here</h3>
             <div className="player1" id="p1">
                 <Grid item xs={5}>
                     <FormControl id="player"sx={{ width: 400 }}>
