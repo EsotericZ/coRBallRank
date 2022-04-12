@@ -28,13 +28,14 @@ input, textarea {
     
 }
 
-.submitBtn {
+.submitBtn2 {
     width: 25%;
     margin: 0 auto;
     padding: 15px 30px;
     background-color: var(--color-nav);
     border: 2px solid black;
     border-radius: 0.5rem;
+    font-size: medium;
 
 }
 

@@ -21,6 +21,7 @@ h1 {
     /* width: 30%; */
     margin-left: 10%;
     /* margin-top: 50px; */
+    line-height: 4;
 }
 
 .player2 {
@@ -28,6 +29,7 @@ h1 {
     display: inline-flex;
     /* width: 30%; */
     margin-left: 10px;
+    line-height: 4;
 }
 
 .hidden {
@@ -51,9 +53,16 @@ h1 {
 .submitBtn {
     margin-left: 10px;
     margin-top: 15px;
-    height: 58px;
+    height: 56px;
     width: 150px;
     display: inline-flex;
+    background-color: var(--color-nav);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 3;
+
     
 }
  
@@ -118,6 +127,11 @@ h1 {
     height: 35px;
     width: 150px;
     margin-bottom: 10px;
+    background-color: var(--color-nav);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    justify-content: center;
+    font-size: 18px;
 }
 h3 {
     display: flex;
