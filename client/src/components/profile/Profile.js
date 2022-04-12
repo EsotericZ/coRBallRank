@@ -5,12 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-// import PHOTO from '../../assets/photo.png';
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
-import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
+import ProfileHistory from './ProfileHistory';
 import './profile.css';
 
 const Profile = () => {
@@ -22,34 +21,7 @@ const Profile = () => {
         variables: {userId: userId}
     });
 
-    console.log(data);
     const playerId = data.user.playerId._id;
-
-    const matchData = useQuery(ODDS_MATCHES);
-    const matchList = matchData.data?.matches || [];
-    const winner = matchList.filter(win => win.winningPlayerId._id === playerId);
-    const loser = matchList.filter(lose => lose.losingPlayerId._id === playerId);
-    console.log(winner);
-    console.log(loser);
-
-    const resWin = [];
-    if (winner) {
-        winner.forEach(win => {
-            let matchDetails = [['Won'], [win.losingPlayerId.fullName], [win.score], [win.division], [win.tournamentId.name]];
-            resWin.push(matchDetails);
-        });
-    };
-
-    const resLost = [];
-    if (loser) {
-        loser.forEach(lose => {
-            let matchDetails = [['Lost'], [lose.winningPlayerId.fullName], [lose.score], [lose.division], [lose.tournamentId.name]];
-            resLost.push(matchDetails);
-        });
-    };
-
-    const results = resWin.concat(resLost);
-    console.log(results);
 
 return loading ? 
     <>
@@ -126,7 +98,9 @@ return loading ?
             </Grid>
         </CardContent>
         </Card>
+        <ProfileHistory playerId={playerId} />
         <Footer />
+        
     </div>
 }
 
