@@ -9,6 +9,7 @@ export const FETCH_USER = gql`
             email
             club
             location
+            role
             playerId {
                 _id
                 fullName
