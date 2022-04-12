@@ -76,6 +76,19 @@ img {
     /* margin-top: 10px; */
 }
 
+.completedImg {
+    display: inline-block;
+    justify-content: center;
+}
+
+.completedName .completedLocation .completedDate .completedLink {
+    display: inline-block;
+    justify-content: center;
+    text-align: right;
+}
+
+
+
 /* =================================================================
 MEDIA QUERIES (MEDIUM)
 ================================================================= */
