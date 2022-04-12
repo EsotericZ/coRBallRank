@@ -11,7 +11,10 @@ const Complete = ({ events }) => {
                         <div>{event.name}</div>
                         <div>{event.club}, {event.location}</div>
                         <div>{event.startDate} - {event.endDate}</div>
-                        Event Information <a href={event.link} target="_blank">Here</a>
+                        Event Information 
+                        <a href={event.link} target="_blank">
+                            Here
+                        </a>
                     </>
                 ))}
             </div>
