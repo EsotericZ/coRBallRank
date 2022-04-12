@@ -1,5 +1,8 @@
 .contact {
     display: grid;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
 }
 
 h4 {
@@ -21,6 +24,18 @@ input, textarea {
     border: 2px solid var(--color-nav);
     resize: none;
     color: black;
+    font-family: "Helvetica", "Arial", sans-serif;
+    
+}
+
+.submitBtn {
+    width: 25%;
+    margin: 0 auto;
+    padding: 15px 30px;
+    background-color: var(--color-nav);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+
 }
 
 /* =================================================================
