@@ -4,11 +4,13 @@ footer {
     text-align: center;
     font-size: 15px;
     margin-top: 20px;
+    width: 100%;
+
     /* position: fixed;
     bottom: 0; */
+    
     position: absolute;
     height: auto;
-    width: 100%;
 }
 
 .permalinks {
