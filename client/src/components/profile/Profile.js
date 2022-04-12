@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField';
 import Box from "@material-ui/core";
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
+import { RotateSpinner } from "react-spinners-kit";
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
 import ProfileHistory from './ProfileHistory';
@@ -27,7 +28,7 @@ const Profile = () => {
     return loading ?
         <>
             <Nav />
-            <h1>Loading...</h1>
+            <RotateSpinner />
         </>
         :
         <div>
@@ -106,7 +107,6 @@ const Profile = () => {
                 <h1>Match History</h1>
                     <ProfileHistory playerId={playerId} />
                 </div>
-                
             </div>
             <Footer />
         </div>

@@ -7,6 +7,7 @@ import MD_IMG from '../../assets/MDOUBLE.PNG';
 import FS_IMG from '../../assets/FSINGLE.PNG';
 import FD_IMG from '../../assets/FDOUBLE.PNG';
 import MIX_IMG from '../../assets/MIX.PNG';
+import { RotateSpinner } from "react-spinners-kit";
 import './home.css';
 
 import Box from '@mui/material/Box';
@@ -65,7 +66,7 @@ const HomeRanking = () => {
     return loading ?
         <>
             <Nav />
-            <h1>Loading...</h1>
+            <RotateSpinner />
         </>
         :
         <TableContainer  component={Paper}>

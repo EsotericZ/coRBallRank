@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './ranking.css';
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
+import { RotateSpinner } from "react-spinners-kit";
 
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -50,7 +51,7 @@ const Ranking = () => {
     return loading ?
         <>
             <Nav />
-            <h1>Loading...</h1>
+            <RotateSpinner />
         </>
         :
         <>

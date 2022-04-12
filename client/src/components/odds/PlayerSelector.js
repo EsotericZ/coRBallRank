@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { FETCH_PLAYER } from '../../graphql/queries/fetchPlayers';
+import { RotateSpinner } from "react-spinners-kit";
 import './odds.css';
 
 const PlayerSelector = ({player, winChance}) => {
@@ -10,9 +11,7 @@ const PlayerSelector = ({player, winChance}) => {
     }); 
 
     return loading ?
-        <>
-            <h1>Loading...</h1>
-        </>
+        <RotateSpinner />
         :
         <div class="card">
             <img src={data.player.avatar} alt="Porfile Pic" height="200" className="img" />
