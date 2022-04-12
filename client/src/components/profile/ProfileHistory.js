@@ -31,16 +31,18 @@ const ProfileHistory = ({ playerId }) => {
         </>
         :
         <>
-            <div class="card" id="right">
+           
                 {results.map((match) => (
                     <>
-                        <div>{match[0]} vs {match[1]}</div>
+                    <div class="matchHistory" id="right">
+                        <h3>{match[0]} vs {match[1]}</h3>
                         <div>Scores: {match[2]}</div>
                         <div>{match[3]} : {match[4]}</div>
+                        </div>
+                      
                     </>
                 ))}
-            </div>
-        </>
+        </>    
 }
 
 export default ProfileHistory;
