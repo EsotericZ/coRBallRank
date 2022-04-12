@@ -70,6 +70,7 @@ const Odds = () => {
             <div container className="odds" alignItems="center">
                 <h1 >Player Odds</h1>
                 <h3> CJ Add Description Here</h3>
+            <div container className="odds">
             <div className="player1" id="p1">
                 <Grid item xs={5}>
                     <FormControl id="player"sx={{ width: 400 }}>
@@ -114,8 +115,8 @@ const Odds = () => {
                     </FormControl>
                 </Grid>
             </div>
-            <div className="submit" id="submitBtn">
-                <button className="submit"
+            <div className="submit">
+                <button height="58"className="submitBtn"
                     onClick={() => {
                         playerRanks();
                         document.getElementById('p1').classList.toggle('hidden');
@@ -151,6 +152,7 @@ const Odds = () => {
                 >
                     Try Again!
                 </button>
+            </div>
             </div>
         </div>
         </div> 
