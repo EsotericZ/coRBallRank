@@ -1,6 +1,5 @@
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-// import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -14,7 +13,6 @@ import Footer from '../footer/Footer';
 import { RotateSpinner } from "react-spinners-kit";
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
-// import { alertClasses } from '@mui/material';
 
 const Odds = () => {
     const { loading, data } = useQuery(ALL_PLAYERS);
@@ -66,10 +64,13 @@ const Odds = () => {
         :
         <>
             <Nav />
-
             <div container className="odds" alignItems="center">
                 <h1 >Player Odds</h1>
-                <h3> CJ Add Description Here</h3>
+                <h3>
+                    Ever wonder how you might stack up against the competition? Use the player odds calculator to 
+                    determine the winning percentage chance for any two players based on past tournament results!
+                    Compare ranks, see match history and see how closly matched you would be in a tournament setting!
+                </h3>
             <div container className="odds">
             <div className="player1" id="p1">
                 <Grid item xs={5}>
@@ -83,7 +84,7 @@ const Odds = () => {
                             fullWidth
                             label="Player 1"
                         >
-                     npm       <MenuItem value="">Select Player 1</MenuItem>
+                       <MenuItem value="">Select Player 1</MenuItem>
                             {playerList.map((player) => (
                                 <MenuItem key={player._id} value={player._id}>
                                     {player.fullName}
@@ -115,8 +116,8 @@ const Odds = () => {
                     </FormControl>
                 </Grid>
             </div>
-            <div className="submit">
-                <button height="58"className="submitBtn"
+            <div className="submit" id="submitBtn">
+                <button height="58" className="submitBtn" 
                     onClick={() => {
                         playerRanks();
                         document.getElementById('p1').classList.toggle('hidden');
@@ -125,7 +126,7 @@ const Odds = () => {
                         document.getElementById('resetBtn').classList.toggle('hidden');
                     }}
                 >
-                    Click Me
+                    Calculate!
                 </button>
             </div>
             <div container className="results">
@@ -157,16 +158,7 @@ const Odds = () => {
         </div>
         </div> 
         <Footer />
-        {/* <Box display="flex"sx={{ flexGrow: 1 }}>
-            <Grid justify="center" container spacing={1}>
-                <Box className="left">
-                </Box>
-                <Box className="right">
-                </Box>
-            </Grid>
-        </Box> */}
     </>
-
 };
 
 export default Odds;
