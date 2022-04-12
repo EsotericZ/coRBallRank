@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 // import { useState } from 'react';
 import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
 import Details from './Details';
+import { RotateSpinner } from "react-spinners-kit";
 import './odds.css';
 
 const History = ({p1, p2}) => {
@@ -39,9 +40,7 @@ const History = ({p1, p2}) => {
     console.log(results);
 
     return loading ?
-        <>
-            <h1>Loading...</h1>
-        </>
+        <RotateSpinner />
         :
         <>
             
