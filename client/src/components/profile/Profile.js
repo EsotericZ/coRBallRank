@@ -106,7 +106,6 @@ const Profile = () => {
                 <h1>Match History</h1>
                     <ProfileHistory playerId={playerId} />
                 </div>
-                
             </div>
             <Footer />
         </div>

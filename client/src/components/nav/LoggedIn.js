@@ -105,9 +105,9 @@ function LoggedIn() {
               <Link to="/ranking" className={classes.link} id="ranking">
                 Ranking
               </Link>
-              {/* <Link to="/events" className={classes.link} id="events">
+              <Link to="/admin" className={classes.link} id="events">
                 Events
-              </Link> */}
+              </Link>
               <Link to="/history" className={classes.link} id="history">
                 History
               </Link>

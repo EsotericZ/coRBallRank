@@ -7,7 +7,7 @@ import Home from './components/home/Home';
 import Odds from './components/odds/Odds';
 import Profile  from './components/profile/Profile';
 import Ranking from './components/ranking/Ranking';
-
+import Admin from './components/admin/Admin'
 // THIS IS A TEST PAGE DELETE IT WHEN DONE WITH IT 
 import Users from './users/Users';
 
@@ -56,6 +56,11 @@ const App = () => {
           <Route
             path='/contact'
             element={<Contact />}
+          >
+          </Route>
+          <Route
+            path='/admin'
+            element={<Admin />}
           >
           </Route>
       </Routes>
