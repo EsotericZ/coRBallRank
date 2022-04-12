@@ -24,6 +24,7 @@ import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
 import rockies from "../../assets/cologo.png";
+import { RotateSpinner } from "react-spinners-kit";
 import './loggedIn.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -83,8 +84,7 @@ function LoggedIn() {
   };
 
   return loading ?
-    <>
-    </>
+    <RotateSpinner />
     :
     <AppBar position="static" className="logInNav">
       <CssBaseline className="logInNav" />

@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 import { FETCH_USER } from '../../graphql/queries/fetchUsers';
+import { RotateSpinner } from "react-spinners-kit";
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
 import ProfileHistory from './ProfileHistory';
@@ -26,7 +27,7 @@ const Profile = () => {
 return loading ? 
     <>
         <Nav />
-        <h1>Loading...</h1> 
+        <RotateSpinner />
     </>
     :
     <div>

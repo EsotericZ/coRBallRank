@@ -11,11 +11,12 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./LoggedOutDrawer";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+// import TextField from '@mui/material/TextField';
+// import Button from '@mui/material/Button';
 import './loggedOut.css'
 import '../../index.css';
-import { spacing } from "@mui/system";
+// import { spacing } from "@mui/system";
+import { RotateSpinner } from "react-spinners-kit";
 
 import rockies from "../../assets/cologo.png";
 

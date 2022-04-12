@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { ODDS_MATCHES } from '../../graphql/queries/fetchMatches';
+import { RotateSpinner } from "react-spinners-kit";
 
 const ProfileHistory = ({ playerId }) => {
     const { loading, data } = useQuery(ODDS_MATCHES);
@@ -26,9 +27,7 @@ const ProfileHistory = ({ playerId }) => {
     const results = resWin.concat(resLost);
 
     return loading ?
-        <>
-            <h1>Loading...</h1>
-        </>
+        <RotateSpinner />
         :
         <>
             <div class="card" id="right">
