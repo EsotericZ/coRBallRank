@@ -1,7 +1,69 @@
 const db = require('./connection');
-const { Player, User, Tournament, Match, PlayerHistory } = require('../models');
+const { Club, Location, Player, User, Tournament, Match } = require('../models');
 
 db.once('open', async () => {
+    await Location.deleteMany();
+
+    const locations = await Location.insertMany([
+        {
+            // 00
+            city: 'Arvada, CO',
+        },
+        {
+            // 01
+            city: 'Colorado Springs, CO',
+        },
+        {
+            // 02
+            city: 'Denver, CO',
+        },
+        {
+            // 03
+            city: 'Pueblo, CO',
+        },
+        {
+            // 04
+            city: 'Thornton, CO',
+        },
+        {
+            // 05
+            city: 'Highlands Ranch, CO',
+        },
+    ]);
+    
+    console.log('Locations Seeded')
+
+    await Club.deleteMany();
+
+    const clubs = await Club.insertMany([
+        {
+            // 00
+            name: 'Apex Rec Center',
+            address: '12120 W 64th Ave',
+            locationId: locations[0]._id,
+        },
+        {
+            // 01
+            name: 'Denver Athletic Club',
+            address: '12120 W 64th Ave',
+            locationId: locations[2]._id,
+        },
+        {
+            // 02
+            name: 'Highlands Ranch Rec Center',
+            address: '12120 W 64th Ave',
+            locationId: locations[5]._id,
+        },
+        {
+            // 03
+            name: 'Pueblo Athletic Club',
+            address: '12120 W 64th Ave',
+            locationId: locations[3]._id,
+        },
+    ])
+
+    console.log('Clubs Seeded')
+    
     await Player.deleteMany();
 
     const players = await Player.insertMany([
