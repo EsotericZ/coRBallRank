@@ -252,8 +252,8 @@ db.once('open', async () => {
             playerId: players[0]._id,
             role: 'admin',
             password: 'pass',
-            clubId: clubs[0]._id,
-            locationId: locations[0]._id,
+            club: 'Denver Athletic Club',
+            location: 'Denver, CO',
         },
         {
             firstName: 'CJ',
@@ -263,8 +263,8 @@ db.once('open', async () => {
             playerId: players[1]._id,
             role: 'player',
             password: 'pass',
-            clubId: clubs[0]._id,
-            locationId: locations[0]._id,
+            club: 'Apex Rec Center',
+            location: 'Arvada, CO',
         },
     ]);
 

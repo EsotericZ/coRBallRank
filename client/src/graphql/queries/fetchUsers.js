@@ -18,12 +18,8 @@ export const FETCH_USER = gql`
                 gender
             }
             role
-            clubId {
-                 name
-            }
-            locationId {
-                city
-            }
+            club
+            location
         }
     }
 `;
@@ -46,12 +42,8 @@ export const FETCH_USERS = gql`
                 gender
             }
             role
-            clubId {
-                 name
-            }
-            locationId {
-                city
-            }
+            club
+            location
         }
     }
 `;

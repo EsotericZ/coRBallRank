@@ -8,11 +8,11 @@ const Complete = ({ events }) => {
                     <>
                     <div container className="results">
                         <div className="leftImg">
-                            <img className="completedImg" src={event.image} alt="Event Pic" height="200" />
+                            <img className="completedImg" src={event.image} alt="Event Pic" height="100" />
                         </div>
                         <div className="pastInfo">
                             <div className="completedName">{event.name}</div>
-                            <div className="completedLocation">{event.club}, {event.location}</div>
+                            <div className="completedLocation">{event.clubId.name} - {event.locationId.city}</div>
                             <div className="completedDate">{event.startDate} - {event.endDate}</div>
                             <a href={event.link} target="_blank" className="completedLink">
                                 Event Information Here

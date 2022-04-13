@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client'
 import { CREATE_USER } from '../../graphql/mutations/createUser';
+import { FETCH_CLUBS } from '../../graphql/queries/fetchClubs';
+import { FETCH_LOCATIONS } from '../../graphql/queries/fetchLocations';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -19,6 +22,12 @@ import Nav from '../nav/Nav';
 const theme = createTheme();
 
 const CreateUser = () => {
+    const clubsData = useQuery(FETCH_CLUBS);
+    const clubList = clubsData.data?.clubs || [];
+
+    const locationData = useQuery(FETCH_LOCATIONS);
+    const locationList = locationData.data?.locations || [];
+
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''});
     const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_USER);
     const navigate = useNavigate();
@@ -39,8 +48,8 @@ const CreateUser = () => {
             username: formState.username,
             email: formState.email,
             role: "player",
-            club: "temp",
-            location: "temp",
+            club: formState.club,
+            location: formState.location,
             password: formState.password,
         };
         console.log(body);
@@ -75,7 +84,7 @@ const CreateUser = () => {
                             alignItems: 'center',
                         }}
                     >
-                        <Typography component="h1" variant="h5">
+                        <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
                             Sign Up
                         </Typography>
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
@@ -137,19 +146,18 @@ const CreateUser = () => {
                                         <InputLabel id="">Location</InputLabel>
                                         <Select
                                             name="location"
-                                            labelId="l"
+                                            labelId="location"
                                             id=""
                                             value={formState.location}
                                             onChange={handleChange}
                                             fullWidth
                                             label="Location"
                                         >
-                                            <MenuItem value="">
-                                                <em>None</em>
+                                        {locationList.map((location) => (
+                                            <MenuItem key={location._id} value={location.city}>
+                                                {location.city}
                                             </MenuItem>
-                                            <MenuItem value={1}>1</MenuItem>
-                                            <MenuItem value={2}>2</MenuItem>
-                                            <MenuItem value={3}>3</MenuItem>
+                                        ))}
                                         </Select>
                                     </FormControl>
                                 </Grid>
@@ -158,19 +166,18 @@ const CreateUser = () => {
                                         <InputLabel id="">Club</InputLabel>
                                         <Select
                                             name="club"
-                                            labelId="l"
+                                            labelId="club"
                                             id=""
                                             value={formState.club}
                                             onChange={handleChange}
-                                            autoWidth
+                                            fullWidth
                                             label="Club"
                                         >
-                                            <MenuItem value="">
-                                                <em>None</em>
+                                        {clubList.map((club) => (
+                                            <MenuItem key={club._id} value={club.name}>
+                                                {club.name}
                                             </MenuItem>
-                                            <MenuItem value={1}>1</MenuItem>
-                                            <MenuItem value={2}>2</MenuItem>
-                                            <MenuItem value={3}>3</MenuItem>
+                                        ))}
                                         </Select>
                                     </FormControl>
                                 </Grid>
@@ -179,7 +186,7 @@ const CreateUser = () => {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
+                                sx={{ mb: 2 }}
                             >
                                 Submit
                             </Button>
