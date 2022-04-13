@@ -107,8 +107,8 @@ img {
 } */
 
 .eventText {
-    display: flex;
-    flex-basis: 50%;
+    display: inline-block;
+    text-align: end;
 }
 
 .completedName, .upcomingName {
