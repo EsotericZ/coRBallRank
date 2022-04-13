@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';

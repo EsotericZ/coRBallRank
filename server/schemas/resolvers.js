@@ -5,10 +5,10 @@ const utils = require('../utils/auth');
 const resolvers = {
 	Query: {
 		user: async (_root, {id}) => {
-			return await User.findById(id).populate({path:"playerId"}).populate({path:"clubId"}).populate({path:"locationId"});
+			return await User.findById(id).populate({path:"playerId"});
 		},
 		users: async (_root, _args, context) => {
-			return await User.find({}).populate({path:"playerId"}).populate({path:"clubId"}).populate({path:"locationId"});
+			return await User.find({}).populate({path:"playerId"});
 		},
 		locations: async (_root, _args, context) => {
 			return await Location.find({});
@@ -52,15 +52,15 @@ const resolvers = {
 	},
 
 	Mutation: {
-		createUser: async (_root, {firstName, lastName, username, email, role, clubId, locationId, password}) => {
+		createUser: async (_root, {firstName, lastName, username, email, role, club, location, password}) => {
 			const user = await User.create({
 				firstName,
 				lastName,
 				username,
 				email,
 				role,
-				clubId, 
-				locationId,
+				club, 
+				location,
 				password,
 			});
 

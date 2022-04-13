@@ -34,8 +34,8 @@ const typeDefs = gql`
         email: String
         playerId: Player
         role: String
-        clubId: Club
-        locationId: Location
+        club: String
+        location: String
     }
 
     type Tournament {
@@ -94,8 +94,8 @@ const typeDefs = gql`
             username: String!, 
             email: String!, 
             role: String,
-            clubId: String,
-            locationId: String,
+            club: String,
+            location: String,
             password: String!,
         ): Auth
         createPlayer(
