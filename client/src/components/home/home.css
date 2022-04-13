@@ -79,14 +79,24 @@ img {
 .completedImg {
     display: inline-block;
     justify-content: center;
+    flex-basis: 50%;
+}
+/* 
+.container {
+    display: flex;
+} */
+
+.eventText {
+    display: flex;
+    flex-basis: 50%;
 }
 
-.completedName .completedLocation .completedDate .completedLink {
-    display: inline-block;
-    justify-content: center;
-    text-align: right;
+.completedName, .upcomingName {
+    font-weight: bold;
+    font-size: 20px;
 }
 
+/* .completedLocation .completedDate .completedLink */
 
 
 /* =================================================================
