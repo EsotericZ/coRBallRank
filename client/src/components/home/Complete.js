@@ -2,23 +2,28 @@ import './home.css';
 
 const Complete = ({ events }) => {
     return (
-        <div className="container">
-            <div class="card">
+        // <div className="container">
+            <div className="cardEvents">
                 {events.map((event) => (
                     <>
-                        <img className="completedImg" src={event.image} alt="Event Pic" height="200" />
-                        <div className="eventText">
+                    <div container className="results">
+                        <div className="leftImg">
+                            <img className="completedImg" src={event.image} alt="Event Pic" height="200" />
+                        </div>
+                        <div className="pastInfo">
                             <div className="completedName">{event.name}</div>
                             <div className="completedLocation">{event.club}, {event.location}</div>
                             <div className="completedDate">{event.startDate} - {event.endDate}</div>
                             <a href={event.link} target="_blank" className="completedLink">
                                 Event Information Here
                             </a>
+                            <br/>
                         </div>
+                    </div>
                     </>
                 ))}
             </div>
-        </div>
+        // </div>
     )
 };
 
