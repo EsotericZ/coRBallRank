@@ -116,8 +116,7 @@ const Ranking = () => {
                                                 <TableCell align="center">{player.singleRank}</TableCell>
                                                 <TableCell align="center">{player.birthday}</TableCell>
                                                 <TableCell align="center">
-                                                <RankingModal />
-                                                {/* {player.gender} */}
+                                                    <RankingModal />
                                                 </TableCell>
                                             </TableRow>
                                         ))}
@@ -159,7 +158,10 @@ const Ranking = () => {
                                                 <TableCell align="center">{player.fullName}</TableCell>
                                                 <TableCell align="center">{player.doubleRank}</TableCell>
                                                 <TableCell align="center">{player.birthday}</TableCell>
-                                                <TableCell align="center">{player.gender}</TableCell>
+                                                <TableCell align="center">
+                                                <RankingModal />
+                                                {/* {player.gender} */}
+                                                    </TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
