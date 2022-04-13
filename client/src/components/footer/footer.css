@@ -1,16 +1,21 @@
+body {
+    min-height: 100%;
+}
+
 footer {
     background: var(--color-nav);
     padding: 10px 0;
     text-align: center;
     font-size: 15px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 100%;
 
-    /* position: fixed;
-    bottom: 0; */
+    /* position: fixed; */
+    /* bottom: 0; */
     
     position: absolute;
-    height: auto;
+    height: 80px;
+    /* margin-top: -50px; */
 }
 
 .permalinks {
@@ -24,7 +29,3 @@ footer {
     color: white;
     font-weight: bold;
 }
-
-/* .copyright { */
-    /* margin-bottom: 20px; */
-/* } */

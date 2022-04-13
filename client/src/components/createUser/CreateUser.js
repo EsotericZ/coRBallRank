@@ -1,12 +1,8 @@
-// import * as React from 'react';
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { Form, Field } from 'react-final-form';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client'
 import { CREATE_USER } from '../../graphql/mutations/createUser';
 import Box from '@mui/material/Box';
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,7 +10,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -24,44 +19,42 @@ import Nav from '../nav/Nav';
 const theme = createTheme();
 
 const CreateUser = () => {
-    const [createUserMutation] = useMutation(CREATE_USER);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [club, setClub] = useState('');
-    const [location, setLocation] = useState('');
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''});
+    const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_USER);
+    const navigate = useNavigate();
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const body = {
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+            username: formState.username,
+            email: formState.email,
+            role: "player",
+            club: "temp",
+            location: "temp",
+            password: formState.password,
+        };
+        console.log(body);
         try {
-            let res = await (createUserMutation, {
-                method: "POST",
-                body: JSON.stringify({
-                    firstName: firstName,
-                    lastName: lastName,
-                    username: username,
-                    email: email,
-                    playerId: [],
-                    role: "player",
-                    password: password,
-                    club: club,
-                    location: location,
-                }),
+            let res = await createUserMutation({
+                    variables: body
             });
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setFirstName("");
-                setLastName("");
-                setUsername("");
-                setEmail("");
-                setPassword("");
-                setClub("");
-                setLocation("");
-                console.log("User created successfully");
+            const token = res.data.createUser.token;
+            localStorage.setItem('token', token);
+            navigate('/home');
+            if (!error) {
+                setFormState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''})
             } else {
-                console.log("Some error occured");
+                console.error(error)
             }
         } catch (err) {
             console.log(err);
@@ -88,7 +81,7 @@ const CreateUser = () => {
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         autoComplete="given-name"
                                         name="firstName"
                                         required
@@ -99,7 +92,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="lastName"
@@ -109,7 +102,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="email"
@@ -119,7 +112,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="username"
@@ -129,7 +122,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         name="password"
@@ -143,10 +136,11 @@ const CreateUser = () => {
                                     <FormControl sx={{ width: 550 }}>
                                         <InputLabel id="">Location</InputLabel>
                                         <Select
+                                            name="location"
                                             labelId="l"
                                             id=""
-                                            value={location}
-                                            onChange={handleSubmit}
+                                            value={formState.location}
+                                            onChange={handleChange}
                                             fullWidth
                                             label="Location"
                                         >
@@ -163,10 +157,11 @@ const CreateUser = () => {
                                     <FormControl sx={{ width: 550 }}>
                                         <InputLabel id="">Club</InputLabel>
                                         <Select
+                                            name="club"
                                             labelId="l"
                                             id=""
-                                            value={club}
-                                            onChange={handleSubmit}
+                                            value={formState.club}
+                                            onChange={handleChange}
                                             autoWidth
                                             label="Club"
                                         >
@@ -185,23 +180,9 @@ const CreateUser = () => {
                                 fullWidth
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
-                                // disabled={
-                                //     values?.password?.length === 0 || values?.email?.length === 0
-                                // }
-                                onClick={async () => {
-                                    await handleSubmit();
-                                    // form.reset();
-                                    console.log('click')
-                                }}>
+                            >
                                 Submit
                             </Button>
-                            <Grid container justifyContent="flex-end">
-                                <Grid item>
-                                    <Link href="Login" variant="body2">
-                                        Already have an account? Sign in
-                                    </Link>
-                                </Grid>
-                            </Grid>
                         </form>
                     </Box>
                 </Container>

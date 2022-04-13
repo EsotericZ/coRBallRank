@@ -6,7 +6,11 @@
     --white: #F7F7F7;
 }
 
-body {
+.base {
     color: green;
     font-family: 'Abril Fatface', cursive;
+    min-height: 100%;
+    height: 100%;
+    margin: 0 auto -50px;
+    background: var(--color-nav);
 }
