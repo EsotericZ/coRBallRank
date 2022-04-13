@@ -24,44 +24,43 @@ import Nav from '../nav/Nav';
 const theme = createTheme();
 
 const CreateUser = () => {
-    const [createUserMutation] = useMutation(CREATE_USER);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [club, setClub] = useState('');
-    const [location, setLocation] = useState('');
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''});
+    const [createUserMutation,{ data, loading, error }] = useMutation(CREATE_USER);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const body = JSON.stringify({
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+            username: formState.username,
+            email: formState.email,
+            playerId: 'temp',
+            role: "player",
+            password: formState.password,
+            club: "temp",
+            location: "temp",
+        });
+        console.log(body);
         try {
-            let res = await (createUserMutation, {
-                method: "POST",
-                body: JSON.stringify({
-                    firstName: firstName,
-                    lastName: lastName,
-                    username: username,
-                    email: email,
-                    playerId: [],
-                    role: "player",
-                    password: password,
-                    club: club,
-                    location: location,
-                }),
+            let res = await createUserMutation({
+                    variables: body
             });
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setFirstName("");
-                setLastName("");
-                setUsername("");
-                setEmail("");
-                setPassword("");
-                setClub("");
-                setLocation("");
+            // let resJson = await res.json();
+            if (!error && data) {
+
+                setFormState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''})
                 console.log("User created successfully");
             } else {
                 console.log("Some error occured");
+                console.error(error)
             }
         } catch (err) {
             console.log(err);
@@ -88,7 +87,7 @@ const CreateUser = () => {
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         autoComplete="given-name"
                                         name="firstName"
                                         required
@@ -99,7 +98,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="lastName"
@@ -109,7 +108,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="email"
@@ -119,7 +118,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         id="username"
@@ -129,7 +128,7 @@ const CreateUser = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField
+                                    <TextField onChange={handleChange}
                                         required
                                         fullWidth
                                         name="password"
@@ -143,10 +142,11 @@ const CreateUser = () => {
                                     <FormControl sx={{ width: 550 }}>
                                         <InputLabel id="">Location</InputLabel>
                                         <Select
+                                            name="location"
                                             labelId="l"
                                             id=""
-                                            value={location}
-                                            onChange={handleSubmit}
+                                            value={formState.location}
+                                            onChange={handleChange}
                                             fullWidth
                                             label="Location"
                                         >
@@ -163,10 +163,11 @@ const CreateUser = () => {
                                     <FormControl sx={{ width: 550 }}>
                                         <InputLabel id="">Club</InputLabel>
                                         <Select
+                                            name="club"
                                             labelId="l"
                                             id=""
-                                            value={club}
-                                            onChange={handleSubmit}
+                                            value={formState.club}
+                                            onChange={handleChange}
                                             autoWidth
                                             label="Club"
                                         >
@@ -188,11 +189,12 @@ const CreateUser = () => {
                                 // disabled={
                                 //     values?.password?.length === 0 || values?.email?.length === 0
                                 // }
-                                onClick={async () => {
-                                    await handleSubmit();
-                                    // form.reset();
-                                    console.log('click')
-                                }}>
+                                // onClick={async () => {
+                                //     await handleSubmit();
+                                //     // form.reset();
+                                //     console.log('click')
+                                // }}
+                                >
                                 Submit
                             </Button>
                             <Grid container justifyContent="flex-end">
