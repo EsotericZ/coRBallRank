@@ -79,13 +79,16 @@ img {
 .completedImg {
     display: inline-block;
     justify-content: center;
-    
+    flex-basis: 50%;
 }
+/* 
+.container {
+    display: flex;
+} */
 
 .eventText {
-    display: inline-block;
-    justify-content: center;
-    text-align: right;
+    display: flex;
+    flex-basis: 50%;
 }
 
 .completedName, .upcomingName {

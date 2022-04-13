@@ -2,8 +2,8 @@ import './home.css';
 
 const Complete = ({ events }) => {
     return (
-        <>
-            <div class="card" id="right">
+        <div className="container">
+            <div class="card">
                 {events.map((event) => (
                     <>
                         <img className="completedImg" src={event.image} alt="Event Pic" height="200" />
@@ -18,7 +18,7 @@ const Complete = ({ events }) => {
                     </>
                 ))}
             </div>
-        </>
+        </div>
     )
 };
 
