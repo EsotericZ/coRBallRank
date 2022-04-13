@@ -71,7 +71,7 @@ const Odds = () => {
                     determine the winning percentage chance for any two players based on past tournament results!
                     Compare ranks, see match history and see how closly matched you would be in a tournament setting!
                 </h3>
-            <div container className="odds">
+            <div container className="pOptions">
             <div className="player1" id="p1">
                 <Grid item xs={5}>
                     <FormControl id="player"sx={{ width: 400 }}>

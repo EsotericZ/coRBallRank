@@ -9,9 +9,8 @@ footer {
     /* position: fixed;
     bottom: 0; */
     
-    position: sticky;
+    position: absolute;
     height: auto;
-    /* margin-top: 400px; */
 }
 
 .permalinks {

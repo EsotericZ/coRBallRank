@@ -15,6 +15,7 @@ const Upcoming = ({ events }) => {
                                 <div>{event.club}, {event.location}</div>
                                 <div>{event.startDate} - {event.endDate}</div>
                                 <a href={event.link} target="_blank">Event Information Here</a>
+                                <br/>
                             </div>
                         </div>
                     </>

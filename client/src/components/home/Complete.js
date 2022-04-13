@@ -17,6 +17,7 @@ const Complete = ({ events }) => {
                             <a href={event.link} target="_blank" className="completedLink">
                                 Event Information Here
                             </a>
+                            <br/>
                         </div>
                     </div>
                     </>

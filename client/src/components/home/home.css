@@ -91,9 +91,15 @@ img {
 }
 
 .completedImg {
-    display: inline-block;
+    display: flex;
     justify-content: center;
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
+    width: 150px;
+}
+.pastInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
 }
 /* 
 .container {

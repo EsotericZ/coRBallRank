@@ -7,7 +7,10 @@
     margin-right:auto;
     /* margin-top: 50px; */
 }
-
+.pOptions {
+    display: flex;
+    justify-content: center;
+}
 h1 {
     display: flex;
     text-align: center;
@@ -30,6 +33,7 @@ h1 {
     /* width: 30%; */
     margin-left: 10px;
     line-height: 4;
+    margin-top: 10px;
 }
 
 .hidden {
@@ -53,7 +57,7 @@ h1 {
 
 .submitBtn {
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
     height: 56px;
     width: 150px;
     display: inline-flex;
