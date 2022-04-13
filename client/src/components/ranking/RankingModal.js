@@ -39,7 +39,6 @@ export default function RankingModal({player}) {
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         {player.fullName}
-                        
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         {player.avatar}

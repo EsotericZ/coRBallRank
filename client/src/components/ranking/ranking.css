@@ -22,6 +22,11 @@ searchBar {
     font-weight: bold;
 }
 
+#modal-modal-description {
+    display: flex;
+    flex-direction: column;
+}
+
 /* =================================================================
 MEDIA QUERIES (SMALL)
 ================================================================= */
