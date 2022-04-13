@@ -5,10 +5,10 @@ const utils = require('../utils/auth');
 const resolvers = {
 	Query: {
 		user: async (_root, {id}) => {
-			return await User.findById(id).populate({path:"playerId"});
+			return await User.findById(id).populate({path:"playerId"}).populate({path:"clubId"}).populate({path:"locationId"});
 		},
 		users: async (_root, _args, context) => {
-			return await User.find({}).populate({path:"playerId"});
+			return await User.find({}).populate({path:"playerId"}).populate({path:"clubId"}).populate({path:"locationId"});
 		},
 		locations: async (_root, _args, context) => {
 			return await Location.find({});
@@ -44,23 +44,23 @@ const resolvers = {
 			return await Match.find({}).populate({path:"winningPlayerId"}).populate({path:"losingPlayerId"}).populate({path:"tournamentId"});
 		},
 		tournament: async (_root, {id}) => {
-			return await Tournament.findById(id);
+			return await Tournament.findById(id).populate({path:"clubId"}).populate({path:"locationId"});
 		},
 		tournaments: async (_root, _args, context) => {
-			return await Tournament.find({});
+			return await Tournament.find({}).populate({path:"clubId"}).populate({path:"locationId"});
 		},
 	},
 
 	Mutation: {
-		createUser: async (_root, {firstName, lastName, username, email, role, club, location, password}) => {
+		createUser: async (_root, {firstName, lastName, username, email, role, clubId, locationId, password}) => {
 			const user = await User.create({
 				firstName,
 				lastName,
 				username,
 				email,
 				role,
-				club, 
-				location,
+				clubId, 
+				locationId,
 				password,
 			});
 
@@ -83,7 +83,6 @@ const resolvers = {
 		},
 		createMatch: async (_root, {winningPlayerId, losingPlayerId, pointDifferential, score, tieBreaker, division, status, tournamentId, matchType}) => {
 			const match = await Match.create({
-				// matchId,
 				winningPlayerId,
 				losingPlayerId,
 				pointDifferential,
@@ -96,11 +95,11 @@ const resolvers = {
 			});
 			console.log('Created Match', match)
 		},
-		createTournament: async (_root, {name, location, club, startDate, endDate, weightIndex, link, status}) => {
+		createTournament: async (_root, {name, clubId, locationId, startDate, endDate, weightIndex, link, status}) => {
 			const tournament = await Tournament.create({
 				name,
-				location,
-				club,
+				clubId,
+				locationId,
 				startDate,
 				endDate,
 				weightIndex,

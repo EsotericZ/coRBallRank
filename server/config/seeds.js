@@ -29,6 +29,10 @@ db.once('open', async () => {
             // 05
             city: 'Highlands Ranch, CO',
         },
+        {
+            // 06
+            city: 'Centennial, CO',
+        },
     ]);
     
     console.log('Locations Seeded')
@@ -45,25 +49,37 @@ db.once('open', async () => {
         {
             // 01
             name: 'Denver Athletic Club',
-            address: '12120 W 64th Ave',
+            address: '1325 Glenarm Pl',
             locationId: locations[2]._id,
         },
         {
             // 02
             name: 'Highlands Ranch Rec Center',
-            address: '12120 W 64th Ave',
+            address: '8800 S Broadway',
             locationId: locations[5]._id,
         },
         {
             // 03
             name: 'Pueblo Athletic Club',
-            address: '12120 W 64th Ave',
+            address: '58 Glen Royal Dr',
             locationId: locations[3]._id,
+        },
+        {
+            // 04
+            name: 'Goodson Rec Center',
+            address: '6315 S University Blvd',
+            locationId: locations[6]._id,
+        },
+        {
+            // 05
+            name: 'Downtown YMCA',
+            address: '207 N Nevada Ave',
+            locationId: locations[1]._id,
         },
     ])
 
     console.log('Clubs Seeded')
-    
+
     await Player.deleteMany();
 
     const players = await Player.insertMany([
@@ -95,7 +111,7 @@ db.once('open', async () => {
             lastName: 'Martinez',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1212,
+            singleRank: 1284,
             doubleRank: 1318,
             mixedRank: 1205,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/102032_large.jpg',
@@ -106,9 +122,9 @@ db.once('open', async () => {
             lastName: 'Garcia',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
-            mixedRank: 1100,
+            singleRank: 1122,
+            doubleRank: 1141,
+            mixedRank: 1109,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/317309_large.jpg',
         },
         {
@@ -117,8 +133,8 @@ db.once('open', async () => {
             lastName: 'Pathrojuthri',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1002,
+            doubleRank: 1013,
             mixedRank: 0,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/279312_large.jpg',
         },
@@ -128,9 +144,9 @@ db.once('open', async () => {
             lastName: 'Stone',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
+            singleRank: 1212,
             doubleRank: 1183,
-            mixedRank: 1300,
+            mixedRank: 1301,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/67020_large.jpg',
         },
         {
@@ -139,9 +155,9 @@ db.once('open', async () => {
             lastName: 'Beckwith',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
-            mixedRank: 0,
+            singleRank: 1211,
+            doubleRank: 1197,
+            mixedRank: 1055,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/18373_large.gif',
         },
         {
@@ -150,8 +166,8 @@ db.once('open', async () => {
             lastName: 'Cuellar',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1102,
+            doubleRank: 1053,
             mixedRank: 0,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/180050_large.jpg',
         },
@@ -161,8 +177,8 @@ db.once('open', async () => {
             lastName: 'Huey',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1302,
+            doubleRank: 1263,
             mixedRank: 0,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/27024_large.jpg',
         },
@@ -172,8 +188,8 @@ db.once('open', async () => {
             lastName: 'Nigro',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1342,
+            doubleRank: 1243,
             mixedRank: 0,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/275445_large.jpg',
         },
@@ -183,8 +199,8 @@ db.once('open', async () => {
             lastName: 'Torres',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1052,
+            doubleRank: 1053,
             mixedRank: 0,
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/262238_large.jpg',
         },
@@ -216,8 +232,8 @@ db.once('open', async () => {
             lastName: 'Schaeffer',
             birthday: '02/04/1986',
             gender: 'M',
-            singleRank: 1112,
-            doubleRank: 1183,
+            singleRank: 1022,
+            doubleRank: 1043,
             mixedRank: 0,
             avatar: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetdrawings.com%2Fimg%2Fracquetball-silhouette-23.jpg&f=1&nofb=1',
         },
@@ -236,8 +252,8 @@ db.once('open', async () => {
             playerId: players[0]._id,
             role: 'admin',
             password: 'pass',
-            club: 'None',
-            location: 'None',
+            clubId: clubs[0]._id,
+            locationId: locations[0]._id,
         },
         {
             firstName: 'CJ',
@@ -247,8 +263,8 @@ db.once('open', async () => {
             playerId: players[1]._id,
             role: 'player',
             password: 'pass',
-            club: 'DAC',
-            location: 'Denver',
+            clubId: clubs[0]._id,
+            locationId: locations[0]._id,
         },
     ]);
 
@@ -260,8 +276,8 @@ db.once('open', async () => {
         {
             // 00
             name: '2020 Apex Open',
-            location: 'Arvada, CO',
-            club: 'Apex',
+            clubId: clubs[0]._id,
+            locationId: locations[0]._id,
             startDate: '02/07/20',
             endDate: '02/09/20',
             weightIndex: 20,
@@ -272,8 +288,8 @@ db.once('open', async () => {
         {
             // 01
             name: '2022 State Singles',
-            location: 'Denver, CO',
-            club: 'Denver Athletic Club',
+            clubId: clubs[1]._id,
+            locationId: locations[2]._id,
             startDate: '05/13/22',
             endDate: '05/15/22',
             weightIndex: 30,
@@ -284,8 +300,8 @@ db.once('open', async () => {
         {
             // 02
             name: '2022 Rocky Mountain State Games',
-            location: 'Colorado Springs, CO',
-            club: 'Denver Athletic Club',
+            clubId: clubs[5]._id,
+            locationId: locations[1]._id,
             startDate: '07/22/22',
             endDate: '07/24/22',
             weightIndex: 20,

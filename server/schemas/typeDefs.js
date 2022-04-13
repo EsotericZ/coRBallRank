@@ -34,15 +34,15 @@ const typeDefs = gql`
         email: String
         playerId: Player
         role: String
-        club: String
-        location: String
+        clubId: Club
+        locationId: Location
     }
 
     type Tournament {
         _id: ID
         name: String
-        location: String
-        club: String
+        clubId: Club
+        locationId: Location
         startDate: String
         endDate: String
         weightIndex: Int
@@ -94,8 +94,8 @@ const typeDefs = gql`
             username: String!, 
             email: String!, 
             role: String,
-            club: String,
-            location: String,
+            clubId: String,
+            locationId: String,
             password: String!,
         ): Auth
         createPlayer(
@@ -120,8 +120,7 @@ const typeDefs = gql`
         ): Match
         createTournament(
             name: String!,
-            location: String!,
-            club: String!,
+            clubId: String!,
             startDate: String!,
             endDate: String!,
             weightIndex: Int!,
