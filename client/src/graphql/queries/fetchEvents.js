@@ -4,10 +4,16 @@ export const FETCH_EVENTS = gql`
     query Tournaments {
         tournaments {
             name
-            location
-            club
+            clubId {
+                name
+                address
+            }
+            locationId {
+                city
+            }
             startDate
             endDate
+            weightIndex
             link
             status
             image

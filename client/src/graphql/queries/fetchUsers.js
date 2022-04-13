@@ -6,17 +6,23 @@ export const FETCH_USER = gql`
             _id
             firstName
             lastName
+            username
             email
-            club
-            location
-            role
             playerId {
-                _id
                 fullName
                 singleRank
                 doubleRank
                 mixedRank
                 avatar
+                birthday
+                gender
+            }
+            role
+            clubId {
+                 name
+            }
+            locationId {
+                city
             }
         }
     }
@@ -28,10 +34,23 @@ export const FETCH_USERS = gql`
             _id
             firstName
             lastName
+            username
             email
             playerId {
-                firstName
+                fullName
+                singleRank
+                doubleRank
+                mixedRank
                 avatar
+                birthday
+                gender
+            }
+            role
+            clubId {
+                 name
+            }
+            locationId {
+                city
             }
         }
     }

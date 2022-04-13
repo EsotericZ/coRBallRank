@@ -8,8 +8,8 @@ const userSchema = new Schema({
 	playerId: { type: Schema.Types.ObjectId, ref: 'Player' },
 	role: String,
 	password: String,
-	club: String,
-	location: String,
+	clubId:  { type: Schema.Types.ObjectId, ref: 'Club' },
+	locationId:  { type: Schema.Types.ObjectId, ref: 'Location' },
 });
 
 module.exports = model('User', userSchema);
