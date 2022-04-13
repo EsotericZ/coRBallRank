@@ -119,6 +119,10 @@ const Odds = () => {
             <div className="submit" id="submitBtn">
                 <button height="58" className="submitBtn" 
                     onClick={() => {
+                        if (player1 == '' || player2 == '' ){
+                            alert('Please pick players')
+                            return ;
+                        }
                         playerRanks();
                         document.getElementById('p1').classList.toggle('hidden');
                         document.getElementById('p2').classList.toggle('hidden');
