@@ -19,10 +19,13 @@ const style = {
     p: 4,
 };
 
+
 export default function RankingModal({player}) {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    console.log({player})
 
     return (
         <div>
@@ -35,10 +38,13 @@ export default function RankingModal({player}) {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Modal
+                        {player.fullName}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        {player.fullName}
+                        {player.avatar}
+                        Gender: {player.gender}
+                        Score: {player.singleRank}
+                        Birthday: {player.birthday}
                     </Typography>
                 </Box>
             </Modal>

@@ -18,6 +18,15 @@ searchBar {
     padding-bottom: 30%;
 }
 
+#modal-modal-title {
+    font-weight: bold;
+}
+
+#modal-modal-description {
+    display: flex;
+    flex-direction: column;
+}
+
 /* =================================================================
 MEDIA QUERIES (SMALL)
 ================================================================= */
