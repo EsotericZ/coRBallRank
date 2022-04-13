@@ -12,9 +12,9 @@ import TabPanel from '@mui/lab/TabPanel';
 
 import { useState } from "react";
 import NewEvent from "./NewEvent";
-// import MatchModal from "./MatchModal";
-// import NewsModal from "./NewsModal";
-// import PlayerModal from "./PlayerModal";
+import NewMatch from "./NewMatch";
+import NewNews from "./NewNews";
+import NewPlayer from "./NewPlayer";
 
 const Admin = () => {
     const [value, setValue] = useState('1');
@@ -45,16 +45,16 @@ const Admin = () => {
                             <NewEvent />
                         </TabPanel>
                         <TabPanel value="2">
-                            <h1>2</h1>
-                            {/* <NewEvent /> */}
+                            <h1>Creat a New Match</h1>
+                            <NewMatch />
                         </TabPanel>
                         <TabPanel value="3">
-                            <h1>3</h1>
-                            {/* <NewEvent /> */}
+                            <h1>Create a New News Feed Item</h1>
+                            <NewNews />
                         </TabPanel>
                         <TabPanel value="4">
-                            <h1>4</h1>
-                            {/* <NewEvent /> */}
+                            <h1>Add a New Player</h1>
+                            <NewPlayer />
                         </TabPanel>
                     </TabContext>
                 </Box>
