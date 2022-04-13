@@ -4,6 +4,7 @@ img {
 
 #homeEvents {
     direction: row-reverse;
+    width: 500px;
 }
 
 .home {
@@ -65,15 +66,28 @@ img {
     font-weight: bold;
 }
 
-.card {
-    display: inline-block;
+.cardEvents {
+    /* display: inline-block; */
     justify-content: center;
+    display: flex;
     /* margin-left: 65%; */
     padding: 15px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+    width:500px;
+    flex-direction: column;
     /* margin-top: 10px; */
+}
+.pastEvents{
+    justify-content: center;
+    display: flex;
+    /* margin-left: 65%; */
+    padding: 15px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 500px;
 }
 
 .completedImg {
