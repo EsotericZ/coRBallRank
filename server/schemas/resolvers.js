@@ -46,13 +46,12 @@ const resolvers = {
 	},
 
 	Mutation: {
-		createUser: async (_root, {firstName, lastName, username, email, playerId, role, club, location, password}) => {
+		createUser: async (_root, {firstName, lastName, username, email, role, club, location, password}) => {
 			const user = await User.create({
 				firstName,
 				lastName,
 				username,
 				email,
-				playerId,
 				role,
 				club, 
 				location,

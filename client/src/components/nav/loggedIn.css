@@ -32,10 +32,10 @@
 .avatar{
   background-color:red ;
   float: right;
-  display: flex;
+  display: block;
 }
 .account{
     float: right;
-    display: flex;
+    display: block;
     background-color:red;
 }
