@@ -33,13 +33,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(),
     marginRight: theme.spacing(),
     // display: "inline-block",
-    verticalAlign: "center",
+    // verticalAlign: "center",
     fontSize: '20px',
     textDecoration: 'none',
     color: 'white',
+    width: '100%',
     // marginRight: '35px',
-    display: "flex",
-    justifyContent: "space-between",
+    // display: "flex",
+    // justifyContent: "space-between",
   },
   account: {
     display: "block",
@@ -68,7 +69,7 @@ function LoggedIn() {
   const playerId = player.data._id;
 
   const { loading, data } = useQuery(FETCH_USER, {
-      variables: {userId: playerId}
+    variables: { userId: playerId }
   });
 
   const roleData = data?.user.role;
@@ -91,7 +92,7 @@ function LoggedIn() {
     :
     <AppBar position="static" className="logInNav">
       <CssBaseline className="logInNav" />
-      <Toolbar className="logInNav" sx={{width:"600px"}}>
+      <Toolbar className="logInNav" sx={{ width: "600px" }}>
         {/* <Typography className={classes.logo}> */}
         <img src={rockies} alt="logo" className="logo" />
         {/* </Typography> */}
@@ -100,28 +101,29 @@ function LoggedIn() {
         ) : (
 
           <div className={classes.navlinks}>
-            <Box display="flex" sx={{width:1300}} justifyContent="space-between">
+            <Box display="flex" sx = {{ width: "100%"}}justifyContent="space-between">
               <div>
-              <Link to="/home" className={classes.link} id="home">
-                Home
-              </Link>
-              <Link to="/ranking" className={classes.link} id="ranking">
-                Ranking
-              </Link>
-              {/* <Link to="/events" className={classes.link} id="events">
+                <Link to="/home" className={classes.link} id="home">
+                  Home
+                </Link>
+                <Link to="/ranking" className={classes.link} id="ranking">
+                  Ranking
+                </Link>
+                {/* <Link to="/events" className={classes.link} id="events">
                 Events
               </Link> */}
-              <Link to="/history" className={classes.link} id="history">
-                History
-              </Link>
-              <Link to="/odds" className={classes.link} id="odds">
-                Odds
-              </Link>
-              <Link to="/contact" className={classes.link} id="contact">
-                Contact
-              </Link>
+                <Link to="/history" className={classes.link} id="history">
+                  History
+                </Link>
+                <Link to="/odds" className={classes.link} id="odds">
+                  Odds
+                </Link>
+                <Link to="/contact" className={classes.link} id="contact">
+                  Contact
+                </Link>
               </div>
 
+              <div>
               <Tooltip witdh="300px" justify="right" className="account" title="My Account">
                 <IconButton
                   onClick={handleClick}
@@ -134,6 +136,7 @@ function LoggedIn() {
                   <Avatar className="avatar" sx={{ width: 52, height: 52 }} src={data.user.playerId.avatar}></Avatar>
                 </IconButton>
               </Tooltip>
+              </div>
             </Box>
 
             <Menu
@@ -176,9 +179,9 @@ function LoggedIn() {
                 <Avatar /><Link to='/profile'>Profile</Link>
               </MenuItem>
               {roleData === 'admin' ? (
-              <MenuItem>
-                <Avatar /><Link to='/admin'>Admin Page</Link>
-              </MenuItem>
+                <MenuItem>
+                  <Avatar /><Link to='/admin'>Admin Page</Link>
+                </MenuItem>
               ) : <></>}
               <Divider />
               <MenuItem>

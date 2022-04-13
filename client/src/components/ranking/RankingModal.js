@@ -1,10 +1,11 @@
-import * as React from 'react';
+// import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Ranking from './Ranking';
-import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
+// import Ranking from './Ranking';
+// import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
 const style = {
     position: 'absolute',
@@ -18,12 +19,10 @@ const style = {
     p: 4,
 };
 
-export default function RankingModal() {
-    const [open, setOpen] = React.useState(false);
+export default function RankingModal({player}) {
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-
 
     return (
         <div>
@@ -39,7 +38,7 @@ export default function RankingModal() {
                         Modal
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        {player.fullName}
                     </Typography>
                 </Box>
             </Modal>
