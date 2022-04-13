@@ -2,43 +2,64 @@ import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
 import './admin.css';
 
+import Box from '@mui/material/Box';
+import TableContainer from '@mui/material/TableContainer';
+import Paper from '@mui/material/Paper';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+
 import { useState } from "react";
-import EventModal from "./EventModal";
-import MatchModal from "./MatchModal";
-import NewsModal from "./NewsModal";
-import PlayerModal from "./PlayerModal";
+import NewEvent from "./NewEvent";
+// import MatchModal from "./MatchModal";
+// import NewsModal from "./NewsModal";
+// import PlayerModal from "./PlayerModal";
 
 const Admin = () => {
-    const [event, setEvent] = useState(false);
-    const [match, setMatch] = useState(false);
-    const [news, setNews] = useState(false);
-    const [player, setPlayer] = useState(false);
+    const [value, setValue] = useState('1');
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
         <>
-            <Nav />
-            <main>
-                <button className="primaryBtn" onClick={() => setEvent(true)}>
-                    Add Event
-                </button>
-                {event && <EventModal setEvent={setEvent} />}
-
-                <button className="primaryBtn" onClick={() => setMatch(true)}>
-                    Add Match
-                </button>
-                {match && <MatchModal setMatch={setMatch} />}
-
-                <button className="primaryBtn" onClick={() => setNews(true)}>
-                    Add News
-                </button>
-                {news && <NewsModal setNews={setNews} />}
-
-                <button className="primaryBtn" onClick={() => setPlayer(true)}>
-                    Add Player
-                </button>
-                {player && <PlayerModal setPlayer={setPlayer} />}
-            </main>
-            <Footer />    
+            <TableContainer component={Paper} className="rankPage">
+                <Nav />
+                <Box sx={{ textAlign: 'center', borderBottom: 1, borderColor: 'divider' }} className="rankings">
+                    Admin Controls
+                </Box>
+                <Box sx={{ width: '100%', typography: 'body1' }}>
+                    <TabContext value={value}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                            <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
+                                <Tab label="New Event" value="1" />
+                                <Tab label="New Player" value="2" />
+                                <Tab label="New News Item" value="3" />
+                                <Tab label="New Match" value="4" />
+                            </TabList>
+                        </Box>
+                        <TabPanel value="1">
+                            <h1>Create a New Event</h1>
+                            <NewEvent />
+                        </TabPanel>
+                        <TabPanel value="2">
+                            <h1>2</h1>
+                            {/* <NewEvent /> */}
+                        </TabPanel>
+                        <TabPanel value="3">
+                            <h1>3</h1>
+                            {/* <NewEvent /> */}
+                        </TabPanel>
+                        <TabPanel value="4">
+                            <h1>4</h1>
+                            {/* <NewEvent /> */}
+                        </TabPanel>
+                    </TabContext>
+                </Box>
+                <Footer />
+            </TableContainer >
         </>
     );
 };

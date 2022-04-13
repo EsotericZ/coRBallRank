@@ -1,6 +1,18 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+    type Location {
+        _id: ID
+        city: String
+    }
+
+    type Club {
+        _id: ID
+        name: String
+        address: String
+        locationId: Location
+    }
+
     type Player {
         _id: ID
         firstName: String
@@ -60,6 +72,8 @@ const typeDefs = gql`
     type Query {
         user(id: String!): User
         users: [User]
+        clubs: [Club]
+        locations: [Location]
         player(id: String!): Player
         allPlayers: [Player]
         maleSingles: [Player]

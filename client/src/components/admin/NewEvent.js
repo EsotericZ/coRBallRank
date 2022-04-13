@@ -18,7 +18,7 @@ import Nav from '../nav/Nav';
 
 const theme = createTheme();
 
-const CreateUser = () => {
+const NewEvent = () => {
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '', club: '', location: ''});
     const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_USER);
     const navigate = useNavigate();
@@ -63,21 +63,17 @@ const CreateUser = () => {
     
     return (
         <>
-            <Nav />
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
                     <Box
                         sx={{
-                            marginTop: 8,
+                            marginTop: 4,
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                         }}
                     >
-                        <Typography component="h1" variant="h5">
-                            Sign Up
-                        </Typography>
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
@@ -179,7 +175,7 @@ const CreateUser = () => {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
+                                sx={{ mb: 2 }}
                             >
                                 Submit
                             </Button>
@@ -191,4 +187,4 @@ const CreateUser = () => {
     );
 };
 
-export default CreateUser;
+export default NewEvent;

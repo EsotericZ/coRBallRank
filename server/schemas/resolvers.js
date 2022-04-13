@@ -1,5 +1,5 @@
 const {AuthenticationError} = require('apollo-server-express');
-const { Match, Player, User, Tournament, PlayerHistory } = require('../models');
+const { Club, Location, Match, Player, User, Tournament } = require('../models');
 const utils = require('../utils/auth');
 
 const resolvers = {
@@ -9,6 +9,12 @@ const resolvers = {
 		},
 		users: async (_root, _args, context) => {
 			return await User.find({}).populate({path:"playerId"});
+		},
+		locations: async (_root, _args, context) => {
+			return await Location.find({});
+		},
+		clubs: async (_root, _args, context) => {
+			return await Club.find({}).populate({path:"locationId"});
 		},
 		player: async (_root, {id}) => {
 			return await Player.findById(id);
