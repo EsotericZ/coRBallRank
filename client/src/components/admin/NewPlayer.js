@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client'
-// import { CREATE_EVENT } from '../../graphql/mutations/createEvent';
+// import { CREATE_PLAYER } from '../../graphql/mutations/createPlayer';
 import { FETCH_CLUBS } from '../../graphql/queries/fetchClubs';
 import { FETCH_LOCATIONS } from '../../graphql/queries/fetchLocations';
 import Box from '@mui/material/Box';
@@ -20,14 +20,8 @@ import TextField from '@mui/material/TextField';
 const theme = createTheme();
 
 const NewPlayer = () => {
-    const clubsData = useQuery(FETCH_CLUBS);
-    const clubList = clubsData.data?.clubs || [];
-
-    const locationData = useQuery(FETCH_LOCATIONS);
-    const locationList = locationData.data?.locations || [];
-
-    const [formState, setFormState] = useState({ name: '', clubId: '', locationId: '', startDate: '', endDate: '', weightIndex: '', link: '', status: '', image: ''});
-    // const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_EVENT);
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', birthday: '', gender: '', avatar: ''});
+    // const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_PLAYER);
     const [createUserMutation,{ _data, _loading, error }] = 'TRUNK';
     const navigate = useNavigate();
 
@@ -42,15 +36,14 @@ const NewPlayer = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const body = {
-            name: formState.name,
-            clubId: formState.club,
-            locationId: formState.location,
-            startDate: formState.startDate,
-            endDate: formState.endDate,
-            weightIndex: formState.weightIndex,
-            link: formState.link,
-            status: formState.status,
-            image: formState.image,
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+            birthday: formState.birthday,
+            gender: formState.gender,
+            singleRank: 0,
+            doubleRank: 0,
+            mixedRank: 0,
+            avatar: formState.avatar,
         };
         console.log(body);
         try {
@@ -59,7 +52,7 @@ const NewPlayer = () => {
             });
             navigate('/admin');
             if (!error) {
-                setFormState({ name: '', clubId: '', locationId: '', startDate: '', endDate: '', weightIndex: '', link: '', status: '', image: ''})
+                setFormState({ firstName: '', lastName: '', birthday: '', gender: '', avatar: ''})
             } else {
                 console.error(error)
             }
@@ -83,63 +76,13 @@ const NewPlayer = () => {
                     >
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
-                                <Grid item xs={12}>
-                                    <TextField onChange={handleChange}
-                                        required
-                                        fullWidth
-                                        id="name"
-                                        label="Name"
-                                        name="name"
-                                        autoComplete="family-name"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Location</InputLabel>
-                                        <Select
-                                            name="location"
-                                            labelId="location"
-                                            id=""
-                                            value={formState.locationId}
-                                            onChange={handleChange}
-                                            fullWidth
-                                            label="Location"
-                                        >
-                                        {locationList.map((location) => (
-                                            <MenuItem key={location._id} value={location.city}>
-                                                {location.city}
-                                            </MenuItem>
-                                        ))}
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Club</InputLabel>
-                                        <Select
-                                            name="club"
-                                            labelId="club"
-                                            id=""
-                                            value={formState.clubId}
-                                            onChange={handleChange}
-                                            fullWidth
-                                            label="Club"
-                                        >
-                                        {clubList.map((club) => (
-                                            <MenuItem key={club._id} value={club.name}>
-                                                {club.name}
-                                            </MenuItem>
-                                        ))}
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="startDate"
-                                        label="Start Date"
-                                        name="startDate"
+                                        id="firstName"
+                                        label="First Name"
+                                        name="firstName"
                                         autoComplete="family-name"
                                     />
                                 </Grid>
@@ -147,28 +90,36 @@ const NewPlayer = () => {
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="endDate"
-                                        label="End Date"
-                                        name="endDate"
+                                        id="lastName"
+                                        label="Last Name"
+                                        name="lastName"
+                                        autoComplete="family-name"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField onChange={handleChange}
+                                        required
+                                        fullWidth
+                                        id="birthday"
+                                        label="Birthday"
+                                        name="birthday"
                                         autoComplete="family-name"
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Weight Index</InputLabel>
+                                        <InputLabel id="">Gender</InputLabel>
                                         <Select
-                                            name="weightIndex"
+                                            name="gender"
                                             labelId="l"
                                             id=""
-                                            value={formState.weightIndex}
+                                            value={formState.gender}
                                             onChange={handleChange}
                                             fullWidth
-                                            label="Weight Index"
+                                            label="Gender"
                                         >
-                                            <MenuItem value={1}>10</MenuItem>
-                                            <MenuItem value={2}>20</MenuItem>
-                                            <MenuItem value={3}>30</MenuItem>
-                                            <MenuItem value={3}>40</MenuItem>
+                                            <MenuItem value={1}>M</MenuItem>
+                                            <MenuItem value={2}>F</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </Grid>
@@ -176,37 +127,9 @@ const NewPlayer = () => {
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="link"
-                                        name="link"
-                                        label="URL Link"
-                                        autoComplete="family-name"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Event Status</InputLabel>
-                                        <Select
-                                            name="status"
-                                            labelId="l"
-                                            id=""
-                                            value={formState.status}
-                                            onChange={handleChange}
-                                            fullWidth
-                                            label="Event Status"
-                                        >
-                                            <MenuItem value={1}>Future</MenuItem>
-                                            <MenuItem value={2}>In-Progress</MenuItem>
-                                            <MenuItem value={3}>Completed</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextField onChange={handleChange}
-                                        required
-                                        fullWidth
-                                        id="image"
-                                        name="image"
-                                        label="Image URL"
+                                        id="avatar"
+                                        name="avatar"
+                                        label="Avatar URL"
                                         autoComplete="family-name"
                                     />
                                 </Grid>

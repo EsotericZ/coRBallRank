@@ -35,9 +35,9 @@ const Admin = () => {
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
                                 <Tab label="New Event" value="1" />
-                                <Tab label="New Player" value="2" />
-                                <Tab label="New News Item" value="3" />
-                                <Tab label="New Match" value="4" />
+                                <Tab label="New Match" value="2" />
+                                <Tab label="New Player" value="3" />
+                                <Tab label="New News Item" value="4" />
                             </TabList>
                         </Box>
                         <TabPanel value="1">
@@ -49,12 +49,12 @@ const Admin = () => {
                             <NewMatch />
                         </TabPanel>
                         <TabPanel value="3">
-                            <h1>Create a New News Feed Item</h1>
-                            <NewNews />
-                        </TabPanel>
-                        <TabPanel value="4">
                             <h1>Add a New Player</h1>
                             <NewPlayer />
+                        </TabPanel>
+                        <TabPanel value="4">
+                            <h1>Create a New News Feed Item</h1>
+                            <NewNews />
                         </TabPanel>
                     </TabContext>
                 </Box>
