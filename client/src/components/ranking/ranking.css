@@ -20,9 +20,15 @@ searchBar {
 
 #modal-modal-title {
     font-weight: bold;
+    display: flex;
+    justify-content: center;
 }
 
 #modal-modal-description {
+    display: flex;
+    flex-direction: column;
+}
+.rankModal {
     display: flex;
     flex-direction: column;
 }

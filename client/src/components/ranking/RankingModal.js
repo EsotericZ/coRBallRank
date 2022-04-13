@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { GridColumn } from 'semantic-ui-react';
 // import Ranking from './Ranking';
 // import { MALE_SINGLES, FEMALE_SINGLES, MALE_DOUBLES, FEMALE_DOUBLES, MIXED_DOUBLES } from '../../graphql/queries/fetchPlayers';
 
@@ -16,7 +17,12 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 2,
+    display: 'flex',
+    justifyContent: 'center',
+    fontSize: '20px',
+    textAlign: 'center',
+
 };
 
 
@@ -36,16 +42,19 @@ export default function RankingModal({player}) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Box sx={style} >
+                    <div className="rankModal">
+                    <div id="modal-modal-title" variant="h6" component="h2">
                         {player.fullName}
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        {player.avatar}
-                        Gender: {player.gender}
-                        Score: {player.singleRank}
+                    </div>
+                    <br/>
+                    <div style={{ textAlign: "center" }} id="modal-modal-description">
+                        <img src={player.avatar} alt="Porfile Pic" align="center"/>
+                        Gender: {player.gender}<br/>
+                        Score: {player.singleRank}<br/>
                         Birthday: {player.birthday}
-                    </Typography>
+                    </div>
+                    </div>
                 </Box>
             </Modal>
         </div>
