@@ -33,6 +33,12 @@
     font-size: 20px;
     text-decoration: none;
     color: white;
+    /* margin-left: 10px; */
     margin-right: 35px;
-    vertical-align: center;
+    margin-top: 5px;
+    /* vertical-align: center; */
+}
+
+#home {
+    margin-left: 20px;
 }

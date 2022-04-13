@@ -73,9 +73,7 @@ function LoggedOut() {
     <AppBar position="static" className="logoutNav">
       <CssBaseline className="logoutNav" />
       <Toolbar className="logoutNav">
-        {/* <Typography className={classes.logo}> */}
         <img src={rockies} alt="logo" className="logo" />
-        {/* </Typography> */}
         {isMobile ? (
           <DrawerComponent />
         ) : (
@@ -104,36 +102,6 @@ function LoggedOut() {
               </Link>
             </Box>
             <Login className="login" />
-            {/* <TextField 
-              margin="normal"
-              required
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              onChange = { (event, newValue) => 
-                this.setState({email: newValue})}
-            />
-            <TextField
-              margin="normal"
-              required
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange = { (event, newValue) => 
-                this.setState({password: newValue})}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ mt: 1, mb: 1 }}
-              onClick = { (event) => this.handleClick(event)}
-            >
-              Log In
-            </Button> */}
           </div>
         )}
       </Toolbar>
