@@ -5,6 +5,8 @@ img {
 #homeEvents {
     direction: row-reverse;
     width: 500px;
+    /* justify-content: center; */
+    display: inline-block;
 }
 
 .home {
