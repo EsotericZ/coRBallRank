@@ -25,6 +25,7 @@ const History = () => {
                             <input type="text" className="form-control rounded"
                                 placeholder="Write something here..." style={{ border: "none" }} />
                         </div>
+                        <button> Post</button>
                     </div>
                     {/* <Modal  className=" fade" id="post-modal" onHide={handleClose} show={show} >
                                     <Modal.Header  className="d-flex justify-content-between">
