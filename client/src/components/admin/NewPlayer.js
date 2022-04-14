@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client'
 // import { CREATE_PLAYER } from '../../graphql/mutations/createPlayer';
-import { FETCH_CLUBS } from '../../graphql/queries/fetchClubs';
-import { FETCH_LOCATIONS } from '../../graphql/queries/fetchLocations';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';

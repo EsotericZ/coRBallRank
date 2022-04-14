@@ -1,6 +1,7 @@
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
 import './admin.css';
+import FIX from '../../assets/FIX.jpg';
 
 import Box from '@mui/material/Box';
 import TableContainer from '@mui/material/TableContainer';
@@ -53,8 +54,11 @@ const Admin = () => {
                             <NewPlayer />
                         </TabPanel>
                         <TabPanel value="4">
-                            <h1>Create a New News Feed Item</h1>
-                            <NewNews />
+                            {/* <h1>Create a New News Feed Item</h1> */}
+                            {/* <NewNews /> */}
+                            <div className="cj">
+                                <img src={FIX} alt="Construction" />
+                            </div>
                         </TabPanel>
                     </TabContext>
                 </Box>

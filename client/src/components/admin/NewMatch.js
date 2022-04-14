@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client'
-// import { CREATE_EVENT } from '../../graphql/mutations/createEvent';
-import { FETCH_CLUBS } from '../../graphql/queries/fetchClubs';
-import { FETCH_LOCATIONS } from '../../graphql/queries/fetchLocations';
+// import { CREATE_MATCH } from '../../graphql/mutations/createMatch';
+import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
+import { FETCH_EVENTS } from '../../graphql/queries/fetchEvents';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -20,14 +20,14 @@ import TextField from '@mui/material/TextField';
 const theme = createTheme();
 
 const NewMatch = () => {
-    const clubsData = useQuery(FETCH_CLUBS);
-    const clubList = clubsData.data?.clubs || [];
+    const playersData = useQuery(ALL_PLAYERS);
+    const playerList = playersData.data?.allPlayers || [];
 
-    const locationData = useQuery(FETCH_LOCATIONS);
-    const locationList = locationData.data?.locations || [];
+    const eventData = useQuery(FETCH_EVENTS);
+    const eventList = eventData.data?.tournaments || [];
 
     const [formState, setFormState] = useState({ name: '', clubId: '', locationId: '', startDate: '', endDate: '', weightIndex: '', link: '', status: '', image: ''});
-    // const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_EVENT);
+    // const [createUserMutation,{ _data, _loading, error }] = useMutation(CREATE_MATCH);
     const [createUserMutation,{ _data, _loading, error }] = 'TRUNK';
     const navigate = useNavigate();
 
@@ -84,30 +84,20 @@ const NewMatch = () => {
                         <form noValidate onSubmit={(e) => handleSubmit(e)} sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <TextField onChange={handleChange}
-                                        required
-                                        fullWidth
-                                        id="name"
-                                        label="Name"
-                                        name="name"
-                                        autoComplete="family-name"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
                                     <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Location</InputLabel>
+                                        <InputLabel id="">Winner</InputLabel>
                                         <Select
-                                            name="location"
-                                            labelId="location"
+                                            name="winner"
+                                            labelId="winner"
                                             id=""
-                                            value={formState.locationId}
+                                            value={formState.winner}
                                             onChange={handleChange}
                                             fullWidth
-                                            label="Location"
+                                            label="Winner"
                                         >
-                                        {locationList.map((location) => (
-                                            <MenuItem key={location._id} value={location.city}>
-                                                {location.city}
+                                        {playerList.map((player) => (
+                                            <MenuItem key={player._id} value={player.fullName}>
+                                                {player.fullName}
                                             </MenuItem>
                                         ))}
                                         </Select>
@@ -115,19 +105,19 @@ const NewMatch = () => {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Club</InputLabel>
+                                        <InputLabel id="">Loser</InputLabel>
                                         <Select
-                                            name="club"
-                                            labelId="club"
+                                            name="loser"
+                                            labelId="loser"
                                             id=""
-                                            value={formState.clubId}
+                                            value={formState.loser}
                                             onChange={handleChange}
                                             fullWidth
-                                            label="Club"
+                                            label="Loser"
                                         >
-                                        {clubList.map((club) => (
-                                            <MenuItem key={club._id} value={club.name}>
-                                                {club.name}
+                                        {playerList.map((player) => (
+                                            <MenuItem key={player._id} value={player.fullName}>
+                                                {player.fullName}
                                             </MenuItem>
                                         ))}
                                         </Select>
@@ -137,9 +127,9 @@ const NewMatch = () => {
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="startDate"
-                                        label="Start Date"
-                                        name="startDate"
+                                        id="pointDifferential"
+                                        label="Point Differential"
+                                        name="pointDifferential"
                                         autoComplete="family-name"
                                     />
                                 </Grid>
@@ -147,28 +137,49 @@ const NewMatch = () => {
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="endDate"
-                                        label="End Date"
-                                        name="endDate"
+                                        id="score"
+                                        label="Score"
+                                        name="score"
+                                        autoComplete="family-name"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField onChange={handleChange}
+                                        required
+                                        fullWidth
+                                        id="division"
+                                        label="Division"
+                                        name="division"
+                                        autoComplete="family-name"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField onChange={handleChange}
+                                        required
+                                        fullWidth
+                                        id="status"
+                                        label="Status"
+                                        name="status"
                                         autoComplete="family-name"
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Weight Index</InputLabel>
+                                        <InputLabel id="">Tournament</InputLabel>
                                         <Select
-                                            name="weightIndex"
-                                            labelId="l"
+                                            name="tournament"
+                                            labelId="tournament"
                                             id=""
-                                            value={formState.weightIndex}
+                                            value={formState.tournament}
                                             onChange={handleChange}
                                             fullWidth
-                                            label="Weight Index"
+                                            label="Tournament"
                                         >
-                                            <MenuItem value={1}>10</MenuItem>
-                                            <MenuItem value={2}>20</MenuItem>
-                                            <MenuItem value={3}>30</MenuItem>
-                                            <MenuItem value={3}>40</MenuItem>
+                                        {eventList.map((event) => (
+                                            <MenuItem key={event._id} value={event.name}>
+                                                {event.name}
+                                            </MenuItem>
+                                        ))}
                                         </Select>
                                     </FormControl>
                                 </Grid>
@@ -176,37 +187,9 @@ const NewMatch = () => {
                                     <TextField onChange={handleChange}
                                         required
                                         fullWidth
-                                        id="link"
-                                        name="link"
-                                        label="URL Link"
-                                        autoComplete="family-name"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl sx={{ width: 550 }}>
-                                        <InputLabel id="">Event Status</InputLabel>
-                                        <Select
-                                            name="status"
-                                            labelId="l"
-                                            id=""
-                                            value={formState.status}
-                                            onChange={handleChange}
-                                            fullWidth
-                                            label="Event Status"
-                                        >
-                                            <MenuItem value={1}>Future</MenuItem>
-                                            <MenuItem value={2}>In-Progress</MenuItem>
-                                            <MenuItem value={3}>Completed</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextField onChange={handleChange}
-                                        required
-                                        fullWidth
-                                        id="image"
-                                        name="image"
-                                        label="Image URL"
+                                        id="matchType"
+                                        name="matchType"
+                                        label="Match Type"
                                         autoComplete="family-name"
                                     />
                                 </Grid>
