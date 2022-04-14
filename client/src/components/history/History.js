@@ -13,20 +13,7 @@ const History = () => {
         <>
             <Nav />
             <div className='container' id="historyContainer">
-                <div className='historyCard'>
-                    <div className="header-title">
-                        <h2 className="card-title">Create Post</h2>
-                    </div>
-                    <div className="">
-                        <div className="user-img">
-                            <img alt="user1" className="avatar-60 rounded-circle" />
-                        </div>
-                        <div className="post-text" onClick={handleShow}>
-                            <input type="text" className="form-control rounded"
-                                placeholder="Write something here..." style={{ border: "none" }} />
-                        </div>
-                        <button> Post</button>
-                    </div>
+                {/* <div className='historyCard'> */}
                     {/* <Modal  className=" fade" id="post-modal" onHide={handleClose} show={show} >
                                     <Modal.Header  className="d-flex justify-content-between">
                                         <Modal.Title id="post-modalLabel">Create Post</Modal.Title>
@@ -78,6 +65,22 @@ const History = () => {
                                         <button type="submit" className="btn btn-primary d-block w-100 mt-3">Post</button>
                                     </Modal.Body>
                                 </Modal> */}
+                {/* </div> */}
+                <div className='historyCard'>
+                    <div>
+                        <img className="rounded-circle img-fluid" alt="" />
+                        <h2>Rally Highlight</h2>
+                    </div>
+                    <div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Uhyr-CRsrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div className="">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
+                        </div>
+                        {/* <div className="">
+                            <button>Like</button>
+                            <button>Comment</button>
+                        </div> */}
+                    </div>
                 </div>
                 <div className='historyCard'>
                     <div>
@@ -85,29 +88,13 @@ const History = () => {
                         <h2>PLAYER NAME</h2>
                     </div>
                     <div>
-                        <iframe title="vedio" src="https://www.youtube.com/embed/j_GsIanLxZk?rel=0" ></iframe>
                         <div className="">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
                         </div>
-                        <div className="">
-                            <Link to="#">like</Link>
-                            <Link to="#">reply</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className='historyCard'>
-                    <div>
-                        <img className="rounded-circle img-fluid" alt="" />
-                        <h2>PLAYER NAME</h2>
-                    </div>
-                    <div>
-                        <div className="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus</p>
-                        </div>
-                        <div className="">
-                            <Link to="#">like</Link>
-                            <Link to="#">reply</Link>
-                        </div>
+                        {/* <div className="">
+                            <button>Like</button>
+                            <button>Comment</button>
+                        </div> */}
                     </div>
                 </div>
             </div>

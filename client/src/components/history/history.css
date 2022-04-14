@@ -3,22 +3,29 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* margin-left: 65%; */
+  margin-left: 30%;
   padding: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
   height: auto;
+  margin-bottom: 20px;
+  /* border: 1px black solid; */
 }
 
 #historyContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px black solid;
+  /* border: 1px black solid; */
   text-align: center;
 }
 
 h2 {
   display: flex;
+  justify-content: center;
+}
+button{
+  margin-top: 5px;
+  margin-left: 5px;
 }

@@ -50,9 +50,11 @@ export default function RankingModal({player}) {
                     <br/>
                     <div style={{ textAlign: "center" }} id="modal-modal-description">
                         <img src={player.avatar} alt="Porfile Pic" align="center"/>
-                        Gender: {player.gender}<br/>
-                        Score: {player.singleRank}<br/>
-                        Birthday: {player.birthday}
+                        {/* Singles: {player.singleRank}<br/>
+                        Doubles: {player.doubleRank}<br/>
+                        Mixed: {player.mixedRank}<br/> */}
+                        {/* Gender: {player.gender}<br/>
+                        Birthday: {player.birthday} */}
                     </div>
                     </div>
                 </Box>
