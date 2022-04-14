@@ -9,6 +9,7 @@ export const FETCH_USER = gql`
             username
             email
             playerId {
+                _id
                 fullName
                 singleRank
                 doubleRank

@@ -5,8 +5,11 @@ import { RotateSpinner } from "react-spinners-kit";
 const ProfileHistory = ({ playerId }) => {
     const { loading, data } = useQuery(ODDS_MATCHES);
     const matchList = data?.matches || [];
+    console.log({playerId})
     const winner = matchList.filter(win => win.winningPlayerId._id === playerId);
     const loser = matchList.filter(lose => lose.losingPlayerId._id === playerId);
+    console.log(winner);
+    console.log(loser);
 
     const resWin = [];
     if (winner) {
