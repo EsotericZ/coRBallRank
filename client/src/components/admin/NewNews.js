@@ -19,7 +19,7 @@ import TextField from '@mui/material/TextField';
 
 const theme = createTheme();
 
-const NewEvent = () => {
+const NewNews = () => {
     const clubsData = useQuery(FETCH_CLUBS);
     const clubList = clubsData.data?.clubs || [];
 
@@ -227,4 +227,4 @@ const NewEvent = () => {
     );
 };
 
-export default NewEvent;
+export default NewNews;

@@ -1,6 +1,7 @@
 import Nav from '../nav/Nav';
 import Footer from '../footer/Footer';
 import './admin.css';
+import FIX from '../../assets/FIX.jpg';
 
 import Box from '@mui/material/Box';
 import TableContainer from '@mui/material/TableContainer';
@@ -12,9 +13,9 @@ import TabPanel from '@mui/lab/TabPanel';
 
 import { useState } from "react";
 import NewEvent from "./NewEvent";
-// import MatchModal from "./MatchModal";
-// import NewsModal from "./NewsModal";
-// import PlayerModal from "./PlayerModal";
+import NewMatch from "./NewMatch";
+import NewNews from "./NewNews";
+import NewPlayer from "./NewPlayer";
 
 const Admin = () => {
     const [value, setValue] = useState('1');
@@ -35,9 +36,9 @@ const Admin = () => {
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <TabList onChange={handleChange} aria-label="lab API tabs example" className="tabs">
                                 <Tab label="New Event" value="1" />
-                                <Tab label="New Player" value="2" />
-                                <Tab label="New News Item" value="3" />
-                                <Tab label="New Match" value="4" />
+                                <Tab label="New Match" value="2" />
+                                <Tab label="New Player" value="3" />
+                                <Tab label="New News Item" value="4" />
                             </TabList>
                         </Box>
                         <TabPanel value="1">
@@ -45,16 +46,19 @@ const Admin = () => {
                             <NewEvent />
                         </TabPanel>
                         <TabPanel value="2">
-                            <h1>2</h1>
-                            {/* <NewEvent /> */}
+                            <h1>Creat a New Match</h1>
+                            <NewMatch />
                         </TabPanel>
                         <TabPanel value="3">
-                            <h1>3</h1>
-                            {/* <NewEvent /> */}
+                            <h1>Add a New Player</h1>
+                            <NewPlayer />
                         </TabPanel>
                         <TabPanel value="4">
-                            <h1>4</h1>
-                            {/* <NewEvent /> */}
+                            {/* <h1>Create a New News Feed Item</h1> */}
+                            {/* <NewNews /> */}
+                            <div className="cj">
+                                <img src={FIX} alt="Construction" />
+                            </div>
                         </TabPanel>
                     </TabContext>
                 </Box>
