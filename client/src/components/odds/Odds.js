@@ -9,7 +9,6 @@ import InputLabel from '@mui/material/InputLabel';
 import PlayerSelector from './PlayerSelector';
 import History from './History';
 import Nav from '../nav/Nav';
-import Footer from '../footer/Footer';
 import { RotateSpinner } from "react-spinners-kit";
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
@@ -161,7 +160,6 @@ const Odds = () => {
             </div>
         </div>
         </div> 
-        <Footer />
     </>
 };
 
