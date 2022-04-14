@@ -182,11 +182,12 @@ const CreateUser = () => {
                                     </FormControl>
                                 </Grid>
                             </Grid>
-                            <Button
+                            <Button className="createBtn"
                                 type="submit"
                                 fullWidth
                                 variant="contained"
                                 sx={{ mb: 2 }}
+                                
                             >
                                 Submit
                             </Button>
