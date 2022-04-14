@@ -24,7 +24,7 @@ const Profile = () => {
     });
 
     const playerId = data.user.playerId._id;
-    console.log(data)
+
 
     return loading ?
         <>
