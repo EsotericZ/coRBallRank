@@ -1,12 +1,24 @@
 .historyCard {
   width: 700px;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 65%;
+  /* margin-left: 65%; */
   padding: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
   height: 300px;
+}
+
+#historyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px black solid;
+  text-align: center;
+}
+
+h2 {
+  display: flex;
 }

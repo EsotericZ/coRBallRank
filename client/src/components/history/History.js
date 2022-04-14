@@ -12,10 +12,10 @@ const History = () => {
     return (
         <>
             <Nav />
-            <div className='container'>
+            <div className='container' id="historyContainer">
                 <div className='historyCard'>
                     <div className="header-title">
-                        <h4 className="card-title">Create Post</h4>
+                        <h2 className="card-title">Create Post</h2>
                     </div>
                     <div className="">
                         <div className="user-img">
@@ -81,7 +81,7 @@ const History = () => {
                 <div className='historyCard'>
                     <div>
                         <img className="rounded-circle img-fluid" alt="" />
-                        <h4>PLAYER NAME</h4>
+                        <h2>PLAYER NAME</h2>
                     </div>
                     <div>
                         <iframe title="vedio" src="https://www.youtube.com/embed/j_GsIanLxZk?rel=0" ></iframe>
@@ -97,7 +97,7 @@ const History = () => {
                 <div className='historyCard'>
                     <div>
                         <img className="rounded-circle img-fluid" alt="" />
-                        <h4>PLAYER NAME</h4>
+                        <h2>PLAYER NAME</h2>
                     </div>
                     <div>
                         <div className="">
