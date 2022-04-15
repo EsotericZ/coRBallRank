@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+        "start": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
         "install": "cd server && npm i && cd ../client && npm i",
         "seed": "node server/config/seeds.js"
     },

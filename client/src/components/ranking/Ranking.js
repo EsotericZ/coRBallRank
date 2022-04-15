@@ -298,7 +298,7 @@ const Ranking = () => {
                         </TabContext>
                     </Box>
                 </TableContainer >
-                <Footer />
+                {/* <Footer /> */}
             </>
     }
 

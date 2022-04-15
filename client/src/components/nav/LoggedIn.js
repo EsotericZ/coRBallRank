@@ -187,7 +187,7 @@ function LoggedIn() {
               <MenuItem>
                 <ListItemIcon>
                   <Logout fontSize="small" />
-                  <Link to='/home'
+                  <Link to='/'
                     onClick={() => {
                       window.localStorage.removeItem("token")
                       window.refresh();
