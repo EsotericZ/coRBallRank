@@ -62,7 +62,7 @@ const Admin = () => {
                         </TabPanel>
                     </TabContext>
                 </Box>
-                <Footer />
+                {/* <Footer /> */}
             </TableContainer >
         </>
     );

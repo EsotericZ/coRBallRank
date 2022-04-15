@@ -34,7 +34,7 @@ const Contact = () => {
                     </form>
                 </div>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
