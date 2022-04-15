@@ -9,7 +9,6 @@ import InputLabel from '@mui/material/InputLabel';
 import PlayerSelector from './PlayerSelector';
 import History from './History';
 import Nav from '../nav/Nav';
-import Footer from '../footer/Footer';
 import { RotateSpinner } from "react-spinners-kit";
 import { ALL_PLAYERS } from '../../graphql/queries/fetchPlayers';
 import './odds.css';
@@ -144,6 +143,7 @@ const Odds = () => {
                             {show ? <History p1={player1} p2={player2} /> : null}
                         </div>
                     </div>
+<<<<<<< HEAD
                     </div>
                     <div className="reset">
                         <div className="reset hidden" id="resetBtn">
@@ -163,6 +163,25 @@ const Odds = () => {
                 
             </div>
             {/* <Footer /> */}
+=======
+                </div>
+                <div>
+                    <div className="reset hidden" id="resetBtn">
+                        <button className="resetBtn"
+                            onClick={() => {
+                                reset();
+                                document.getElementById('p1').classList.toggle('hidden');
+                                document.getElementById('p2').classList.toggle('hidden');
+                                document.getElementById('submitBtn').classList.toggle('hidden');
+                                document.getElementById('resetBtn').classList.toggle('hidden');
+                            }}
+                        >
+                            Try Again!
+                        </button>
+                    </div>
+                </div>
+            </div>
+>>>>>>> main
         </>
 };
 

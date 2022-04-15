@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Nav from '../nav/Nav';
-import Footer from '../footer/Footer';
+// import Footer from '../footer/Footer';
 import { Link } from 'react-router-dom'
 import './history.css';
 

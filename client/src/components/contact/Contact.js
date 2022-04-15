@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import Nav from '../nav/Nav';
-import Footer from '../footer/Footer';
+// import Footer from '../footer/Footer';
 import './contact.css';
 
 const Contact = () => {
