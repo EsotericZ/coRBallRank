@@ -4,6 +4,7 @@
     "description": "Colorado Racquetball Ranking Generator built with React",
     "main": "index.js",
     "scripts": {
+        "build": "cd client && npm run build",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
         "start": "node server/server.js",
