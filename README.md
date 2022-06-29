@@ -30,7 +30,11 @@ npm run seed
 Video Example
 
 ## Deployment
-https://corballrank.herokuapp.com/
+https://corballrank.herokuapp.com/  
+
+![Alt text](/client/public/images/background.png?raw=true "Screenshot")  
+
+
 
 ## Future Ideas
 We have many ideas for future features, here are a few 	
