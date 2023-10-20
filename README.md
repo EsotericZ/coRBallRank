@@ -1,7 +1,5 @@
 # Colorado Racquetball Association Ranking Generator
 
-# NOTE - HEROKU IS DEPRICATED - THE LIVE LINK NO LONGER WORKS
-    
 ## Description / User Story
                                                         
 AS A player
