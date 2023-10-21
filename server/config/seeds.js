@@ -84,7 +84,7 @@ db.once('open', async () => {
 
     const players = await Player.insertMany([
         {
-            // 00
+            
             firstName: 'Admin',
             lastName: 'Admin',
             birthday: '04/06/2022',
@@ -95,7 +95,7 @@ db.once('open', async () => {
             avatar: '',
         },
         {
-            // 01
+            
             firstName: 'CJ',
             lastName: 'Sanders',
             birthday: '02/04/1986',
@@ -106,7 +106,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/186770_large.jpg',
         },
         {
-            // 02
+            
             firstName: 'Luis',
             lastName: 'Martinez',
             birthday: '02/04/1986',
@@ -117,7 +117,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/102032_large.jpg',
         },
         {
-            // 03
+            
             firstName: 'Dominic',
             lastName: 'Garcia',
             birthday: '02/04/1986',
@@ -128,7 +128,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/317309_large.jpg',
         },
         {
-            // 04
+            
             firstName: 'Vikram',
             lastName: 'Pathrojuthri',
             birthday: '02/04/1986',
@@ -139,7 +139,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/279312_large.jpg',
         },
         {
-            // 05
+            
             firstName: 'David',
             lastName: 'Stone',
             birthday: '02/04/1986',
@@ -150,7 +150,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/67020_large.jpg',
         },
         {
-            // 06
+            
             firstName: 'Lee',
             lastName: 'Beckwith',
             birthday: '02/04/1986',
@@ -161,7 +161,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/18373_large.gif',
         },
         {
-            // 07
+            
             firstName: 'Jorge',
             lastName: 'Cuellar',
             birthday: '02/04/1986',
@@ -172,7 +172,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/180050_large.jpg',
         },
         {
-            // 08
+            
             firstName: 'Ken',
             lastName: 'Huey',
             birthday: '02/04/1986',
@@ -183,7 +183,7 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/27024_large.jpg',
         },
         {
-            // 09
+            
             firstName: 'Michael',
             lastName: 'Nigro',
             birthday: '02/04/1986',
@@ -194,7 +194,6 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/275445_large.jpg',
         },
         {
-            // 10
             firstName: 'Luis',
             lastName: 'Torres',
             birthday: '02/04/1986',
@@ -205,7 +204,6 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/262238_large.jpg',
         },
         {
-            // 11
             firstName: 'Chantel',
             lastName: 'Anderson',
             birthday: '02/04/1986',
@@ -216,7 +214,6 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/37675_large.jpg',
         },
         {
-            // 12
             firstName: 'Khyathi',
             lastName: 'Velpuri',
             birthday: '02/04/1986',
@@ -227,7 +224,6 @@ db.once('open', async () => {
             avatar: 'https://www.r2sports.com/tourney/imageGallery/gallery/player/281354_b0a5_sm.png',
         },
         {
-            // 13
             firstName: 'Derek',
             lastName: 'Schaeffer',
             birthday: '02/04/1986',
@@ -274,7 +270,7 @@ db.once('open', async () => {
 
     const tournaments = await Tournament.insertMany([
         {
-            // 00
+            
             name: '2020 Apex Open',
             clubId: clubs[0]._id,
             locationId: locations[0]._id,
